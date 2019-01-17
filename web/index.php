@@ -10,7 +10,7 @@
     <body>
         <header>
             <?php // include($_SERVER['DOCUMENT_ROOT'] . '/acme/common/header.php') 
-            include '/web/common/header.php'?>
+            include ($_SERVER['DOCUMENT_ROOT'] . '/web/common/header.php'?>
         </header>
         <main>
             <a href="intro.php">Introduction</a><br>
