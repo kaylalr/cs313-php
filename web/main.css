@@ -43,7 +43,8 @@ main {
     display: flex;
     flex-flow: row nowrap;
     width: 100%;
-    justify-content: space-around
+    justify-content: space-around;
+    align-items: center;
 }
 #introDiv img {
     height: 450px;
