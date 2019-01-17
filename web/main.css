@@ -47,6 +47,7 @@ main {
 }
 #introDiv img {
     width: 45%;
+    height: inherit;
 }
 #introDiv div {
     margin-left: 10em;
