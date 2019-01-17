@@ -41,13 +41,12 @@ main {
 }
 #introDiv {
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     width: 100%;
     justify-content: space-around
 }
 #introDiv img {
-    width: 45%;
-    height: inherit;
+    height: 450px;
 }
 #introDiv div {
     margin-left: 10em;
