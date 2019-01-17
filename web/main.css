@@ -6,10 +6,11 @@ header {
     background-color: #333;
     height: 100px;
     color: white;
-    text-align: center;
-    /* this "display: flex" is just so I can use align-content */
-    display: flex;
-    align-content: center;
+    /*    text-align: center;
+         this "display: flex" is just so I can use align-content 
+        display: flex;
+        align-content: center;*/
+    padding: auto auto;
 }
 nav {
     background-color: #555;
@@ -44,8 +45,5 @@ footer {
     background-color: #333;
     height: 100px;
     color: white;
-    text-align: center;
-    /* this "display: flex" is just so I can use align-content */
-    display: flex;
-    align-content: center;
+    padding: auto auto;
 }
