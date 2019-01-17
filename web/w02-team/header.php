@@ -1,10 +1,3 @@
-<!--<nav>
-    <ul>
-        <li><a href='home.php'>Home</a></li>
-        <li><a href='about.php'>About</a></li>
-        <li><a href='login.php'>Login</a></li>
-    </ul>
-</nav>-->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">Supersonic Banana</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,7 +5,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-            <a class="nav-item nav-link <?php echo $home ?>" href="home.php">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link <?php echo $home ?>" href="home.php">Home</a>
             <a class="nav-item nav-link <?php echo $about ?>" href="about.php">About</a>
             <a class="nav-item nav-link <?php echo $login ?>" href="login.php">Login</a>
         </div>
