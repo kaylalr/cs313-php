@@ -15,7 +15,7 @@
     <main>
         <ul>
             <li><a href="index.php?action=adminLogin">Login as Administrator</a></li>
-            <li>Login as Tester</li>
+            <li><a href='index.php?action=testerLogin'>Login as Tester</a></li>
         </ul>
     </main>
 </body>

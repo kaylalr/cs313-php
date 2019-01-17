@@ -10,4 +10,8 @@ switch ($action) {
         $loginMessage = "You are logged in as Administrator.";
         include 'home.php';
         break;
+    case 'testerLogin';
+        $loginMessage = "You are logged in as a Tester.";
+        include 'home.php';
+        break;
 }
