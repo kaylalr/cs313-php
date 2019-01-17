@@ -45,8 +45,11 @@ main {
     width: 100%;
     justify-content: space-around
 }
+#introDiv img {
+    width: 45%;
+}
 #introDiv div {
-    margin-left: 20px;
+    margin-left: 10em;
 }
 footer {
     background-color: #333;
