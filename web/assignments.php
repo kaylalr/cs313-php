@@ -10,6 +10,9 @@
         <header>
             <?php include 'common/header.php' ?>
         </header>
+        <nav>
+            <?php include 'common/nav.php' ?>
+        </nav>
         <main>
             <p>Coming soon!</p>
         </main>

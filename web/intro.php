@@ -10,6 +10,9 @@
         <header>
             <?php include 'common/header.php' ?>
         </header>
+        <nav>
+            <?php include 'common/nav.php' ?>
+        </nav>
         <main>
             <h2>Something I love - Piano</h2>
             <p>I love playing the piano! I've been playing since I was 8 years 
