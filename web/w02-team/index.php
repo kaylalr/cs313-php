@@ -25,6 +25,6 @@ switch ($action) {
         $_SESSION['user'] = "tester";
         include 'home.php';
         break;
-    defaul:
+    default:
         include 'home.php';
 }
