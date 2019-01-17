@@ -36,7 +36,8 @@ nav a:active {
     text-decoration: underline;
 }
 main {
-    min-height: 100px;
+    min-height: 200px;
+    padding: 30px 20px;
 }
 footer {
     background-color: #333;
