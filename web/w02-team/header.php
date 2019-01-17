@@ -6,7 +6,7 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
             <a class="nav-item nav-link <?php echo $home ?>" href="index.php">Home</a>
-            <a class="nav-item nav-link <?php echo $about ?>" href="index.php?aciton=about">About</a>
+            <a class="nav-item nav-link <?php echo $about ?>" href="index.php?action=about">About</a>
             <a class="nav-item nav-link <?php echo $login ?>" href="index.php?action=login">Login</a>
         </div>
     </div>
