@@ -16,7 +16,7 @@
             <a href="assignments.php">Assignments</a><br>
         </main>
         <footer>
-            <?php include 'common/footer/header.php' ?>
+            <?php include './common/footer.php' ?>
         </footer>
     </body>
 </html>
