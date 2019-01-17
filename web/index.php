@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="">
-    <title>Home</title>
-</head>
-<body>
-    <a></a>
-    <a></a>
-    <footer></footer>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="">
+        <title>Home</title>
+    </head>
+    <body>
+        <header>
+            <?php // include($_SERVER['DOCUMENT_ROOT'] . '/acme/common/header.php') 
+            include 'common/header.php'?>
+        </header>
+        <main>
+            <a href="intro.php">Introduction</a>
+            <a href="assignments.php">Assignments</a>
+        </main>
+        <footer>
+            <?php echo "Today is " . date("m-d-Y") . "." ?>
+        </footer>
+    </body>
 </html>
