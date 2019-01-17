@@ -7,6 +7,8 @@ header {
     height: 100px;
     color: white;
     text-align: center;
+    /* this "display: flex" is just so I can use align-content */
+    display: flex;
     align-content: center;
 }
 nav {
@@ -36,10 +38,14 @@ nav a:active {
     text-decoration: underline;
 }
 main {
-    min-width: 100px;
+    min-height: 100px;
 }
 footer {
     background-color: #333;
     height: 100px;
     color: white;
+    text-align: center;
+    /* this "display: flex" is just so I can use align-content */
+    display: flex;
+    align-content: center;
 }
