@@ -6,6 +6,8 @@ header {
     background-color: #333;
     height: 100px;
     color: white;
+    text-align: center;
+    align-content: center;
 }
 nav {
     background-color: #555;
@@ -20,7 +22,7 @@ nav ul {
     margin: 0;
     width: 300px;
     justify-content: space-around;
-    align-content: center;
+    align-items: center;
 }
 nav a:link, nav a:visited {
     color: white;
@@ -32,4 +34,12 @@ nav a:hover {
 nav a:active {
     color: #FFBF00;
     text-decoration: underline;
+}
+main {
+    min-width: 100px;
+}
+footer {
+    background-color: #333;
+    height: 100px;
+    color: white;
 }
