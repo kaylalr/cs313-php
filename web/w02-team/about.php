@@ -15,7 +15,7 @@
     <main>
         <h1>Supersonic Banana</h1>
         <p>Everything banana.</p>
-        <p>We have anything banana flavored you you could ever want!</p>
+        <p>We have anything banana flavored you could ever want!</p>
     </main>
 </body>
 </html>
