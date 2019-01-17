@@ -1,4 +1,4 @@
 <ul>
-    <li><a href="intro.php">Introduction</a></li>
-    <li><a href="assignments.php">Assignments</a></li>
+    <li><a href="index.php?action=intro">Introduction</a></li>
+    <li><a href="index.php?action=assignments">Assignments</a></li>
 </ul>

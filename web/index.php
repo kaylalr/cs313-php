@@ -1,25 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="main.css">
-        <title>Home</title>
-    </head>
-    <body>
-        <header>
-            <?php include 'common/header.php' ?>
-        </header>
-        <nav>
-            <?php include 'common/nav.php' ?>
-        </nav>
-        <main>
-            <a href="intro.php">Introduction</a><br>
-            <a href="assignments.php">Assignments</a><br>
-        </main>
-        <footer>
-            <?php include './common/footer.php' ?>
-        </footer>
-    </body>
-</html>
+<?php 
+
+// Create or access a Session
+session_start();
+
+$action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING);
+if ($action == NULL) {
+    $action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING);
+}
+
+switch ($action) {
+    case "intro":
+        include 'intro.php';
+        break;
+    case "assignments":
+        include 'assignments.php';
+        break;
+    default:
+        include 'home.php';
+}
