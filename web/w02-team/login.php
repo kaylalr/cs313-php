@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href='main.css'>
-    <title>Document</title>
+    <title>Login</title>
 </head>
 <body>
     <header>
@@ -14,7 +14,7 @@
     </header>
     <main>
         <ul>
-            <li>Login as Administrator</li>
+            <li><a href="index.php?action=adminLogin">Login as Administrator</a></li>
             <li>Login as Tester</li>
         </ul>
     </main>

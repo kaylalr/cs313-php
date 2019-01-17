@@ -6,8 +6,8 @@ if ($action == NULL) {
 }
 
 switch ($action) {
-    case 'about':
-        $about = true;
-        
+    case 'adminLogin':
+        $loginMessage = "You are logged in as Administrator.";
+        include 'home.php';
         break;
 }
