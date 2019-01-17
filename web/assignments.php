@@ -7,6 +7,6 @@
     <title>Assignments</title>
 </head>
 <body>
-    
+    <p>Coming soon!</p>
 </body>
 </html>

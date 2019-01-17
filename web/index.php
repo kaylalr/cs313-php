@@ -9,15 +9,14 @@
     </head>
     <body>
         <header>
-            <?php // include($_SERVER['DOCUMENT_ROOT'] . '/acme/common/header.php') 
-            include 'common/header.php'?>
+            <?php include 'common/header.php' ?>
         </header>
         <main>
             <a href="intro.php">Introduction</a><br>
             <a href="assignments.php">Assignments</a><br>
         </main>
         <footer>
-            <?php echo "Today is " . date("m-d-Y") ?>
+            <?php include './common/footer/header.php' ?>
         </footer>
     </body>
 </html>
