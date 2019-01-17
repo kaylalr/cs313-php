@@ -3,8 +3,23 @@ body {
     margin: 0 auto;
 }
 header {
-    background-color: #2F4F4F;
+    background-color: #333;
 }
 nav {
-    
+    background-color: #555
+}
+nav ul {
+    width: 200px;
+    justify-content: space-around;
+}
+nav a:link, nav a:visited {
+    color: white;
+    text-decoration: none;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+nav a:active {
+    color: #77D700;
+    text-decoraction: underline;
 }
