@@ -39,6 +39,15 @@ main {
     min-height: 150px;
     padding: 30px 20px;
 }
+#introDiv {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    justify-content: space-around
+}
+#introDiv div {
+    margin-left: 20px;
+}
 footer {
     background-color: #333;
     height: 100px;
