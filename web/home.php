@@ -11,9 +11,7 @@
         <header>
             <?php include 'common/header.php' ?>
         </header>
-        <nav>
             <?php include 'common/nav.php' ?>
-        </nav>
         <main>
             <a href="intro.php">Introduction</a><br><br>
             <a href="assignments.php">Assignments</a><br>
