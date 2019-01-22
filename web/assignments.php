@@ -15,7 +15,7 @@
             <?php include 'common/nav.php' ?>
         </nav>
         <main>
-            <p>Coming soon!</p>
+            <p><a href="wiw/index.php?action=cart">Shopping Cart</a></p>
         </main>
         <footer>
             <?php include './common/footer.php' ?>
