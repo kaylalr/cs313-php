@@ -9,7 +9,7 @@ header {
     text-align: center;
     padding-top: 35px;
 }
-nav {
+/*nav {
     background-color: #555;
     height: 50px;
     font-size: 1.2em;
@@ -34,7 +34,7 @@ nav a:hover {
 nav a:active {
     color: #FFBF00;
     text-decoration: underline;
-}
+}*/
 main {
     min-height: 150px;
     padding: 30px 20px;
