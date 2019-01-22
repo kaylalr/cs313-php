@@ -11,9 +11,9 @@
         <header>
             <?php include 'common/header.php' ?>
         </header>
-        <!--<div class="container">-->
+        <nav>
         <?php include 'common/nav.php' ?>
-        <!--</div>-->
+        </nav>
         <main>
             <a href="intro.php">Introduction</a><br><br>
             <a href="assignments.php">Assignments</a><br>
