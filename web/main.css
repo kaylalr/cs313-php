@@ -24,7 +24,7 @@ nav ul {
     justify-content: space-around;
     align-items: center;
 }*/
-nav a:link, nav a:visited {
+/*nav a:link, nav a:visited {
     color: white;
     text-decoration: none;
 }
@@ -34,7 +34,7 @@ nav a:hover {
 nav a:active {
     color: #FFBF00;
     text-decoration: underline;
-}
+}*/
 main {
     min-height: 150px;
     padding: 30px 20px;
