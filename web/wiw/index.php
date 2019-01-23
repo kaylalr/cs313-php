@@ -15,6 +15,13 @@ switch ($action) {
     case "puppies":
         include 'puppies.php';
         break;
+    case "addCart":
+        if(isset($_SESSION['cart']['total']) && $_SESSION['cart']['total'] > 0) {
+            $_SESSION['cart']['total'] += 1;
+        } else {
+            $_SESSION['cart']['total'] = 1;
+        }
+        break;
     default:
         include 'home.php';
 }

@@ -15,12 +15,42 @@
         </header>
         <main>
             <div class="gridContainer">
-                <div class="gridItem"></div>
-                <div class="gridItem"></div>
-                <div class="gridItem"></div>
-                <div class="gridItem"></div>
-                <div class="gridItem"></div>
-                <div class="gridItem"></div>
+                <div class="gridItem">
+                    <img src="images/boy1sm.jpg.jpg" alt="male puppy">
+                    <p>Male Puppy 1</p>
+                    <p>Price: $1200</p>
+                    <a class="btn btn-warning" href="index.html?action=addCart">Add to Cart</a>
+                </div>
+                <div class="gridItem">
+                    <img src="images/girl5sm.jpg.jpg" alt="girl puppy">
+                    <p>Female Puppy 1</p>
+                    <p>Price: $1200</p>
+                    <a class="btn btn-warning" href="index.html?action=addCart">Add to Cart</a>
+                </div>
+                <div class="gridItem">
+                    <img src="images/boy1sm.jpg.jpg" alt="male puppy">
+                    <p>Male Puppy 2</p>
+                    <p>Price: $1200</p>
+                    <a class="btn btn-warning" href="index.html?action=addCart">Add to Cart</a>
+                </div>
+                <div class="gridItem">
+                    <img src="images/girl5sm.jpg.jpg" alt="girl puppy">
+                    <p>Female Puppy 2</p>
+                    <p>Price: $1200</p>
+                    <a class="btn btn-warning" href="index.html?action=addCart">Add to Cart</a>
+                </div>
+                <div class="gridItem">
+                    <img src="images/boy1sm.jpg.jpg" alt="male puppy">
+                    <p>Male Puppy 3</p>
+                    <p>Price: $1200</p>
+                    <a class="btn btn-warning" href="index.html?action=addCart">Add to Cart</a>
+                </div>
+                <div class="gridItem">
+                    <img src="images/girl5sm.jpg.jpg" alt="girl puppy">
+                    <p>Female Puppy 3</p>
+                    <p>Price: $1200</p>
+                    <a class="btn btn-warning" href="index.html?action=addCart">Add to Cart</a>
+                </div>
             </div>
         </main>
     </body>
