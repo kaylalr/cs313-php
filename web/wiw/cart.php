@@ -15,7 +15,7 @@
         </header>
         <main>
             <h2>Congratulations! You added <?php $addedPuppy['Name'] ?> to your cart!</h2>
-            <div class="cart">
+            <div>
                 <?php echo $cartItems ?>
             </div>
         </main>
