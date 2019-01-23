@@ -12,6 +12,9 @@ switch ($action) {
     case "cart":
         include 'cart.php';
         break;
+    case "puppies":
+        include 'puppies.php';
+        break;
     default:
         include 'home.php';
 }

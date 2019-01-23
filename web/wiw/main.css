@@ -30,3 +30,13 @@ header button {
 main {
     max-width: 1100px;
 }
+/* puppies page grid */
+.gridContainer {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+.gridItem {
+    background-color: pink;
+    border: 1px solid;
+    padding: 20px;
+}
