@@ -11,7 +11,7 @@
     <body>
         <header>
             <?php include 'common/header.php' ?>
-        </header>
             <?php include 'common/nav.php' ?>
+        </header>
     </body>
 </html>
