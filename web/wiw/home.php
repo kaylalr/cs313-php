@@ -13,8 +13,5 @@
         <header>
             <?php include 'common/header.php' ?>
         </header>
-        <nav>
-            <?php include 'common/nav.php' ?>
-        </nav>
     </body>
 </html>
