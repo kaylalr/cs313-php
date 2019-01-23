@@ -1,8 +1,14 @@
+body {
+    font-size: 1.2em;
+}
 header {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     height: 70px;
+}
+nav {
+    height: inherit;
 }
 nav ul {
     display: flex;
