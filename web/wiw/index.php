@@ -52,7 +52,7 @@ switch ($action) {
         } else {
             $_SESSION['cart']['total'] = 1;
         }
-        echo $_SESSION['cart']['total'];
+//        echo $_SESSION['cart']['total'];
         
         if(isset($cartItems)) {
             $cartItems .= '<div class="cartItem">';

@@ -47,8 +47,9 @@ main {
 }
 /* cart page */
 .cartItem {
-    display: flex;
+    display: grid;
+    grid-template-columns: 300px auto;
 }
-.cartItem img {
-    width: 120px;
-}
+/*.cartItem img {
+    width: 300px;
+}*/
