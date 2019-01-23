@@ -29,7 +29,7 @@ switch ($action) {
                     <img src="' . $puppy['ImagePath'] . '" alt="' . $puppy['ImageDescription'] . '">
                     <p>' . $puppy['Name'] . '</p>
                     <p>Price: ' . $puppy['Price'] . '</p>
-                    <a class="btn btn-warning" href="index.php?action=addCart?id='. $puppy['id'] .'">Add to Cart</a>
+                    <a class="btn btn-warning" href="index.php?action=addCart&id='. $puppy['id'] .'">Add to Cart</a>
                 </div>';
         }
         $puppyGrid .= "</div>";
