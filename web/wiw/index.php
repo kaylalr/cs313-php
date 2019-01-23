@@ -21,7 +21,8 @@ switch ($action) {
         } else {
             $_SESSION['cart']['total'] = 1;
         }
-//        include 'puppies.php';
+        echo $_SESSION['cart']['total'];
+        include 'puppies.php';
         break;
     default:
         include 'home.php';
