@@ -16,6 +16,7 @@
         <main>
 <!--            <div class="gridContainer">
             </div>-->
+<?php echo $puppyGrid; ?>
         </main>
     </body>
 </html>
