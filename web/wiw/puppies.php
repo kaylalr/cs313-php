@@ -14,8 +14,6 @@
             <?php include 'common/header.php' ?>
         </header>
         <main>
-            <!--            <div class="gridContainer">
-                        </div>-->
             <?php echo $puppyGrid; ?>
         </main>
     </body>

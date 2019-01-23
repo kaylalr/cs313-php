@@ -38,20 +38,40 @@ switch ($action) {
     case "addCart":
         $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 //        make function to get puppy by id from database insead of doing the following
-        do {
+//        do {
         foreach($puppies as $puppy) {
             if($puppy['id'] == $id) {
+                $addedPuppy = $puppy;
                 $found = true;
             }
         }
-        } while ($found == false);
+//        } while ($found == false);
+        
+        // get total number of things in cart
         if (isset($_SESSION['cart']['total']) && $_SESSION['cart']['total'] > 0) {
             $_SESSION['cart']['total'] += 1;
         } else {
             $_SESSION['cart']['total'] = 1;
         }
         echo $_SESSION['cart']['total'];
-        include 'puppies.php';
+        
+        if(isset($cartItems)) {
+            $cartItems .= '<div class="cartItem">';
+            $cartItems .= '<img class="cartItemPic" src="' . $addedPuppy['ImagePath'] . '" alt="' . $addedPuppy['ImageDescription'] . '">';
+            $cartItems .= '<div class="cartItemInfo">';
+            $cartItems .= '<h3>' . $addedPuppy['Name'] . '</h3>';
+            $cartItems .= '<p class="cartItemPrice">' . $addedPuppy['Price'] . '</p>';
+            $cartItems .= '</div></div>';
+        } else {
+            $cartItems = '<div class="cartItem">';
+            $cartItems .= '<img class="cartItemPic" src="' . $addedPuppy['ImagePath'] . '" alt="' . $addedPuppy['ImageDescription'] . '">';
+            $cartItems .= '<div class="cartItemInfo">';
+            $cartItems .= '<h3>' . $addedPuppy['Name'] . '</h3>';
+            $cartItems .= '<p class="cartItemPrice">' . $addedPuppy['Price'] . '</p>';
+            $cartItems .= '</div></div>';
+        }
+        
+        include 'cart.php';
         break;
     default:
         include 'home.php';

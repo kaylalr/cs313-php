@@ -45,3 +45,10 @@ main {
 .gridItem img {
     width: 100%;
 }
+/* cart page */
+.cartItem {
+    display: flex;
+}
+.cartItem img {
+    width: 120px;
+}

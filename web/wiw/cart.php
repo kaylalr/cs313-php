@@ -13,5 +13,11 @@
         <header>
             <?php include 'common/header.php' ?>
         </header>
+        <main>
+            <h2>Congratulations! You added <?php $addedPuppy['Name'] ?> to your cart!</h2>
+            <div>
+                <?php echo $cartItems ?>
+            </div>
+        </main>
     </body>
 </html>
