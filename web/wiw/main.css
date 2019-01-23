@@ -7,6 +7,7 @@ header {
     justify-content: space-between;
     height: 70px;
     padding: 0 20px;
+    background-color: darkslategray;
 }
 nav {
     height: inherit;
@@ -21,6 +22,9 @@ nav ul {
     align-items: center;
     padding: 0;
     height: inherit;
+}
+header button {
+    height: 40px;
 }
 main {
     max-width: 1100px;
