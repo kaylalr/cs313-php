@@ -6,8 +6,9 @@ header {
     flex-flow: row nowrap;
     justify-content: space-between;
     height: 70px;
-    padding: 20px 30px;
+    padding: 0 30px;
     background-color: #555;
+    align-items: center;
 }
 nav {
     height: inherit;
