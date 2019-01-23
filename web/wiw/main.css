@@ -38,7 +38,7 @@ main {
     grid-template-columns: auto auto auto;
 }
 .gridItem {
-    /*background-color: pink;*/
+    background-color: lightgray;
     border: 1px solid;
     padding: 20px;
 }
