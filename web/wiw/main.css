@@ -6,8 +6,8 @@ header {
     flex-flow: row nowrap;
     justify-content: space-between;
     height: 70px;
-    padding: 0 20px;
-    background-color: darkslategray;
+    padding: 20px 30px;
+    background-color: #555;
 }
 nav {
     height: inherit;
@@ -16,7 +16,7 @@ nav ul {
     display: flex;
     flex-flow: row nowrap;
     width: 400px;
-    justify-content: space-around;
+    justify-content: space-between;
     list-style-type: none;
     margin: 0;
     align-items: center;
