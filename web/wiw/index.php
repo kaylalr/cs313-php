@@ -42,7 +42,6 @@ switch ($action) {
         foreach($puppies as $puppy) {
             if($puppy['id'] == $id) {
                 $addedPuppy = $puppy;
-                $found = true;
             }
         }
 //        } while ($found == false);
@@ -70,7 +69,14 @@ switch ($action) {
             $cartItems .= '<p class="cartItemPrice">' . $addedPuppy['Price'] . '</p>';
             $cartItems .= '</div></div>';
         }
-        
+
+        // build cart
+//        foreach($puppies as $puppy) {
+//            if($puppy['Cart']) {
+//                
+//            }
+//        }
+//        
         include 'cart.php';
         break;
     default:
