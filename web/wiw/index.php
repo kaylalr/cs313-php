@@ -55,16 +55,16 @@ switch ($action) {
 //        echo $_SESSION['cart']['total'];
         
         if(isset($cartItems)) {
-            $cartItems .= '<div class="cart">';
-            $cartItems .= '<img class="cartItem" src="' . $addedPuppy['ImagePath'] . '" alt="' . $addedPuppy['ImageDescription'] . '">';
             $cartItems .= '<div class="cartItem">';
+            $cartItems .= '<img class="cartItemContent" src="' . $addedPuppy['ImagePath'] . '" alt="' . $addedPuppy['ImageDescription'] . '">';
+            $cartItems .= '<div class="cartItemContent">';
             $cartItems .= '<h3>' . $addedPuppy['Name'] . '</h3>';
             $cartItems .= '<p class="cartItemPrice">' . $addedPuppy['Price'] . '</p>';
             $cartItems .= '</div></div>';
         } else {
-            $cartItems = '<div class="cart">';
-            $cartItems .= '<img class="cartItem" src="' . $addedPuppy['ImagePath'] . '" alt="' . $addedPuppy['ImageDescription'] . '">';
-            $cartItems .= '<div class="cartItem">';
+            $cartItems = '<div class="cartItem">';
+            $cartItems .= '<img class="cartItemContent" src="' . $addedPuppy['ImagePath'] . '" alt="' . $addedPuppy['ImageDescription'] . '">';
+            $cartItems .= '<div class="cartItemContent">';
             $cartItems .= '<h3>' . $addedPuppy['Name'] . '</h3>';
             $cartItems .= '<p class="cartItemPrice">' . $addedPuppy['Price'] . '</p>';
             $cartItems .= '</div></div>';
