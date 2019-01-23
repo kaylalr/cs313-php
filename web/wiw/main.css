@@ -48,7 +48,7 @@ main {
 /* cart page */
 .cart {
     display: grid;
-    grid-template-columns: 150px auto;
+    grid-template-columns: 200px auto;
 }
 .cartItem {
     border: 1px solid;
@@ -56,7 +56,7 @@ main {
     padding: 20px;
 }
 .cart img {
-    width: inherit;
+    width: 160px;
 }
 .cartItem h3 {
     margin-top: 0;
