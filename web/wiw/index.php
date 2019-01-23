@@ -53,6 +53,7 @@ switch ($action) {
             $_SESSION['cart']['total'] = 1;
         }
         echo $_SESSION['cart']['total'];
+        exit;
         
         if(isset($cartItems)) {
             $cartItems .= '<div class="cartItem">';
