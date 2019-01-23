@@ -13,29 +13,15 @@
   </div>
 </nav>-->
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <?php 
-if (isset($_SESSION['user'])) {
-    if ($_SESSION[user] == "admin") {
-        echo "<a class='navbar-brand' href='#'>Welcome Admin</a>";
-    }
-    if ($_SESSION[user] == "tester") {
-        echo "<a class='navbar-brand' href='#'>Welcome Tester</a>";
-    }
-}
-else {
-    echo "<a class='navbar-brand' href='#'>Supersonic Banana</a>";
-}
-?>
-    
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">    
 <!--    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>-->
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-            <a class="nav-item nav-link <?php echo $home ?>" href="index.php">Home</a>
-            <a class="nav-item nav-link <?php echo $about ?>" href="index.php?action=about">About</a>
-            <a class="nav-item nav-link <?php echo $login ?>" href="index.php?action=login">Login</a>
+            <a class="nav-item nav-link" href="index.php">Home</a>
+            <a class="nav-item nav-link" href="">About</a>
+            <!--<a class="nav-item nav-link" href="">Login</a>-->
         </div>
     </div>
 </nav>
