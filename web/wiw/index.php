@@ -5,9 +5,9 @@ session_start();
 
 //puppies array for shopping cart assignment
 $puppies = array(
-    array('id' => 1, 'Name' => 'Male Puppy 1', 'Price' => '$1200', 'ImagePath' => 'images/images/boy1sm.jpg', 'ImageDescription' => 'male puppy'),
-    array('id' => 2, 'Name' => 'Male Puppy 2', 'Price' => '$1200', 'ImagePath' => 'images/images/boy1sm.jpg', 'ImageDescription' => 'male puppy'),
-    array('id' => 3, 'Name' => 'Male Puppy 3', 'Price' => '$1200', 'ImagePath' => 'images/images/boy1sm.jpg', 'ImageDescription' => 'male puppy'),
+    array('id' => 1, 'Name' => 'Male Puppy 1', 'Price' => '$1200', 'ImagePath' => 'images/boy1sm.jpg', 'ImageDescription' => 'male puppy'),
+    array('id' => 2, 'Name' => 'Male Puppy 2', 'Price' => '$1200', 'ImagePath' => 'images/boy1sm.jpg', 'ImageDescription' => 'male puppy'),
+    array('id' => 3, 'Name' => 'Male Puppy 3', 'Price' => '$1200', 'ImagePath' => 'images/boy1sm.jpg', 'ImageDescription' => 'male puppy'),
     array('id' => 4, 'Name' => 'Female Puppy 1', 'Price' => '$1200', 'ImagePath' => 'images/girl5sm.jpg', 'ImageDescription' => 'female puppy'),
     array('id' => 5, 'Name' => 'Female Puppy 2', 'Price' => '$1200', 'ImagePath' => 'images/girl5sm.jpg', 'ImageDescription' => 'female puppy'),
     array('id' => 6, 'Name' => 'Female Puppy 3', 'Price' => '$1200', 'ImagePath' => 'images/girl5sm.jpg', 'ImageDescription' => 'female puppy'),
@@ -23,7 +23,7 @@ switch ($action) {
         include 'cart.php';
         break;
     case "puppies":
-        $puppyGrid = "<div>";
+        $puppyGrid = "<div class='gridContainer'>";
         foreach ($puppies as $puppy) {
             $puppyGrid .= '<div class="gridItem">
                     <img src="' . $puppy['ImagePath'] . '" alt="' . $puppy['ImageDescription'] . '">
