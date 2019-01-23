@@ -14,44 +14,8 @@
             <?php include 'common/header.php' ?>
         </header>
         <main>
-            <div class="gridContainer">
-                <div class="gridItem">
-                    <img src="images/boy1sm.jpg" alt="male puppy">
-                    <p>Male Puppy 1</p>
-                    <p>Price: $1200</p>
-                    <a class="btn btn-warning" href="index.php?action=addCart">Add to Cart</a>
-                </div>
-                <div class="gridItem">
-                    <img src="images/girl5sm.jpg" alt="girl puppy">
-                    <p>Female Puppy 1</p>
-                    <p>Price: $1200</p>
-                    <a class="btn btn-warning" href="index.php?action=addCart">Add to Cart</a>
-                </div>
-                <div class="gridItem">
-                    <img src="images/boy1sm.jpg" alt="male puppy">
-                    <p>Male Puppy 2</p>
-                    <p>Price: $1200</p>
-                    <a class="btn btn-warning" href="index.php?action=addCart">Add to Cart</a>
-                </div>
-                <div class="gridItem">
-                    <img src="images/girl5sm.jpg" alt="girl puppy">
-                    <p>Female Puppy 2</p>
-                    <p>Price: $1200</p>
-                    <a class="btn btn-warning" href="index.php?action=addCart">Add to Cart</a>
-                </div>
-                <div class="gridItem">
-                    <img src="images/boy1sm.jpg" alt="male puppy">
-                    <p>Male Puppy 3</p>
-                    <p>Price: $1200</p>
-                    <a class="btn btn-warning" href="index.php?action=addCart">Add to Cart</a>
-                </div>
-                <div class="gridItem">
-                    <img src="images/girl5sm.jpg" alt="girl puppy">
-                    <p>Female Puppy 3</p>
-                    <p>Price: $1200</p>
-                    <a class="btn btn-warning" href="index.php?action=addCart">Add to Cart</a>
-                </div>
-            </div>
+<!--            <div class="gridContainer">
+            </div>-->
         </main>
     </body>
 </html>
