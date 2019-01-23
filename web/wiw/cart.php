@@ -14,7 +14,7 @@
             <?php include 'common/header.php' ?>
         </header>
         <main>
-            <h2>Congratulations! You added <?php $addedPuppy['Name'] ?> to your cart!</h2>
+            <h2>Congratulations! You added <?php echo $addedPuppy['Name'] ?> to your cart!</h2>
             <div>
                 <?php echo $cartItems ?>
             </div>
