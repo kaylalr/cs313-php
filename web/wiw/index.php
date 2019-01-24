@@ -34,6 +34,8 @@ function createCart($puppies) {
             }
         }
     }
+    echo $cartItems;
+    exit;
     return $cartItems;
 }
 
