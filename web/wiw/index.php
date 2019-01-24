@@ -90,7 +90,7 @@ switch ($action) {
             echo "key => " . $key . " value => " . $currentItem;
             if($currentItem == $id) {
 //                unset($_SESSION['cart']);
-                echo '<br>remove ' . $currentItem . '<br>';
+                echo '<br>remove key => ' . $key . " value => " . $currentItem . '<br>';
                 array_splice($_SESSION['cart'], $key);
                 print_r($_SESSION['cart']);
                 exit;
