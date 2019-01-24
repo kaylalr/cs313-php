@@ -22,7 +22,7 @@ if ($action == NULL) {
 // this function needs access to the puppies array
 function createCart($puppies) {
     $cartItems = "";
-    foreach ($_SESSION['cart']['puppyId'] as $currentItem) {
+    foreach ($_SESSION['cart'] as $currentItem) {
         foreach ($puppies as $puppy) {
             if ($currentItem == $puppy['id']) {
                 $cartItems .= '<div class="cartItem">';
@@ -30,6 +30,7 @@ function createCart($puppies) {
                 $cartItems .= '<div class="cartItemContent">';
                 $cartItems .= '<h3>' . $puppy['Name'] . '</h3>';
                 $cartItems .= '<p class="cartItemPrice">' . $puppy['Price'] . '</p>';
+                $cartItems .= '<a href="index.php?action=removeCart&id=' . $puppy['id'] .'">Remove</a>';
                 $cartItems .= '</div></div>';
             }
         }
@@ -62,11 +63,11 @@ switch ($action) {
         foreach ($puppies as $puppy) {
             if ($puppy['id'] == $id) {
                 $addedPuppy = $puppy;
-                if (!isset($_SESSION['cart']['puppyId'])) {
-                    $_SESSION['cart']['puppyId'] = array($puppy['id']);
+                if (!isset($_SESSION['cart'])) {
+                    $_SESSION['cart'] = array($puppy['id']);
                 } else {
-//                    $_SESSION['cart']['puppyId'] .= ", " . $puppy['id'];
-                    array_push($_SESSION['cart']['puppyId'], $puppy['id']);
+//                    $_SESSION['cart'] .= ", " . $puppy['id'];
+                    array_push($_SESSION['cart'], $puppy['id']);
                 }
             }
         }
@@ -77,31 +78,22 @@ switch ($action) {
             $_SESSION['cart']['total'] += 1;
         } else {
             $_SESSION['cart']['total'] = 1;
-        }
-//        echo $_SESSION['cart']['total'];
-//        if(isset($cartItems)) {
-//            $cartItems .= '<div class="cartItem">';
-//            $cartItems .= '<img class="cartItemContent" src="' . $addedPuppy['ImagePath'] . '" alt="' . $addedPuppy['ImageDescription'] . '">';
-//            $cartItems .= '<div class="cartItemContent">';
-//            $cartItems .= '<h3>' . $addedPuppy['Name'] . '</h3>';
-//            $cartItems .= '<p class="cartItemPrice">' . $addedPuppy['Price'] . '</p>';
-//            $cartItems .= '</div></div>';
-//        } else {
-//            $cartItems = '<div class="cartItem">';
-//            $cartItems .= '<img class="cartItemContent" src="' . $addedPuppy['ImagePath'] . '" alt="' . $addedPuppy['ImageDescription'] . '">';
-//            $cartItems .= '<div class="cartItemContent">';
-//            $cartItems .= '<h3>' . $addedPuppy['Name'] . '</h3>';
-//            $cartItems .= '<p class="cartItemPrice">' . $addedPuppy['Price'] . '</p>';
-//            $cartItems .= '</div></div>';
-//        }
-        // build cart
-//        foreach($puppies as $puppy) {
-//            if($puppy['Cart']) {
-//                
-//            }
-//        }
-//        
+        }     
         include 'cart.php';
+        break;
+    case "removeCart":
+        $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
+        foreach($_SESSION['cart'] as $currentItem) {
+            if($currentItem == $id) {
+//                unset($_SESSION['cart'])
+            }
+        }
+        for($i = 0; $i <= $_SESSION['cart']; $i++) {
+            if($_SESSION['cart'][i] == $id) {
+                array_splice($_SESSION, $i);
+            }
+        }
+        include 'index.php?action=cart';
         break;
     default:
         include 'home.php';
