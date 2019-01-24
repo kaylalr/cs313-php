@@ -22,21 +22,9 @@ if ($action == NULL) {
 // this function needs access to the puppies array
 function createCart($puppies) {
     $cartItems = "";
-//    echo 'testing: ' . $_SESSION['cart']['puppyId'];
-//    exit;
-//    echo 'first puppies: ';
-//    print_r($puppies);
-    echo "SESSION['cart']['puppyId'] variable: " . $_SESSION['cart']['puppyId'];
-//    exit;
     foreach ($_SESSION['cart']['puppyId'] as $currentItem) {
-        echo 'second puppies: ';
-        print_r($puppies);
         foreach ($puppies as $puppy) {
-            echo 'third puppies: ';
-            print_r($puppies);
             if ($currentItem == $puppy['id']) {
-                echo 'working';
-                exit;
                 $cartItems .= '<div class="cartItem">';
                 $cartItems .= '<img class="cartItemContent" src="' . $puppy['ImagePath'] . '" alt="' . $puppy['ImageDescription'] . '">';
                 $cartItems .= '<div class="cartItemContent">';
@@ -46,8 +34,6 @@ function createCart($puppies) {
             }
         }
     }
-//    echo $cartItems;
-//    exit;
     return $cartItems;
 }
 
