@@ -22,7 +22,7 @@ if ($action == NULL) {
 // this function needs access to the puppies array
 function createCart($puppies) {
     $cartItems = "";
-    echo "sessoin variable: " . $_SESSION['cart'];
+//    echo "sessoin variabl e: " . $_SESSION['cart'];
     foreach ($_SESSION['cart'] as $currentItem) {
         foreach ($puppies as $puppy) {
             if ($currentItem == $puppy['id']) {
@@ -42,7 +42,7 @@ function createCart($puppies) {
 switch ($action) {
     case "cart":
         $cartItems = createCart($puppies);
-        echo 'cart items: ' . $cartItems;
+//        echo 'cart items: ' . $cartItems;
         
         include 'cart.php';
         break;
