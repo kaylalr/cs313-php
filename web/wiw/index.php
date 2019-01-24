@@ -102,7 +102,8 @@ switch ($action) {
 //                array_splice($_SESSION, $i);
 //            }
 //        }
-        echo 'sesion variable: ' . $_SESSION['cart'];
+        echo 'sesion variable: ';
+        print_r($_SESSION['cart']);
         exit;
         header("Location: index.php?action=cart");
         break;
