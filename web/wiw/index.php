@@ -29,6 +29,7 @@ function createCart($puppies) {
 //        exit;
         foreach ($puppies as $puppy) {
             echo 'puppy foreach loop';
+            exit;
             if ($currentItem == $puppy['id']) {
                 echo 'working';
                 exit;
