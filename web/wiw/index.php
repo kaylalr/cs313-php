@@ -83,7 +83,7 @@ switch ($action) {
         } else {
             $_SESSION['cart']['total'] += 1;
         }     
-        include 'cart.php';
+        header("Location: index.php?action=cart");
         break;
     case "removeCart":
         $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
