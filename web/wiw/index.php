@@ -91,6 +91,7 @@ switch ($action) {
                 array_splice($_SESSION['cart'], $key);
             }
         }
+        exit;
 //        for($i = 0; $i <= $_SESSION['cart']; $i++) {
 //            echo $_SESSION['cart']['i'];
 //            exit;
