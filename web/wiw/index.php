@@ -65,6 +65,8 @@ switch ($action) {
             if ($puppy['id'] == $id) {
                 $addedPuppy = $puppy;
                 $_SESSION['cart']['puppyId'] .= $puppy['id'];
+                echo $_SESSION['cart']['puppyId'];
+                exit;
             }
         }
         $cartItems = createCart($puppies);
