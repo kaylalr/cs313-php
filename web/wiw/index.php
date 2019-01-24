@@ -23,6 +23,8 @@ if ($action == NULL) {
 function createCart($puppies) {
     $cartItems = "";
     foreach ($_SESSION['cart']['puppyId'] as $currentItem) {
+        echo $currentItem;
+        exit;
         foreach ($puppies as $puppy) {
             if ($currentItem == $puppy['id']) {
                 echo 'working';
