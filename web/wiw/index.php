@@ -111,6 +111,10 @@ switch ($action) {
 //        exit;
         header("Location: index.php?action=cart");
         break;
+    case "cartDeleteAll":
+        unset($_SESSION['cart']);
+        header("Location: index.php?action=cart");
+        break;
     default:
         include 'home.php';
 }

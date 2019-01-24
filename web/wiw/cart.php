@@ -19,6 +19,7 @@
             <div>
                 <?php echo $cartItems ?>
             </div>
+            <a href="index.php?action=cartDeleteAll">Delete all</a>
         </main>
     </body>
 </html>
