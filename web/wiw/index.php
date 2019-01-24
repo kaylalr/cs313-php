@@ -24,10 +24,10 @@ function createCart($puppies) {
     $cartItems = "";
 //    echo 'testing: ' . $_SESSION['cart']['puppyId'];
 //    exit;
-    echo 'first puppies: ';
-    print_r($puppies);
-    echo $_SESSION['cart']['puppyId'];
-    exit;
+//    echo 'first puppies: ';
+//    print_r($puppies);
+//    echo $_SESSION['cart']['puppyId'];
+//    exit;
     foreach ($_SESSION['cart']['puppyId'] as $currentItem) {
         echo 'second puppies: ';
         print_r($puppies);
