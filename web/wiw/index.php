@@ -41,7 +41,8 @@ function createCart($puppies) {
 switch ($action) {
     case "cart":
         $cartItems = createCart($puppies);
-        echo $cartItems;
+        echo 'cart items: ' . $cartItems;
+        
         include 'cart.php';
         break;
     case "puppies":
