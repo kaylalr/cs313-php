@@ -22,7 +22,6 @@ if ($action == NULL) {
 // this function needs access to the puppies array
 function createCart($puppies) {
     $cartItems = "";
-//    echo "sessoin variabl e: " . $_SESSION['cart'];
     foreach ($_SESSION['cart'] as $currentItem) {
         foreach ($puppies as $puppy) {
             if ($currentItem == $puppy['id']) {
@@ -42,9 +41,6 @@ function createCart($puppies) {
 switch ($action) {
     case "cart":
         $cartItems = createCart($puppies);
-//        echo 'cart items: ' . $cartItems;
-        echo 'shopping cart: ';
-        print_r($_SESSION['cart']);
         include 'cart.php';
         break;
     case "puppies":
@@ -62,56 +58,26 @@ switch ($action) {
         break;
     case "addCart":
         $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
-//        make function to get puppy by id from database insead of doing the following
-//        do {
         foreach ($puppies as $puppy) {
             if ($puppy['id'] == $id) {
                 $addedPuppy = $puppy;
                 if (!isset($_SESSION['cart'])) {
                     $_SESSION['cart'] = array($puppy['id']);
                 } else {
-//                    $_SESSION['cart'] .= ", " . $puppy['id'];
                     array_push($_SESSION['cart'], $puppy['id']);
                 }
             }
         }
-//        print_r($_SESSION['cart']);
-//        exit;
         $cartItems = createCart($puppies);
-//        } while ($found == false);
-        // get total number of things in cart
-//        if (!isset($_SESSION['cart']['total'])) {
-//            $_SESSION['cart']['total'] = 1;
-//        } else {
-//            $_SESSION['cart']['total'] += 1;
-//        }     
         header("Location: index.php?action=cart");
         break;
     case "removeCart":
         $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
         foreach($_SESSION['cart'] as $key => $currentItem) {
-//            echo "key => " . $key . " value => " . $currentItem . "<br>";
             if($currentItem == $id) {
-//                unset($_SESSION['cart']);
-//                echo '<br>remove key => ' . $key . " value => " . $currentItem . '<br>';
                 array_splice($_SESSION['cart'], $key, 1);
-//                echo "<br><br>session cart: ";
-//                print_r($_SESSION['cart']);
-//                echo "<br><br>";
-//                exit;
             }
         }
-//        exit;
-//        for($i = 0; $i <= $_SESSION['cart']; $i++) {
-//            echo $_SESSION['cart']['i'];
-//            exit;
-//            if($_SESSION['cart'][i] == $id) {
-//                array_splice($_SESSION, $i);
-//            }
-//        }
-//        echo 'sesion variable: ';
-//        print_r($_SESSION['cart']);
-//        exit;
         header("Location: index.php?action=cart");
         break;
     case "cartDeleteAll":
