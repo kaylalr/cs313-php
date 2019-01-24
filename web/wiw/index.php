@@ -76,7 +76,7 @@ switch ($action) {
         foreach ($puppies as $puppy) {
             if ($puppy['id'] == $id) {
                 $addedPuppy = $puppy;
-                $_SESSION['cart']['puppyId'] .= $puppy['id'];
+                $_SESSION['cart']['puppyId'] .= $puppy['id'] . ", ";
             }
         }
         $cartItems = createCart($puppies);
