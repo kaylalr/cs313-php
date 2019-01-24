@@ -93,7 +93,7 @@ switch ($action) {
                 array_splice($_SESSION, $i);
             }
         }
-        include 'index.php?action=cart';
+        header("Location: index.php?action=cart");
         break;
     default:
         include 'home.php';
