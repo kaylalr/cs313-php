@@ -74,8 +74,8 @@ switch ($action) {
                 }
             }
         }
-        print_r($_SESSION['cart']);
-        exit;
+//        print_r($_SESSION['cart']);
+//        exit;
         $cartItems = createCart($puppies);
 //        } while ($found == false);
         // get total number of things in cart
