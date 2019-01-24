@@ -77,9 +77,10 @@ switch ($action) {
             if ($puppy['id'] == $id) {
                 $addedPuppy = $puppy;
                 if (!isset($_SESSION['cart']['puppyId'])) {
-                    $_SESSION['cart']['puppyId'] = $puppy['id'];
+                    $_SESSION['cart']['puppyId'] = array($puppy['id']);
                 } else {
-                    $_SESSION['cart']['puppyId'] .= ", " . $puppy['id'];
+//                    $_SESSION['cart']['puppyId'] .= ", " . $puppy['id'];
+                    array_push($_SESSION['cart']['puppyId'], $puppy['id']);
                 }
             }
         }
