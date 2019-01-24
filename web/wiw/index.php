@@ -22,7 +22,7 @@ if ($action == NULL) {
 // this function needs access to the puppies array
 function createCart($puppies) {
     $cartItems = "";
-    echo $_SESSION['cart']['puppyId'];
+    echo 'testing: ' . $_SESSION['cart']['puppyId'];
     exit;
     foreach ($_SESSION['cart']['puppyId'] as $currentItem) {
         echo $currentItem;
