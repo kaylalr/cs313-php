@@ -89,7 +89,7 @@ switch ($action) {
 //            }
 //        }
         for($i = 0; $i <= $_SESSION['cart']; $i++) {
-            echo $_SESSION['cart'][i];
+            echo $_SESSION['cart']['i'];
             exit;
             if($_SESSION['cart'][i] == $id) {
                 array_splice($_SESSION, $i);
