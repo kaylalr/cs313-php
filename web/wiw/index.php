@@ -79,7 +79,7 @@ switch ($action) {
                 if (!isset($_SESSION['cart']['puppyId'])) {
                     $_SESSION['cart']['puppyId'] = $puppy['id'];
                 } else {
-                    $_SESSION['cart']['puppyId'] .= $puppy['id'];
+                    $_SESSION['cart']['puppyId'] .= ", " . $puppy['id'];
                 }
             }
         }
