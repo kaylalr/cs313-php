@@ -25,9 +25,10 @@ function createCart($puppies) {
 //    echo 'testing: ' . $_SESSION['cart']['puppyId'];
 //    exit;
     foreach ($_SESSION['cart']['puppyId'] as $currentItem) {
-        echo $currentItem;
-        exit;
+//        echo $currentItem;
+//        exit;
         foreach ($puppies as $puppy) {
+            echo 'puppy foreach loop';
             if ($currentItem == $puppy['id']) {
                 echo 'working';
                 exit;
