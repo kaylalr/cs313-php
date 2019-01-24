@@ -25,6 +25,8 @@ function createCart($puppies) {
     foreach ($_SESSION['cart']['puppyId'] as $currentItem) {
         foreach ($puppies as $puppy) {
             if ($currentItem == $puppy['id']) {
+                echo 'working';
+                exit;
                 $cartItems .= '<div class="cartItem">';
                 $cartItems .= '<img class="cartItemContent" src="' . $puppy['ImagePath'] . '" alt="' . $puppy['ImageDescription'] . '">';
                 $cartItems .= '<div class="cartItemContent">';
@@ -34,8 +36,8 @@ function createCart($puppies) {
             }
         }
     }
-    echo $cartItems;
-    exit;
+//    echo $cartItems;
+//    exit;
     return $cartItems;
 }
 
@@ -65,8 +67,8 @@ switch ($action) {
             if ($puppy['id'] == $id) {
                 $addedPuppy = $puppy;
                 $_SESSION['cart']['puppyId'] .= $puppy['id'];
-                echo $_SESSION['cart']['puppyId'];
-                exit;
+//                echo $_SESSION['cart']['puppyId'];
+//                exit;
             }
         }
         $cartItems = createCart($puppies);
