@@ -94,7 +94,7 @@ switch ($action) {
             if($currentItem == $id) {
 //                unset($_SESSION['cart']);
 //                echo '<br>remove key => ' . $key . " value => " . $currentItem . '<br>';
-                array_splice($_SESSION['cart'], $key);
+                array_splice($_SESSION['cart'], $key, 1);
 //                echo "<br><br>session cart: ";
 //                print_r($_SESSION['cart']);
 //                echo "<br><br>";
