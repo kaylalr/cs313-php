@@ -74,13 +74,14 @@ switch ($action) {
                 }
             }
         }
+        print_r($_SESSION['cart']);
         $cartItems = createCart($puppies);
 //        } while ($found == false);
         // get total number of things in cart
-        if (isset($_SESSION['cart']['total']) && $_SESSION['cart']['total'] > 0) {
-            $_SESSION['cart']['total'] += 1;
-        } else {
+        if (!isset($_SESSION['cart']['total'])) {
             $_SESSION['cart']['total'] = 1;
+        } else {
+            $_SESSION['cart']['total'] += 1;
         }     
         include 'cart.php';
         break;
