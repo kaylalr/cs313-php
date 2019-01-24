@@ -34,11 +34,12 @@ function createCart($puppies) {
             }
         }
     }
+    return $cartItems;
 }
 
 switch ($action) {
     case "cart":
-        $cartItems = createCart();
+        $cartItems = createCart($puppies);
         include 'cart.php';
         break;
     case "puppies":
@@ -64,6 +65,7 @@ switch ($action) {
                 $_SESSION['cart']['puppyId'] .= $puppy['id'];
             }
         }
+        $cartItems = createCart($puppies);
 //        } while ($found == false);
         // get total number of things in cart
         if (isset($_SESSION['cart']['total']) && $_SESSION['cart']['total'] > 0) {
