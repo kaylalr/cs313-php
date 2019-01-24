@@ -43,6 +43,7 @@ switch ($action) {
     case "cart":
         $cartItems = createCart($puppies);
 //        echo 'cart items: ' . $cartItems;
+        echo 'shopping cart: ';
         print_r($_SESSION['cart']);
         include 'cart.php';
         break;
