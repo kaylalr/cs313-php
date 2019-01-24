@@ -41,6 +41,7 @@ function createCart($puppies) {
 switch ($action) {
     case "cart":
         $cartItems = createCart($puppies);
+        echo $cartItems;
         include 'cart.php';
         break;
     case "puppies":
@@ -87,11 +88,11 @@ switch ($action) {
             echo "key => " . $key . " value => " . $currentItem;
             if($currentItem == $id) {
 //                unset($_SESSION['cart']);
-                echo 'remove ' . $currentItem;
+                echo '<br>remove ' . $currentItem . '<br>';
                 array_splice($_SESSION['cart'], $key);
             }
         }
-        exit;
+//        exit;
 //        for($i = 0; $i <= $_SESSION['cart']; $i++) {
 //            echo $_SESSION['cart']['i'];
 //            exit;
