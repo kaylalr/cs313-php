@@ -92,6 +92,8 @@ switch ($action) {
 //                unset($_SESSION['cart']);
                 echo '<br>remove ' . $currentItem . '<br>';
                 array_splice($_SESSION['cart'], $key);
+                print_r($_SESSION['cart']);
+                exit;
             }
         }
 //        exit;
@@ -102,9 +104,9 @@ switch ($action) {
 //                array_splice($_SESSION, $i);
 //            }
 //        }
-        echo 'sesion variable: ';
-        print_r($_SESSION['cart']);
-        exit;
+//        echo 'sesion variable: ';
+//        print_r($_SESSION['cart']);
+//        exit;
         header("Location: index.php?action=cart");
         break;
     default:
