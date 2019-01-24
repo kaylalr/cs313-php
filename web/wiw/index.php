@@ -83,18 +83,19 @@ switch ($action) {
         break;
     case "removeCart":
         $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
-//        foreach($_SESSION['cart'] as $currentItem) {
-//            if($currentItem == $id) {
-////                unset($_SESSION['cart'])
-//            }
-//        }
-        for($i = 0; $i <= $_SESSION['cart']; $i++) {
-            echo $_SESSION['cart']['i'];
-            exit;
-            if($_SESSION['cart'][i] == $id) {
-                array_splice($_SESSION, $i);
+        foreach($_SESSION['cart'] as $key => $currentItem) {
+            if($currentItem == $id) {
+//                unset($_SESSION['cart']);
+                array_splice($_SESSION['cart'], $key);
             }
         }
+//        for($i = 0; $i <= $_SESSION['cart']; $i++) {
+//            echo $_SESSION['cart']['i'];
+//            exit;
+//            if($_SESSION['cart'][i] == $id) {
+//                array_splice($_SESSION, $i);
+//            }
+//        }
         header("Location: index.php?action=cart");
         break;
     default:
