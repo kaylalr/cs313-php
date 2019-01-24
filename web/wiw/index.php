@@ -26,7 +26,7 @@ function createCart($puppies) {
 //    exit;
 //    echo 'first puppies: ';
 //    print_r($puppies);
-//    echo $_SESSION['cart']['puppyId'];
+    echo "SESSION['cart']['puppyId'] variable: " . $_SESSION['cart']['puppyId'];
 //    exit;
     foreach ($_SESSION['cart']['puppyId'] as $currentItem) {
         echo 'second puppies: ';
