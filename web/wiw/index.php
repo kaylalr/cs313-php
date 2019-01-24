@@ -24,10 +24,13 @@ function createCart($puppies) {
     $cartItems = "";
 //    echo 'testing: ' . $_SESSION['cart']['puppyId'];
 //    exit;
+    echo 'first puppies: ' . $puppies;
     foreach ($_SESSION['cart']['puppyId'] as $currentItem) {
 //        echo $currentItem;
 //        exit;
+        echo 'second puppies: ' . $puppies;
         foreach ($puppies as $puppy) {
+            echo 'thrid puppies: ' . $puppies;
             echo 'puppy foreach loop';
             exit;
             if ($currentItem == $puppy['id']) {
