@@ -79,11 +79,11 @@ switch ($action) {
         $cartItems = createCart($puppies);
 //        } while ($found == false);
         // get total number of things in cart
-        if (!isset($_SESSION['cart']['total'])) {
-            $_SESSION['cart']['total'] = 1;
-        } else {
-            $_SESSION['cart']['total'] += 1;
-        }     
+//        if (!isset($_SESSION['cart']['total'])) {
+//            $_SESSION['cart']['total'] = 1;
+//        } else {
+//            $_SESSION['cart']['total'] += 1;
+//        }     
         header("Location: index.php?action=cart");
         break;
     case "removeCart":
