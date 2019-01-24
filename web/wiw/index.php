@@ -84,7 +84,7 @@ switch ($action) {
     case "removeCart":
         $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
         foreach($_SESSION['cart'] as $key => $currentItem) {
-            echo $key . " " . $currentItem;
+            echo "key => " . $key . " value => " . $currentItem;
             if($currentItem == $id) {
 //                unset($_SESSION['cart']);
                 echo 'remove ' . $currentItem;
