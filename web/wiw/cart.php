@@ -14,6 +14,7 @@
             <?php include 'common/header.php' ?>
         </header>
         <main>
+            <p><a href="index.php?action=puppies">Back to Browse</a></p>
             <h2>Congratulations! You added <?php echo $addedPuppy['Name'] ?> to your cart!</h2>
             <div>
                 <?php echo $cartItems ?>

@@ -7,6 +7,6 @@
         <li><a>Link</a></li>
     </ul>
 </nav>
-<button type="button" class="btn btn-default btn-sm">
-    <span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart
-</button>
+<button type="button" class="btn btn-default btn-sm"><a href="index.php?action=cart">
+        <span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart
+    </a></button>

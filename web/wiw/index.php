@@ -18,8 +18,27 @@ if ($action == NULL) {
     $action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING);
 }
 
+// put these into a fuctions.php eventually
+// this function needs access to the puppies array
+function createCart($puppies) {
+    $cartItems = "";
+    foreach ($_SESSION['cart']['puppyId'] as $currentItem) {
+        foreach ($puppies as $puppy) {
+            if ($currentItem == $puppy['id']) {
+                $cartItems .= '<div class="cartItem">';
+                $cartItems .= '<img class="cartItemContent" src="' . $puppy['ImagePath'] . '" alt="' . $puppy['ImageDescription'] . '">';
+                $cartItems .= '<div class="cartItemContent">';
+                $cartItems .= '<h3>' . $puppy['Name'] . '</h3>';
+                $cartItems .= '<p class="cartItemPrice">' . $puppy['Price'] . '</p>';
+                $cartItems .= '</div></div>';
+            }
+        }
+    }
+}
+
 switch ($action) {
     case "cart":
+        $cartItems = createCart();
         include 'cart.php';
         break;
     case "puppies":
@@ -29,7 +48,7 @@ switch ($action) {
                     <img src="' . $puppy['ImagePath'] . '" alt="' . $puppy['ImageDescription'] . '">
                     <h4>' . $puppy['Name'] . '</h4>
                     <p>Price: ' . $puppy['Price'] . '</p>
-                    <a class="btn btn-warning" href="index.php?action=addCart&id='. $puppy['id'] .'">Add to Cart</a>
+                    <a class="btn btn-warning" href="index.php?action=addCart&id=' . $puppy['id'] . '">Add to Cart</a>
                 </div>';
         }
         $puppyGrid .= "</div>";
@@ -39,13 +58,13 @@ switch ($action) {
         $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 //        make function to get puppy by id from database insead of doing the following
 //        do {
-        foreach($puppies as $puppy) {
-            if($puppy['id'] == $id) {
+        foreach ($puppies as $puppy) {
+            if ($puppy['id'] == $id) {
                 $addedPuppy = $puppy;
+                $_SESSION['cart']['puppyId'] .= $puppy['id'];
             }
         }
 //        } while ($found == false);
-        
         // get total number of things in cart
         if (isset($_SESSION['cart']['total']) && $_SESSION['cart']['total'] > 0) {
             $_SESSION['cart']['total'] += 1;
@@ -53,23 +72,21 @@ switch ($action) {
             $_SESSION['cart']['total'] = 1;
         }
 //        echo $_SESSION['cart']['total'];
-        
-        if(isset($cartItems)) {
-            $cartItems .= '<div class="cartItem">';
-            $cartItems .= '<img class="cartItemContent" src="' . $addedPuppy['ImagePath'] . '" alt="' . $addedPuppy['ImageDescription'] . '">';
-            $cartItems .= '<div class="cartItemContent">';
-            $cartItems .= '<h3>' . $addedPuppy['Name'] . '</h3>';
-            $cartItems .= '<p class="cartItemPrice">' . $addedPuppy['Price'] . '</p>';
-            $cartItems .= '</div></div>';
-        } else {
-            $cartItems = '<div class="cartItem">';
-            $cartItems .= '<img class="cartItemContent" src="' . $addedPuppy['ImagePath'] . '" alt="' . $addedPuppy['ImageDescription'] . '">';
-            $cartItems .= '<div class="cartItemContent">';
-            $cartItems .= '<h3>' . $addedPuppy['Name'] . '</h3>';
-            $cartItems .= '<p class="cartItemPrice">' . $addedPuppy['Price'] . '</p>';
-            $cartItems .= '</div></div>';
-        }
-
+//        if(isset($cartItems)) {
+//            $cartItems .= '<div class="cartItem">';
+//            $cartItems .= '<img class="cartItemContent" src="' . $addedPuppy['ImagePath'] . '" alt="' . $addedPuppy['ImageDescription'] . '">';
+//            $cartItems .= '<div class="cartItemContent">';
+//            $cartItems .= '<h3>' . $addedPuppy['Name'] . '</h3>';
+//            $cartItems .= '<p class="cartItemPrice">' . $addedPuppy['Price'] . '</p>';
+//            $cartItems .= '</div></div>';
+//        } else {
+//            $cartItems = '<div class="cartItem">';
+//            $cartItems .= '<img class="cartItemContent" src="' . $addedPuppy['ImagePath'] . '" alt="' . $addedPuppy['ImageDescription'] . '">';
+//            $cartItems .= '<div class="cartItemContent">';
+//            $cartItems .= '<h3>' . $addedPuppy['Name'] . '</h3>';
+//            $cartItems .= '<p class="cartItemPrice">' . $addedPuppy['Price'] . '</p>';
+//            $cartItems .= '</div></div>';
+//        }
         // build cart
 //        foreach($puppies as $puppy) {
 //            if($puppy['Cart']) {
