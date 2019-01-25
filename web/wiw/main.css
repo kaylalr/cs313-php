@@ -17,6 +17,7 @@ header button {
 
 nav {
   height: inherit;
+  font-size: 1.5em;
 }
 nav ul {
   display: flex;
