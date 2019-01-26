@@ -21,7 +21,10 @@
                 <?php echo $cartItems ?>
             </div>
             <?php if ($cartItems != null) { ?>
+            <div class="deleteCheckoutBtns">
                 <a href="index.php?action=cartDeleteAll">Delete all</a>
+                <a class="btn btn-warning" href="index.php?action=checkout">Checkout</a>
+            </div>
             <?php } else { ?>
                 <h2>You have nothing in your cart.</h2>
                 <!--<p></p>-->

@@ -74,3 +74,10 @@ main {
         color: white;
     }
 }
+
+.deleteCheckoutBtns {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin-top: 40px;
+}
