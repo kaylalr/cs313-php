@@ -85,6 +85,9 @@ switch ($action) {
         unset($_SESSION['cart']);
         header("Location: index.php?action=cart");
         break;
+    case "checkout":
+        include 'checkout.php';
+        break;
     default:
         include 'home.php';
 }
