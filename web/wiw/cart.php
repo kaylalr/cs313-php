@@ -15,11 +15,17 @@
         </header>
         <main>
             <p><a href="index.php?action=puppies">Back to Browse</a></p>
-            <h2>Congratulations! You added <?php echo $addedPuppy['Name'] ?> to your cart!</h2>
+            <!--<h2>Congratulations! You added <?php // echo $addedPuppy['Name'] ?> to your cart!</h2>-->
+            <?php echo $newItemMessage; ?>
             <div>
                 <?php echo $cartItems ?>
             </div>
-            <a href="index.php?action=cartDeleteAll">Delete all</a>
+            <?php if ($cartItems != null) { ?>
+                <a href="index.php?action=cartDeleteAll">Delete all</a>
+            <?php } else { ?>
+                <h2>You have nothing in your cart.</h2>
+                <!--<p></p>-->
+            <?php } ?>
         </main>
     </body>
 </html>

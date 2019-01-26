@@ -69,6 +69,7 @@ switch ($action) {
             }
         }
         $cartItems = createCart($puppies);
+        $newItemMessage = "<h2>Congratulations! You added" . $addedPuppy['name'] . "to your cart!</h2>";
         header("Location: index.php?action=cart");
         break;
     case "removeCart":
