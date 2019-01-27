@@ -5,12 +5,12 @@ session_start();
 
 //puppies array for shopping cart assignment
 $puppies = array(
-    array('id' => 1, 'Name' => 'Male Puppy 1', 'Price' => '$1200', 'ImagePath' => 'images/boy1sm.jpg', 'ImageDescription' => 'male puppy', 'Cart' => 'false'),
-    array('id' => 2, 'Name' => 'Male Puppy 2', 'Price' => '$1200', 'ImagePath' => 'images/boy1sm.jpg', 'ImageDescription' => 'male puppy', 'Cart' => 'false'),
-    array('id' => 3, 'Name' => 'Male Puppy 3', 'Price' => '$1200', 'ImagePath' => 'images/boy1sm.jpg', 'ImageDescription' => 'male puppy', 'Cart' => 'false'),
-    array('id' => 4, 'Name' => 'Female Puppy 1', 'Price' => '$1200', 'ImagePath' => 'images/girl5sm.jpg', 'ImageDescription' => 'female puppy', 'Cart' => 'false'),
-    array('id' => 5, 'Name' => 'Female Puppy 2', 'Price' => '$1200', 'ImagePath' => 'images/girl5sm.jpg', 'ImageDescription' => 'female puppy', 'Cart' => 'false'),
-    array('id' => 6, 'Name' => 'Female Puppy 3', 'Price' => '$1200', 'ImagePath' => 'images/girl5sm.jpg', 'ImageDescription' => 'female puppy', 'Cart' => 'false'),
+    array('id' => 1, 'Name' => 'Male Puppy 1', 'Price' => '$1200', 'ImagePath' => 'images/boy1sm.jpg', 'ImageDescription' => 'male puppy', 'Gender' => 'male'),
+    array('id' => 2, 'Name' => 'Male Puppy 2', 'Price' => '$1200', 'ImagePath' => 'images/boy1sm.jpg', 'ImageDescription' => 'male puppy', 'Gender' => 'male'),
+    array('id' => 3, 'Name' => 'Male Puppy 3', 'Price' => '$1200', 'ImagePath' => 'images/boy1sm.jpg', 'ImageDescription' => 'male puppy', 'Gender' => 'male'),
+    array('id' => 4, 'Name' => 'Female Puppy 1', 'Price' => '$1200', 'ImagePath' => 'images/girl5sm.jpg', 'ImageDescription' => 'female puppy', 'Gender' => 'female'),
+    array('id' => 5, 'Name' => 'Female Puppy 2', 'Price' => '$1200', 'ImagePath' => 'images/girl5sm.jpg', 'ImageDescription' => 'female puppy', 'Gender' => 'female'),
+    array('id' => 6, 'Name' => 'Female Puppy 3', 'Price' => '$1200', 'ImagePath' => 'images/girl5sm.jpg', 'ImageDescription' => 'female puppy', 'Gender' => 'female'),
 );
 
 $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING);
@@ -30,7 +30,7 @@ function createCart($puppies) {
                 $cartItems .= '<div class="cartItemContent">';
                 $cartItems .= '<h3>' . $puppy['Name'] . '</h3>';
                 $cartItems .= '<p class="cartItemPrice">' . $puppy['Price'] . '</p>';
-                $cartItems .= '<a href="index.php?action=removeCart&id=' . $puppy['id'] .'">Remove</a>';
+                $cartItems .= '<a href="index.php?action=removeCart&id=' . $puppy['id'] . '">Remove</a>';
                 $cartItems .= '</div></div>';
             }
         }
@@ -44,14 +44,31 @@ switch ($action) {
         include 'cart.php';
         break;
     case "puppies":
+        $genderFilter = filter_input(INPUT_GET, 'genderFilter', FILTER_SANITIZE_STRING);
         $puppyGrid = "<div class='gridContainer'>";
         foreach ($puppies as $puppy) {
-            $puppyGrid .= '<div class="gridItem">
+            if ($genderFilter == 'male' && $puppy['gender'] == 'male') {
+                $puppyGrid .= '<div class="gridItem">
                     <img src="' . $puppy['ImagePath'] . '" alt="' . $puppy['ImageDescription'] . '">
                     <h4>' . $puppy['Name'] . '</h4>
                     <p>Price: ' . $puppy['Price'] . '</p>
                     <a class="btn btn-warning" href="index.php?action=addCart&id=' . $puppy['id'] . '">Add to Cart</a>
                 </div>';
+            } elseif ($genderFilter == 'female' && $puppy['gender'] == 'female') {
+                $puppyGrid .= '<div class="gridItem">
+                    <img src="' . $puppy['ImagePath'] . '" alt="' . $puppy['ImageDescription'] . '">
+                    <h4>' . $puppy['Name'] . '</h4>
+                    <p>Price: ' . $puppy['Price'] . '</p>
+                    <a class="btn btn-warning" href="index.php?action=addCart&id=' . $puppy['id'] . '">Add to Cart</a>
+                </div>';
+            } elseif ($genderFilter == 'both') {
+                $puppyGrid .= '<div class="gridItem">
+                    <img src="' . $puppy['ImagePath'] . '" alt="' . $puppy['ImageDescription'] . '">
+                    <h4>' . $puppy['Name'] . '</h4>
+                    <p>Price: ' . $puppy['Price'] . '</p>
+                    <a class="btn btn-warning" href="index.php?action=addCart&id=' . $puppy['id'] . '">Add to Cart</a>
+                </div>';
+            }
         }
         $puppyGrid .= "</div>";
         include 'puppies.php';
@@ -74,8 +91,8 @@ switch ($action) {
         break;
     case "removeCart":
         $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
-        foreach($_SESSION['cart'] as $key => $currentItem) {
-            if($currentItem == $id) {
+        foreach ($_SESSION['cart'] as $key => $currentItem) {
+            if ($currentItem == $id) {
                 array_splice($_SESSION['cart'], $key, 1);
             }
         }
@@ -96,11 +113,11 @@ switch ($action) {
         $city = filter_input(INPUT_POST, 'inputCity', FILTER_SANITIZE_STRING);
         $state = filter_input(INPUT_POST, 'inputState', FILTER_SANITIZE_STRING);
         $zipcode = filter_input(INPUT_POST, 'inputZip', FILTER_SANITIZE_STRING);
-        
+
         $shippingAddress = "$firstName $lastName<br>"
                 . "$address $address2<br>"
                 . "$city, $state $zipcode";
-        
+
         include 'checkout-confirm.php';
         break;
     default:
