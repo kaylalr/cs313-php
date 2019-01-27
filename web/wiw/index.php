@@ -44,7 +44,7 @@ switch ($action) {
         include 'cart.php';
         break;
     case "puppies":
-        $genderFilter = filter_input(INPUT_GET, 'genderFilter', FILTER_SANITIZE_STRING);
+        $genderFilter = filter_input(INPUT_POST, 'genderFilter', FILTER_SANITIZE_STRING);
         if ($genderFilter == null) {
             $genderFilter = 'both';
         }
