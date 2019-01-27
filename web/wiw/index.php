@@ -47,14 +47,14 @@ switch ($action) {
         $genderFilter = filter_input(INPUT_GET, 'genderFilter', FILTER_SANITIZE_STRING);
         $puppyGrid = "<div class='gridContainer'>";
         foreach ($puppies as $puppy) {
-            if ($genderFilter == 'male' && $puppy['gender'] == 'male') {
+            if ($genderFilter == 'male' && $puppy['Gender'] == 'male') {
                 $puppyGrid .= '<div class="gridItem">
                     <img src="' . $puppy['ImagePath'] . '" alt="' . $puppy['ImageDescription'] . '">
                     <h4>' . $puppy['Name'] . '</h4>
                     <p>Price: ' . $puppy['Price'] . '</p>
                     <a class="btn btn-warning" href="index.php?action=addCart&id=' . $puppy['id'] . '">Add to Cart</a>
                 </div>';
-            } elseif ($genderFilter == 'female' && $puppy['gender'] == 'female') {
+            } elseif ($genderFilter == 'female' && $puppy['Gender'] == 'female') {
                 $puppyGrid .= '<div class="gridItem">
                     <img src="' . $puppy['ImagePath'] . '" alt="' . $puppy['ImageDescription'] . '">
                     <h4>' . $puppy['Name'] . '</h4>
