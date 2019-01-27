@@ -75,6 +75,12 @@ main {
     }
 }
 
+// this is on the checkout.php page
+.formPadding {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
 .deleteCheckoutBtns {
     display: flex;
     flex-flow: row nowrap;

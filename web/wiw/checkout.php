@@ -40,11 +40,11 @@
                         <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group formPadding">
                     <label for="inputAddress">Address</label>
                     <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
                 </div>
-                <div class="form-group">
+                <div class="form-group formPadding">
                     <label for="inputAddress2">Address 2</label>
                     <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
                 </div>
@@ -65,7 +65,7 @@
                         <input type="text" class="form-control" id="inputZip">
                     </div>
                 </div>
-                <div class="checkoutBtnDiv">
+                <div class="checkoutBtnDiv formPadding">
                     <button type="submit" class="btn btn-warning">Checkout</button>
                 </div>
             </form>

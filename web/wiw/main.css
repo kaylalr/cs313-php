@@ -80,6 +80,11 @@ main {
   color: white;
 }
 
+.formPadding {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
 .deleteCheckoutBtns {
   display: flex;
   flex-flow: row nowrap;
