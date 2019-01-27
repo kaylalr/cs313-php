@@ -87,4 +87,9 @@ main {
   margin-top: 40px;
 }
 
+.checkoutBtn {
+  position: relative;
+  left: 0;
+}
+
 /*# sourceMappingURL=main.css.map */

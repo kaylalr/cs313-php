@@ -13,6 +13,7 @@
         <header>
             <?php include 'common/header.php' ?>
         </header>
+        <h2>Checkout</h2>
         <main>
             <!--            <form>
                             <label for="firstName">First Name:</label>
@@ -64,15 +65,7 @@
                         <input type="text" class="form-control" id="inputZip">
                     </div>
                 </div>
-                <div class="form-group">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="gridCheck">
-                        <label class="form-check-label" for="gridCheck">
-                            Check me out
-                        </label>
-                    </div>
-                </div>
-                <button type="submit" class="btn btn-primary">Sign in</button>
+                <button type="submit" class="btn btn-warning checkoutBtn">Checkout</button>
             </form>
         </main>
     </body>
