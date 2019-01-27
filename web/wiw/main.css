@@ -87,9 +87,13 @@ main {
   margin-top: 40px;
 }
 
-.checkoutBtn {
-  position: relative;
-  left: 0;
+.checkoutBtnDiv {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+}
+.checkoutBtnDiv button {
+  margin-top: 20px;
 }
 
 /*# sourceMappingURL=main.css.map */

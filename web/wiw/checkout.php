@@ -65,7 +65,9 @@
                         <input type="text" class="form-control" id="inputZip">
                     </div>
                 </div>
-                <button type="submit" class="btn btn-warning checkoutBtn">Checkout</button>
+                <div class="checkoutBtnDiv">
+                    <button type="submit" class="btn btn-warning">Checkout</button>
+                </div>
             </form>
         </main>
     </body>
