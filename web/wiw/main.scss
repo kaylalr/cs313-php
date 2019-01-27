@@ -28,7 +28,7 @@ nav {
         height: inherit;
     }
     a:link,
-    a:visited {
+        a:visited {
         color: #FFBF00;
     }
 } 
@@ -91,8 +91,6 @@ main {
 .checkoutBtnDiv {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: flex-end;
-    button {
-        margin-top: 20px;
-    }
+    justify-content: space-between;
+    margin-top: 20px;
 }

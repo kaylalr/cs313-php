@@ -95,9 +95,7 @@ main {
 .checkoutBtnDiv {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: flex-end;
-}
-.checkoutBtnDiv button {
+  justify-content: space-between;
   margin-top: 20px;
 }
 
