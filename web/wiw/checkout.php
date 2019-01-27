@@ -37,7 +37,7 @@
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputLastName">Last Name:</label>
-                        <input type="password" class="form-control" name="inputLastName" placeholder="Last Name">
+                        <input type="text" class="form-control" name="inputLastName" placeholder="Last Name">
                     </div>
                 </div>
                 <div class="form-group formPadding">

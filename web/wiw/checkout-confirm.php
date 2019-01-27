@@ -14,7 +14,7 @@
             <?php include 'common/header.php' ?>
         </header>
         <main>
-            <h2><?php echo $firstName ?>, your checkout was successful!</h2>
+            <h2><br><?php echo $firstName ?>, your checkout was successful!</h2>
             <p>Your purchase will be shipped to:</p>
             <p><?php echo $shippingAddress ?></p>
                 
