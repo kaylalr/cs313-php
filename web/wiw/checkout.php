@@ -66,6 +66,7 @@
                     </div>
                 </div>
                 <div class="checkoutBtnDiv formPadding">
+                    <a href="index.php?action=cart">Return to cart</a>
                     <button type="submit" class="btn btn-warning">Continue</button>
                 </div>
             </form>
