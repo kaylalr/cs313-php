@@ -75,6 +75,17 @@ main {
     }
 }
 
+.filter {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 200px;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    form {
+        font-size: 1.2em;
+    }
+}
+
 // this is on the checkout.php page
 .formPadding {
     padding-left: 15px;

@@ -80,6 +80,17 @@ main {
   color: white;
 }
 
+.filter {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 200px;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+.filter form {
+  font-size: 1.2em;
+}
+
 .formPadding {
   padding-left: 15px;
   padding-right: 15px;

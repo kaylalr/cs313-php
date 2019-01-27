@@ -14,15 +14,17 @@
             <?php include 'common/header.php' ?>
         </header>
         <main>
-            <h4>Gender:</h4>
-            <form method='post' action="index.php?action=puppies">
-                <select name="genderFilter">
-                    <option value="both" selected>Both</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                </select>
-                <input class='btn btn-primary' type='submit' value='Go'>
-            </form>
+            <div class='filter'>
+                <h4>Gender:</h4>
+                <form method='post' action="index.php?action=puppies">
+                    <select name="genderFilter">
+                        <option value="both">Both</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                    <input class='btn btn-primary' type='submit' value='Go'>
+                </form>
+            </div>
             <?php echo $puppyGrid; ?>
         </main>
     </body>
