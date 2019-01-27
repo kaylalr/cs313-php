@@ -29,7 +29,7 @@
                             <input type="text" name="zipcode">
                         </form>-->
                     <h2>Checkout</h2>
-            <form>
+                    <form method="post" action="index.php?action=checkoutConfirm">
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputFirstName">First Name:</label>
@@ -66,7 +66,7 @@
                     </div>
                 </div>
                 <div class="checkoutBtnDiv formPadding">
-                    <button type="submit" class="btn btn-warning">Checkout</button>
+                    <button type="submit" class="btn btn-warning">Continue</button>
                 </div>
             </form>
         </main>

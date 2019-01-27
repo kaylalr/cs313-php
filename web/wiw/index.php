@@ -88,6 +88,10 @@ switch ($action) {
     case "checkout":
         include 'checkout.php';
         break;
+    case 'checkoutConfirm':
+        $firstName = filter_input(INPUT_POST, 'inputFirstName', FILTER_VALIDATE_STRING);
+        include 'checkout-confirm.php';
+        break;
     default:
         include 'home.php';
 }
