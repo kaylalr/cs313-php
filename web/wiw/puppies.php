@@ -15,11 +15,13 @@
         </header>
         <main>
             <h4>Gender:</h4>
-            <select name="genderFilter">
-                <option value="both" selected>Both</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-            </select>
+            <form action="index.php?action=puppies">
+                <select name="genderFilter">
+                    <option value="both" selected>Both</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </form>
             <?php echo $puppyGrid; ?>
         </main>
     </body>

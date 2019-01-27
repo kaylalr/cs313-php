@@ -45,6 +45,9 @@ switch ($action) {
         break;
     case "puppies":
         $genderFilter = filter_input(INPUT_GET, 'genderFilter', FILTER_SANITIZE_STRING);
+        if ($genderFilter == null) {
+            $genderFilter = 'both';
+        }
         $puppyGrid = "<div class='gridContainer'>";
         foreach ($puppies as $puppy) {
             if ($genderFilter == 'male' && $puppy['Gender'] == 'male') {
