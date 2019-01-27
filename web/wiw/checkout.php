@@ -13,7 +13,6 @@
         <header>
             <?php include 'common/header.php' ?>
         </header>
-        <h2>Checkout</h2>
         <main>
             <!--            <form>
                             <label for="firstName">First Name:</label>
@@ -29,15 +28,16 @@
                             <label for="zipcode">Zipcode</label>
                             <input type="text" name="zipcode">
                         </form>-->
+                    <h2>Checkout</h2>
             <form>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="inputEmail4">Email</label>
-                        <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                        <label for="inputFirstName">First Name:</label>
+                        <input type="text" class="form-control" id="inputFirstName" placeholder="First Name">
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="inputPassword4">Password</label>
-                        <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                        <label for="inputLastName">Last Name:</label>
+                        <input type="password" class="form-control" id="inputLastName" placeholder="Last Name">
                     </div>
                 </div>
                 <div class="form-group formPadding">
