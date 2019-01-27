@@ -90,6 +90,17 @@ switch ($action) {
         break;
     case 'checkoutConfirm':
         $firstName = filter_input(INPUT_POST, 'inputFirstName', FILTER_SANITIZE_STRING);
+        $lastName = filter_input(INPUT_POST, 'inputLastName', FILTER_SANITIZE_STRING);
+        $address = filter_input(INPUT_POST, 'inputAddress', FILTER_SANITIZE_STRING);
+        $address2 = filter_input(INPUT_POST, 'inputAddress2', FILTER_SANITIZE_STRING);
+        $city = filter_input(INPUT_POST, 'inputCity', FILTER_SANITIZE_STRING);
+        $state = filter_input(INPUT_POST, 'inputState', FILTER_SANITIZE_STRING);
+        $zipcode = filter_input(INPUT_POST, 'inputZip', FILTER_SANITIZE_STRING);
+        
+        $shippingAddress = "$firstName $lastName<br>"
+                . "$address $address2<br>"
+                . "$city, $state $zipcode";
+        
         include 'checkout-confirm.php';
         break;
     default:

@@ -15,6 +15,9 @@
         </header>
         <main>
             <h2><?php echo $firstName ?>, your checkout was successful!</h2>
+            <p>Your purchase will be shipped to:</p>
+            <p><?php echo $shippingAddress ?></p>
+                
             <h3><a href="index.php?aciton=puppies">Return to shopping</a></h3>
         </main>
     </body>
