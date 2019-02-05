@@ -19,10 +19,8 @@ function dbConnect() {
 //        echo "SECOND: dbOpts" . $dbOpts . ", dbHost" . $dbHost . ", dbPort" . $dbPort . ", dbUser" . $dbUser . ", dbPassword" . $dbPassword . ", dbName" . $dbName;
         
         $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-        echo $db;
-        exit;
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        echo $db;
+        echo "getting here";
         exit;
         return $db;
     } catch (PDOException $ex) {
