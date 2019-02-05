@@ -5,10 +5,10 @@ function dbConnect() {
 //    $connect = new PDO($dsn);
 //    return $connect;
     echo "dbConnect() function being called";
-    exit;
     try {
         $dbUrl = getenv('DATABASE_URL');
-
+        echo $dbUrl;
+        exit;
         $dbOpts = parse_url($dbUrl);
 
         $dbHost = $dbOpts["host"];
