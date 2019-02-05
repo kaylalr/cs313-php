@@ -1,9 +1,9 @@
 <?php
 
 function getAllPuppies() {
-    echo "getAllPuppies() function being called";
-    exit;
     $db = dbConnect();
+    echo "dbConnect() working";
+    exit;
     $sql = "Select * from Puppies";
     $stmt = $db->prepare($sql);
     $stmt->execute();
