@@ -4,10 +4,10 @@ function getAllPuppies() {
     $db = dbConnect();
     $sql = 'Select * from Puppies';
     $stmt = $db->query($sql);
-//    $stmt->execute();
+    $stmt->execute();
     $puppies = $stmt->fetchAll(PDO::FFETCH_ASSOC);
 //    $stmt->closeCursor();
-    echo $puppies;
+    echo "puppies: " . $puppies;
     exit;
     return $puppies;
 }
