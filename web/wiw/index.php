@@ -4,11 +4,11 @@
 session_start();
 
 // Get the database connection file
-include 'library/connections.php';
+require_once('library/connections.php');
 // Get the functions file
-include 'library/functions.php';
-// Get puppies model
-include 'model/puppies-model.php';
+//require_once 'library/functions.php';
+//// Get puppies model
+//require_once 'model/puppies-model.php';
 
 //puppies array for shopping cart assignment
 $puppies = array(
