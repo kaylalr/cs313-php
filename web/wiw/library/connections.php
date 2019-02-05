@@ -7,16 +7,18 @@ function dbConnect() {
     echo "dbConnect() function being called";
     try {
         $dbUrl = getenv('DATABASE_URL');
-        echo $dbUrl;
-        exit;
+        echo "\n" . $dbUrl;
         $dbOpts = parse_url($dbUrl);
-
+        
         $dbHost = $dbOpts["host"];
         $dbPort = $dbOpts["port"];
         $dbUser = $dbOpts["user"];
         $dbPassword = $dbOpts["pass"];
         $dbName = ltrim($dbOpts["path"], '/');
 
+        echo "\n" . $dbOpts . ", " . $dbHost . ", " . $dbPort . ", " . $dbUser . ", " . $dbPassword . " " . $dbName;
+        exit;
+        
         $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
