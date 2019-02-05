@@ -7,6 +7,8 @@ function getAllPuppies() {
 //    $stmt->execute();
     $puppies = $stmt->fetchAll(PDO::FFETCH_ASSOC);
 //    $stmt->closeCursor();
+    echo $puppies;
+    exit;
     return $puppies;
 }
 
