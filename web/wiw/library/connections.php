@@ -7,7 +7,7 @@ function dbConnect() {
     echo "dbConnect() function being called";
     try {
         $dbUrl = getenv('DATABASE_URL');
-        echo "\n" . $dbUrl;
+        echo "FIRST:" . $dbUrl;
         $dbOpts = parse_url($dbUrl);
         
         $dbHost = $dbOpts["host"];
@@ -16,7 +16,7 @@ function dbConnect() {
         $dbPassword = $dbOpts["pass"];
         $dbName = ltrim($dbOpts["path"], '/');
 
-        echo "\n" . $dbOpts . ", " . $dbHost . ", " . $dbPort . ", " . $dbUser . ", " . $dbPassword . " " . $dbName;
+        echo "SECOND: dbOpts" . $dbOpts . ", dbHost" . $dbHost . ", dbPort" . $dbPort . ", dbUser" . $dbUser . ", dbPassword" . $dbPassword . ", dbName" . $dbName;
         exit;
         
         $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
