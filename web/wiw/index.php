@@ -3,6 +3,13 @@
 // Create or access a Session
 session_start();
 
+// Get the database connection file
+require_once 'library/connections.php';
+// Get the functions file
+require_once 'library/functions.php';
+// Get puppies model
+require_once 'model/puppies-model.php';
+
 //puppies array for shopping cart assignment
 $puppies = array(
     array('id' => 1, 'Name' => 'Male Puppy 1', 'Price' => '$1200', 'ImagePath' => 'images/boy1sm.jpg', 'ImageDescription' => 'male puppy', 'Gender' => 'male'),
@@ -40,6 +47,9 @@ function createCart($puppies) {
 
 switch ($action) {
     case "cart":
+        $puppies = getAllPuppies();
+        print_r($puppies);
+        exit;
         $cartItems = createCart($puppies);
         include 'cart.php';
         break;
