@@ -7,7 +7,7 @@ function getAllPuppies() {
 //    $stmt->execute();
 //    $puppies = $stmt->fetchAll(PDO::FFETCH_ASSOC);
 //    $stmt->closeCursor();
-    $statement = $db->query('SELECT username, password FROM note_user');
+    $statement = $db->query('SELECT * FROM puppies');
     $puppies = $statement->fetchAll(PDO::FETCH_ASSOC);
     echo "puppies: " . $puppies;
     exit;
