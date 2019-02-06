@@ -9,8 +9,6 @@ function getAllPuppies() {
 //    $stmt->closeCursor();
     $statement = $db->query('SELECT * FROM puppies');
     $puppies = $statement->fetchAll(PDO::FETCH_ASSOC);
-    print_r($puppies);
-    exit;
     return $puppies;
 }
 
