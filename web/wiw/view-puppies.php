@@ -25,7 +25,7 @@
                     <input class='btn btn-primary' type='submit' value='Go'>
                 </form>
             </div>
-            <?php echo $puppyGrid; ?>
+            <?php echo $showPuppies; ?>
         </main>
     </body>
 </html>
