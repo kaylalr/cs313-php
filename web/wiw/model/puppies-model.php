@@ -2,18 +2,17 @@
 
 function getAllPuppies() {
     $db = dbConnect();
-    echo 'getting here';
-    exit;
-    $sql = 'Select * from Puppies';
-    $stmt = $db->query($sql);
-    $stmt->execute();
-    $puppies = $stmt->fetchAll(PDO::FFETCH_ASSOC);
+//    $sql = 'Select * from Puppies';
+//    $stmt = $db->query($sql);
+//    $stmt->execute();
+//    $puppies = $stmt->fetchAll(PDO::FFETCH_ASSOC);
 //    $stmt->closeCursor();
+    $statement = $db->query('SELECT username, password FROM note_user');
+    $puppies = $statement->fetchAll(PDO::FETCH_ASSOC);
     echo "puppies: " . $puppies;
     exit;
     return $puppies;
 }
-
 
 //    $db = acmeConnect();
 //    $sql = 'SELECT clientId, clientFirstname, clientLastname, clientEmail, clientLevel, clientPassword 
