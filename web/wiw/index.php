@@ -146,6 +146,7 @@ switch ($action) {
                 $puppies = getAllPuppies();
         }
         $showPuppies = showPuppies($puppies);
+        include 'view-puppies.php';
         break;
     default:
         include 'home.php';
