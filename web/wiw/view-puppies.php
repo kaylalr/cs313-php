@@ -16,7 +16,7 @@
         <main>
             <div class='filter'>
                 <h4>Gender:</h4>
-                <form method='post' action="index.php?action=puppies">
+                <form method='post' action="index.php?action=viewPuppies">
                     <select name="genderFilter">
                         <option value="both">Both</option>
                         <option value="male">Male</option>
@@ -25,7 +25,7 @@
                     <input class='btn btn-primary' type='submit' value='Go'>
                 </form>
             </div>
-            <?php echo $showPuppies; ?>
+            <?php echo $puppyGrid; ?>
         </main>
     </body>
 </html>

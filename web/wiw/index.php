@@ -133,6 +133,20 @@ switch ($action) {
 
         include 'checkout-confirm.php';
         break;
+    case 'viewPuppies':
+        $genderFilter = filter_input(INPUT_POST, 'genderFilter', FILTER_SANITIZE_STRING);
+        switch ($genderFilter) {
+            case 'male':
+                $puppies = getMalePuppies();
+                break;
+            case 'female':
+                $puppies = getFemalePuppies();
+                break;
+            default:
+                $puppies = getAllPuppies();
+        }
+        $showPuppies = showPuppies($puppies);
+        break;
     default:
         include 'home.php';
 }
