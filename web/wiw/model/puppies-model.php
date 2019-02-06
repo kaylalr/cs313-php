@@ -2,13 +2,13 @@
 
 function getAllPuppies() {
     $db = dbConnect();
-//    $sql = 'Select * from Puppies';
-//    $stmt = $db->query($sql);
+    $sql = 'Select * from Puppies';
+    $stmt = $db->query($sql);
 //    $stmt->execute();
-//    $puppies = $stmt->fetchAll(PDO::FFETCH_ASSOC);
+    $puppies = $stmt->fetchAll(PDO::FFETCH_ASSOC);
 //    $stmt->closeCursor();
-    $statement = $db->query('SELECT * FROM puppies');
-    $puppies = $statement->fetchAll(PDO::FETCH_ASSOC);
+//    $statement = $db->query('SELECT * FROM puppies');
+//    $puppies = $statement->fetchAll(PDO::FETCH_ASSOC);
     print_r($puppies);
     exit;
     return $puppies;
