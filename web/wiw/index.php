@@ -47,7 +47,7 @@ function createCart($puppies) {
 
 switch ($action) {
     case "cart":
-        $puppies = getAllPuppies();
+//        $puppies = getAllPuppies();
 //        print_r($puppies);
 //        exit;
         $cartItems = createCart($puppies);
