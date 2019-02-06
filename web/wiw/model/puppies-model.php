@@ -2,6 +2,8 @@
 
 function getAllPuppies() {
     $db = dbConnect();
+    echo 'getting here';
+    exit;
     $sql = 'Select * from Puppies';
     $stmt = $db->query($sql);
     $stmt->execute();
