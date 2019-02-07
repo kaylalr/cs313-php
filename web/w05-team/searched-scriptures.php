@@ -21,8 +21,6 @@
                 <input type="submit" value="Submit">
             </form>
             <?php
-//            var_dump($scripturesByBook);
-//            exit;
             $view = "<div>";
             foreach ($scripturesByBook as $scripture) {
                 $view .= "<div>";

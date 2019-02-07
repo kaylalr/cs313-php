@@ -44,5 +44,6 @@ function getScripturesByBook($book) {
     $statement->bindValue(':book', $book, PDO::PARAM_INT);
     $statement->execute();
     $scriptures = $statement->fetch(PDO::FETCH_ASSOC);
+    $scriptures .= array();
     return $scriptures;
 }
