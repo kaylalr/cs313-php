@@ -19,6 +19,6 @@ switch ($action) {
         break;
     default:
         echo "getting here";
-//        $scriptures = getAllScriptures();
+        $scriptures = getAllScriptures();
         include 'view-scriptures.php';
 }

@@ -24,7 +24,7 @@ function dbConnect() {
 
 function getAllScriptures() {
     $db = dbConnect();
-    $statement = $db->query('SELECT * FROM scriputres');
+    $statement = $db->query('SELECT * FROM scriptures');
     $scriptures = $statement->fetchAll(PDO::FETCH_ASSOC);
     return $scriptures;
 }
