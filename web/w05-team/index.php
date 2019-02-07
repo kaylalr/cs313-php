@@ -17,7 +17,6 @@ switch ($action) {
         break;
     case "viewSearchedScripture":
         $book = filter_input(INPUT_POST, 'book', FILTER_SANITIZE_STRING);
-        echo $book;
         $scripturesByBook = getScripturesByBook($book);
         include 'searched-scriptures.php';
         break;
