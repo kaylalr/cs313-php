@@ -1,7 +1,9 @@
 <?php 
 
 // Create or access a Session
-session_start();
+//session_start();
+require_once ('functions.php');
+
 
 $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING);
 if ($action == NULL) {
