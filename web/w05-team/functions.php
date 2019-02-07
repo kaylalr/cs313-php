@@ -31,7 +31,7 @@ function getAllScriptures() {
 
 function getScriptureById($id) {
     $db = dbConnect();
-    $statement = $db->query('SELECT * FROM scriptures WHERE scriptureId = :id');
+    $statement = $db->query('SELECT * FROM scriptures WHERE scriptureid = :id');
     $statement->bindValue(':id', $id, PDO::PARAM_INT);
     $scripture = $statement->fetchAll(PDO::FETCH_ASSOC);
     return $scripture;
