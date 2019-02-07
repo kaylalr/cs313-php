@@ -14,8 +14,6 @@
             $view = "<div>";
             
             foreach ($scriptures as $scripture) {
-                var_dump($scripture);
-                exit;
 //                $id = $scripture['scriptureId'];
                 $view .= "<div>";
                 $view .= "<h3><a href='index.php?action=viewScripture&id=$scripture[scriptureid]'>$scripture[book] $scripture[chapter]:$scripture[verse]</a></h3>";
