@@ -18,7 +18,7 @@
                 exit;
 //                $id = $scripture['scriptureId'];
                 $view .= "<div>";
-                $view .= "<h3><a href='index.php?action=viewScripture&id=$scripture[scriptureId]'>$scripture[book] $scripture[chapter]:$scripture[verse]</a></h3>";
+                $view .= "<h3><a href='index.php?action=viewScripture&id=$scripture[scriptureid]'>$scripture[book] $scripture[chapter]:$scripture[verse]</a></h3>";
 //                $view .= "<p>$scripture[content]</p>";
                 $view .= "</div>";
             }
