@@ -19,6 +19,7 @@ switch ($action) {
     case "ViewSearchScripture":
         
         include 'search-scriptures';
+        break;
     case "viewScripture":
         $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
         $scriptureDetail = getScriptureById($id);
