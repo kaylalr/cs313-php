@@ -12,8 +12,8 @@ if ($action == NULL) {
 
 switch ($action) {
     case "searchScriptures":
-        
-        header('Location: index.php?action=viewSearchedScriptures');
+        include 'search-scriptures.php';
+//        header('Location: index.php?action=viewSearchedScriptures');
         break;
     case "viewSearchedScripture":
         $book = filter_input(INPUT_POST, 'book', FILTER_SANITIZE_STRING);
