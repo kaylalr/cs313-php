@@ -13,12 +13,12 @@ if ($action == NULL) {
 switch ($action) {
     case "searchScriptures":
         
-        header('Location: index.php?action=ViewSearchScriptures');
+        header('Location: index.php?action=viewSearchedScriptures');
         break;
-    case "ViewSearchScripture":
+    case "viewSearchedScripture":
         $book = filter_input(INPUT_POST, 'book', FILTER_SANITIZE_STRING);
         $scripturesByBook = getScripturesByBook($book);
-        include 'search-scriptures.php';
+        include 'searched-scriptures.php';
         break;
     case "viewScripture":
         $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
