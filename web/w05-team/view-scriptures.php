@@ -10,7 +10,17 @@
     <body>
         <main>
             <h1>Scriptures</h1>
-            <?php echo $scriptures ?>
+            <?php
+            $view = "<div>";
+            foreach ($scriptures as $scripture) {
+                $view .= "<div>";
+                $view .= "<h3>$scripture[book] $scripture[chapter]:$scripture[verse]</h3>";
+                $view .= "<p>$scripture[content]</p>";
+                $view .= "</div>";
+            }
+            $view .= "</div>";
+            echo $view;
+             ?>
         </main>
     </body>
 </html>
