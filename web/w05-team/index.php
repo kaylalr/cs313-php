@@ -18,7 +18,7 @@ switch ($action) {
         break;
     case "ViewSearchScripture":
         
-        include 'search-scriptures';
+        include 'search-scriptures.php';
         break;
     case "viewScripture":
         $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
