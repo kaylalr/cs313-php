@@ -10,7 +10,7 @@
     <body>
         <main>
             <h1>Search Scriptures</h1>
-            <form action="index.php/searchScriptures" method="post">
+            <form action="index.php?action=searchScriptures" method="post">
                 <lable>Choose a book:</lable>
                 <select name="book">
                     <option value="John">John</option>
