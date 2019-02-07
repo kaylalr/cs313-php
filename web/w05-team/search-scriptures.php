@@ -10,14 +10,25 @@
     <body>
         <main>
             <h1>Search Scriptures</h1>
-            <form>
+            <form action="index.php/searchScriptures" method="post">
                 <lable>Choose a book:</lable>
-                <select>
+                <select name="book">
                     <option value="John">John</option>
                     <option value="Doctrine and Covenants">Doctrine and Covenants</option>
                     <option value="Mosiah">Mosiah</option>
                 </select>
+                <input type="submit" value="Submit">
             </form>
+            <?php
+            $view = "<div>";
+            foreach ($scripturesByBook as $scripture) {
+                $view .= "<div>";
+                $view .= "<h3><a href='index.php?action=viewScripture&id=$scripture[scriptureid]'>$scripture[book] $scripture[chapter]:$scripture[verse]</a></h3>";
+                $view .= "</div>";
+            }
+            $view = "</div>";
+            echo $view;
+            ?>
         </main>
     </body>
 </html>
