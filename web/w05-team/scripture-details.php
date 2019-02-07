@@ -11,8 +11,8 @@
         <main>
             <h1>Scripture Details</h1>
             <?php 
-            $view = "<h3>$scripture[book] $scripture[chapter]:$scripture[verse]</h3>";
-            $view .= "<p>$scripture[content]</p>";
+            $view = "<h3>$scriptureDetail[book] $scriptureDetail[chapter]:$scriptureDetail[verse]</h3>";
+            $view .= "<p>$scriptureDetail[content]</p>";
             echo $view;
             ?>
         </main>
