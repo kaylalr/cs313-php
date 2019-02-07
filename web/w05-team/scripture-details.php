@@ -9,7 +9,12 @@
     </head>
     <body>
         <main>
-            <h1>Search Scriptures</h1>
+            <h1>Scripture Details</h1>
+            <?php 
+            $view = "<h3>$scripture[book] $scripture[chapter]:$scripture[verse]</h3>";
+            $view .= "<p>$scripture[content]</p>";
+            echo $view;
+            ?>
         </main>
     </body>
 </html>
