@@ -1,0 +1,3 @@
+CREATE TABLE Actors (
+    actorId
+)
