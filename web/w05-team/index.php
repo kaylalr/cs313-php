@@ -14,11 +14,13 @@ switch ($action) {
     case "searchScriptures":
         include 'search-scriptures.php';
         break;
-    case "scriptureDetails":
+    case "viewScripture":
+        $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
+        $scriptureDetail = getScriptureById($id);
+        echo $scriptureDetail;
         include 'scriptures-details.php';
         break;
     default:
-        echo "getting here";
         $scriptures = getAllScriptures();
         include 'view-scriptures.php';
 }

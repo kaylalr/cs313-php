@@ -14,8 +14,8 @@
             $view = "<div>";
             foreach ($scriptures as $scripture) {
                 $view .= "<div>";
-                $view .= "<h3>$scripture[book] $scripture[chapter]:$scripture[verse]</h3>";
-                $view .= "<p>$scripture[content]</p>";
+                $view .= "<h3><a href='index.php?action=viewScripture&id=$scripture[scriptureId]'>$scripture[book] $scripture[chapter]:$scripture[verse]</p></h3>";
+//                $view .= "<p>$scripture[content]</p>";
                 $view .= "</div>";
             }
             $view .= "</div>";

@@ -28,3 +28,11 @@ function getAllScriptures() {
     $scriptures = $statement->fetchAll(PDO::FETCH_ASSOC);
     return $scriptures;
 }
+
+function getScriptureById($id) {
+    $db = dbConnect();
+    $statement = $db->query('SELECT * FROM scriptures WHERE scriptureId = :id');
+    $statement->bindValue(':id', $id, PDO::PARAM_INT);
+    $scripture = $statement->fetchAll(PDO::FETCH_ASSOC);
+    return $scripture;
+}
