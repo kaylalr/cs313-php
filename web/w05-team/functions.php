@@ -43,7 +43,6 @@ function getScripturesByBook($book) {
     $statement = $db->prepare('SELECT * FROM scriptures WHERE book = :book');
     $statement->bindValue(':book', $book, PDO::PARAM_INT);
     $statement->execute();
-    $scriptures = $statement->fetch(PDO::FETCH_ASSOC);
-    $scriptures .= array();
+    $scriptures = $statement->fetchAll(PDO::FETCH_ASSOC);
     return $scriptures;
 }
