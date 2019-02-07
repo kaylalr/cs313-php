@@ -14,7 +14,7 @@
             $view = "<div>";
             
             foreach ($scriptures as $scripture) {
-                echo $scripture;
+                var_dump($scripture);
                 exit;
 //                $id = $scripture['scriptureId'];
                 $view .= "<div>";
