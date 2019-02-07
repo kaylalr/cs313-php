@@ -17,6 +17,7 @@
         <main>
             <a href="intro.php">Introduction</a><br><br>
             <a href="assignments.php">Assignments</a><br>
+            <a href="w05-team/">Week 5 Team Assignment</a>
         </main>
         <footer>
             <?php include './common/footer.php' ?>
