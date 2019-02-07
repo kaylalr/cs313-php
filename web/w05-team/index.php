@@ -14,8 +14,11 @@ switch ($action) {
     case "searchScriptures":
         $book = filter_input(INPUT_POST, 'book', FILTER_SANITIZE_STRING);
         $scripturesByBook = getScripturesByBook($book);
-        header('Location: search-scriptures.php');
+        header('Location: index.php?action=ViewSearchScriptures');
         break;
+    case "ViewSearchScripture":
+        
+        include 'search-scriptures';
     case "viewScripture":
         $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
         $scriptureDetail = getScriptureById($id);
