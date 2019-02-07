@@ -27,7 +27,7 @@
                 $view .= "<h3><a href='index.php?action=viewScripture&id=$scripture[scriptureid]'>$scripture[book] $scripture[chapter]:$scripture[verse]</a></h3>";
                 $view .= "</div>";
             }
-            $view = "</div>";
+            $view .= "</div>";
             echo $view;
             ?>
         </main>
