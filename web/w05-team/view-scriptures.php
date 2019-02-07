@@ -12,10 +12,13 @@
             <h1>Scriptures</h1>
             <?php
             $view = "<div>";
+            
             foreach ($scriptures as $scripture) {
-                $id = $scripture['scriptureId'];
+                echo $scripture;
+                exit;
+//                $id = $scripture['scriptureId'];
                 $view .= "<div>";
-                $view .= "<h3><a href='index.php?action=viewScripture&id=$id'>$scripture[book] $scripture[chapter]:$scripture[verse]</a></h3>";
+                $view .= "<h3><a href='index.php?action=viewScripture&id=$scripture[scriptureId]'>$scripture[book] $scripture[chapter]:$scripture[verse]</a></h3>";
 //                $view .= "<p>$scripture[content]</p>";
                 $view .= "</div>";
             }
