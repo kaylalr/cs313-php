@@ -10,6 +10,14 @@
     <body>
         <main>
             <h1>Search Scriptures</h1>
+            <form>
+                <lable>Choose a book:</lable>
+                <select>
+                    <option value="John">John</option>
+                    <option value="Doctrine and Covenants">Doctrine and Covenants</option>
+                    <option value="Mosiah">Mosiah</option>
+                </select>
+            </form>
         </main>
     </body>
 </html>

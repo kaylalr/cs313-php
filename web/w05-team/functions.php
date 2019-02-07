@@ -34,6 +34,6 @@ function getScriptureById($id) {
     $statement = $db->prepare('SELECT * FROM scriptures WHERE scriptureid = :id');
     $statement->bindValue(':id', $id, PDO::PARAM_INT);
     $statement->execute();
-    $scripture = $statement->fetchAll(PDO::FETCH_ASSOC);
+    $scripture = $statement->fetch(PDO::FETCH_ASSOC);
     return $scripture;
 }
