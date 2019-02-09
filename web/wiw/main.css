@@ -57,7 +57,7 @@ main {
 }
 .gridItem img {
   height: 270px;
-  margin: 0 auto;
+  align-self: center;
 }
 .gridItem #no-image {
   /*width: 80%;*/
