@@ -20,4 +20,10 @@ function getFemalePuppies() {
     $puppies = $statement->fetchAll(PDO::FETCH_ASSOC);
     return $puppies;
 }
-//select * from puppies p join images i on i.puppyid = p.puppyid where male = false;
+
+function getTerriers() {
+    $db = dbConnect();
+    $statement = $db->query('SELECT * FROM dams d left join images i on i.damid = d.damid');
+    $puppies = $statement->fetchAll(PDO::FETCH_ASSOC);
+    return $puppies;
+}
