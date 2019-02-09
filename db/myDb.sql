@@ -163,3 +163,8 @@ INSERT INTO Images Values (
 
 
 -- Misty: Alaska, everest, arctic Daisy: Poppy, hogan, charles, oliver frankfurter, sausage, polish Poppy: Tiger, Lily, Blossom, Lilac, Ivy, Cedar
+
+-- there were two images in the table and neither of them were from the mother dogs, so I wanted the damid to be null.
+-- I had accidentally put a damid in there.
+UPDATE Images
+SET damId = null;

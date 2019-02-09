@@ -153,6 +153,10 @@ switch ($action) {
         $showPuppies = showPuppies($puppies);
         include 'view-puppies.php';
         break;
+    case 'viewTerriers':
+        $terriers = getTerriers();
+        $showTerriers = showTerriers($terriers);
+        break;
     default:
         include 'home.php';
 }
