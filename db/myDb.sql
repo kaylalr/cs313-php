@@ -168,3 +168,27 @@ INSERT INTO Images Values (
 -- I had accidentally put a damid in there.
 UPDATE Images
 SET damId = null;
+
+-- Insert more images into the images table
+INSERT INTO Images (
+    imgPath,
+    imgDescription
+) Values (
+    'images/00001IMG_00001_BURST20180911081035.jpg',
+    'image of puppy'
+), (
+   'images/puppiesBanner.jpg',
+    'image of puppy'
+), (
+   'images/puppiesupdate1.jpg',
+    'image of puppy'
+), (
+   'images/puppiesupdate2.jpg',
+    'image of puppy'
+), (
+   'images/puppy1.jpg',
+    'image of puppy' 
+), (
+    'images/IMG_20180911_083038',
+    'image of puppy'
+);
