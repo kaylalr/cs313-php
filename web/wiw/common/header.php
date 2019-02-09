@@ -2,6 +2,7 @@
     <ul>
         <li><a href="index.php">Home</a></li>
         <li><a href="index.php?action=viewPuppies">Puppies</a></li>
+        <li><a href="index.php?action=viewTerriers">Terriers</a></li>
         <!--<li><a href="index.php?action=puppies">Puppies-Cart</a></li>-->
 <!--        <li><a href="#">Link</a></li>
         <li><a href="#">Another</a></li>
