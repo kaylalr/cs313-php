@@ -9,7 +9,7 @@ function showPuppies($puppies) {
     } else {
         $showPuppies .= '<img src="/web/images/no-image.png" alt="no image available">';
     }
-    $showPuppies = '<h4>' . $puppy['name'] . '</h4></div>';
+    $showPuppies .= '<h4>' . $puppy['name'] . '</h4></div>';
     }
     $showPuppies .= '</div>';
     echo $showPuppies;
