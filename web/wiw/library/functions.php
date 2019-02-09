@@ -12,7 +12,5 @@ function showPuppies($puppies) {
     $showPuppies .= '<h4>' . $puppy['name'] . '</h4></div>';
     }
     $showPuppies .= '</div>';
-    echo $showPuppies;
-    exit;
     return $showPuppies;
 }
