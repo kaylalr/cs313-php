@@ -54,10 +54,10 @@ main {
   background-color: lightgray;
   border: 1px solid;
   padding: 20px;
+  text-align: center;
 }
 .gridItem img {
   height: 270px;
-  align-self: center;
 }
 .gridItem #no-image {
   /*width: 80%;*/
