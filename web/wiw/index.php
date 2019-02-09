@@ -137,12 +137,15 @@ switch ($action) {
         $genderFilter = filter_input(INPUT_POST, 'genderFilter', FILTER_SANITIZE_STRING);
         switch ($genderFilter) {
             case 'male':
+                $filterShow = "<h1>Sowing all male puppies.</h1>";
                 $puppies = getMalePuppies();
                 break;
             case 'female':
+                $filterShow = "<h1>Sowing all female puppies.</h1>";
                 $puppies = getFemalePuppies();
                 break;
             default:
+                $filterShow = "<h1>Sowing all puppies.</h1>";
                 $puppies = getAllPuppies();
         }
 //        var_dump($puppies);
