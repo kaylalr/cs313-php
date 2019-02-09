@@ -14,19 +14,8 @@
             <?php include 'common/header.php' ?>
         </header>
         <main>
-            <h1>Puppies</h1>
-            <div class='filter'>
-                <h4>Gender:</h4>
-                <form method='post' action="index.php?action=viewPuppies">
-                    <select name="genderFilter">
-                        <option value="both">Both</option>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                    </select>
-                    <input class='btn btn-primary' type='submit' value='Go'>
-                </form>
-            </div>
-            <?php echo $filterShow; echo $showPuppies; ?>
+            <h1>Terriers</h1>
+            <?php echo $showTerriers; ?>
         </main>
     </body>
 </html>

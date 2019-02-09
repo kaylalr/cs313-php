@@ -27,3 +27,10 @@ function getTerriers() {
     $puppies = $statement->fetchAll(PDO::FETCH_ASSOC);
     return $puppies;
 }
+
+function getAllPictures() {
+    $db = dbConnect();
+    $statement = $db->query('SELECT * FROM images');
+    $images = $statement->fetchAll(PDO::FETCH_ASSOC);
+    return $images;
+}

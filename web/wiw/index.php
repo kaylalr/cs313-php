@@ -137,15 +137,15 @@ switch ($action) {
         $genderFilter = filter_input(INPUT_POST, 'genderFilter', FILTER_SANITIZE_STRING);
         switch ($genderFilter) {
             case 'male':
-                $filterShow = "<h1>Sowing all male puppies.</h1>";
+                $filterShow = "<h2>Sowing all male puppies.</h2>";
                 $puppies = getMalePuppies();
                 break;
             case 'female':
-                $filterShow = "<h1>Sowing all female puppies.</h1>";
+                $filterShow = "<h2>Sowing all female puppies.</h2>";
                 $puppies = getFemalePuppies();
                 break;
             default:
-                $filterShow = "<h1>Sowing all puppies.</h1>";
+                $filterShow = "<h2>Sowing all puppies.</h2>";
                 $puppies = getAllPuppies();
         }
 //        var_dump($puppies);
@@ -156,6 +156,12 @@ switch ($action) {
     case 'viewTerriers':
         $terriers = getTerriers();
         $showTerriers = showTerriers($terriers);
+        include 'view-terriers.php';
+        break;
+    case 'viewGallery':
+        $pictures = getAllPictures();
+        $showGallery = showGallery($pictures);
+        include 'view-gallery.php';
         break;
     default:
         include 'home.php';
