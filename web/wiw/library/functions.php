@@ -7,7 +7,7 @@ function showPuppies($puppies) {
     if ($puppy['imgpath']) {
         $showPuppies .= '<img src="' . $puppy['imgpath'] . '" alt="' . $puppy['imgdescription'] . '">';
     } else {
-        $showPuppies .= '<img src="/web/images/no-image.png" alt="no image available">';
+        $showPuppies .= '<img src="/wiw/images/no-image.png" alt="no image available">';
     }
     $showPuppies .= '<h4>' . $puppy['name'] . '</h4></div>';
     }
