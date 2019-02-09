@@ -145,6 +145,8 @@ switch ($action) {
             default:
                 $puppies = getAllPuppies();
         }
+        var_dump($puppies);
+        exit;
         $showPuppies = showPuppies($puppies);
         include 'view-puppies.php';
         break;
