@@ -20,7 +20,7 @@
                     <label><strong>Email Address</strong></label>
                     <input name="username" id="clientEmail" type="text" placeholder="username" required>
                     <label><strong>Password</strong></label>
-                    <input name="password" id="clientPassword" type="password" placeholder="password" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
+                    <input name="password" id="clientPassword" type="password" placeholder="password" required>
                     <input type="hidden" name="action" value="login">
                     <button id="loginBtn" class="formBtn">Login</button>
                 </form>
