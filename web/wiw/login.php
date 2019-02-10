@@ -21,7 +21,7 @@
                     <input name="username" id="clientEmail" type="text" placeholder="username" required>
                     <label><strong>Password</strong></label>
                     <input name="password" id="clientPassword" type="password" placeholder="password" required>
-                    <input type="hidden" name="action" value="login">
+                    <input type="hidden" name="action" value="loggedin">
                     <button id="loginBtn" class="formBtn">Login</button>
                 </form>
         </main>
