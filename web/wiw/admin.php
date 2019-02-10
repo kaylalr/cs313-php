@@ -1,3 +1,8 @@
+<?php
+if (!$_SESSION['loggedin']) {
+    header('Location: /wiw/login.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>

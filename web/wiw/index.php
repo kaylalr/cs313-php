@@ -164,12 +164,16 @@ switch ($action) {
         include 'view-gallery.php';
         break;
     case 'login':
+        include 'login.php';
+        break;
+    case 'loggedin':
         $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
         $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
-        
+
         $verify = checkUser($username);
-        
+
         if ($verify['userpassword'] == $password) {
+            $_SESSION['loggedin'] = TRUE;
             include 'admin.php';
         }
         break;
