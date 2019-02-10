@@ -163,6 +163,16 @@ switch ($action) {
         $showGallery = showGallery($pictures);
         include 'view-gallery.php';
         break;
+    case 'login':
+        $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
+        $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+        
+        $verify = checkUser($username);
+        
+        if ($verify['userpassword'] == $password) {
+            include 'admin.php';
+        }
+        break;
     default:
         include 'home.php';
 }

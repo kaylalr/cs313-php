@@ -34,3 +34,12 @@ function getAllPictures() {
     $images = $statement->fetchAll(PDO::FETCH_ASSOC);
     return $images;
 }
+
+function checkUser($username) {
+    $db = dbConnect();
+    $statement = $db->prepare('SELECT username, userpassword FROM users WHERE username = :username');
+    $statement->bindValue(':username', $username, PDO::PARAM_INT);
+    $statement->execute();
+    $user = $statement->fetch(PDO::FETCH_ASSOC);
+    return $user;
+}
