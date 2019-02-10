@@ -175,9 +175,9 @@ switch ($action) {
 //        echo "password: $password";
 //        exit;
         if ($verify['userpassword'] == $password) {
-            echo "getting here";
+//            echo "getting here";
             $_SESSION['loggedin'] = TRUE;
-            include '/wiw/admin.php';
+            include 'admin.php';
         }
         break;
     default:
