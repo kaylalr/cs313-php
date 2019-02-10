@@ -174,6 +174,7 @@ switch ($action) {
 //        var_dump($verify);
 //        exit;
         if ($verify['userpassword'] == $password) {
+            echo "getting here";
             $_SESSION['loggedin'] = TRUE;
             include '/wiw/admin.php';
         }

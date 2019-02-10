@@ -1,6 +1,6 @@
 <?php
 if (!$_SESSION['loggedin']) {
-    header('Location: /wiw/login.php');
+    header('Location: /wiw/index.php?action=login');
 }
 ?>
 <!DOCTYPE html>
