@@ -175,7 +175,7 @@ switch ($action) {
         exit;
         if ($verify['userpassword'] == $password) {
             $_SESSION['loggedin'] = TRUE;
-            include 'admin.php';
+            include '/wiw/admin.php';
         }
         break;
     default:
