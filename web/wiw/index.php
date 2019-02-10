@@ -171,7 +171,8 @@ switch ($action) {
         $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
 
         $verify = checkUser($username);
-
+        var_dump($verify);
+        exit;
         if ($verify['userpassword'] == $password) {
             $_SESSION['loggedin'] = TRUE;
             include 'admin.php';
