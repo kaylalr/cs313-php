@@ -18,7 +18,7 @@
 
                 <form class="form" method="post" action="/acme/accounts/index.php">
                     <label><strong>Email Address</strong></label>
-                    <input name="username" id="clientEmail" type="email" placeholder="email" required>
+                    <input name="username" id="clientEmail" type="text" placeholder="username" required>
                     <label><strong>Password</strong></label>
                     <input name="password" id="clientPassword" type="password" placeholder="password" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
                     <input type="hidden" name="action" value="login">
