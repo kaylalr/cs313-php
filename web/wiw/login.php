@@ -16,7 +16,7 @@
         <main>
             <h1>Login</h1>
 
-                <form class="form" method="post" action="/wiw/index.php">
+                <form class="form" method="post" action="/wiw/index.php?action=loggedin">
                     <label><strong>Email Address</strong></label>
                     <input name="username" id="clientEmail" type="text" placeholder="username" required>
                     <label><strong>Password</strong></label>
