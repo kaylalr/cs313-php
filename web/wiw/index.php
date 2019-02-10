@@ -171,8 +171,9 @@ switch ($action) {
         $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
 
         $verify = checkUser($username);
-//        var_dump($verify);
-//        exit;
+        var_dump($verify);
+        echo "password: $password";
+        exit;
         if ($verify['userpassword'] == $password) {
             echo "getting here";
             $_SESSION['loggedin'] = TRUE;

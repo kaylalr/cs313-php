@@ -18,9 +18,9 @@
 
                 <form class="form" method="post" action="/wiw/index.php?action=loggedin">
                     <label><strong>Email Address</strong></label>
-                    <input name="username" id="clientEmail" type="text" placeholder="username" required>
+                    <input name="username" id="username" type="text" placeholder="username" required>
                     <label><strong>Password</strong></label>
-                    <input name="password" id="clientPassword" type="password" placeholder="password" required>
+                    <input name="password" id="password" type="password" placeholder="password" required>
                     <input type="hidden" name="action" value="loggedin">
                     <button id="loginBtn" class="formBtn">Login</button>
                 </form>
