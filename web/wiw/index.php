@@ -180,6 +180,16 @@ switch ($action) {
             include 'admin.php';
         }
         break;
+    case 'updatePuppies':
+        $puppies = getAllPuppies();
+        $updatePuppies = showPuppiesforUpdate($puppies);
+        include 'update-puppies.php';
+        break;
+    case 'updatePuppy':
+        $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
+        $puppy = getPuppyById($id);
+        include 'update-puppy.php';
+        break;
     default:
         include 'home.php';
 }

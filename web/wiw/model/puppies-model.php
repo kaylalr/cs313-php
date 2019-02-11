@@ -21,6 +21,15 @@ function getFemalePuppies() {
     return $puppies;
 }
 
+function getPuppyById($id) {
+    $db = dbConnect();
+    $statement = $db->prepare('SELECT * FROM puppies p left join images i on i.puppyid = p.puppyid WHERE p.puppyid = :id');
+    $statement->bindValue(':id', $id, PDO::PARAM_INT);
+    $statement->execute();
+    $puppy = $statement->fetch(PDO::FETCH_ASSOC);
+    return $puppy;
+}
+
 function getTerriers() {
     $db = dbConnect();
     $statement = $db->query('SELECT * FROM dams d left join images i on i.damid = d.damid');
