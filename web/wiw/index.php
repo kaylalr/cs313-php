@@ -271,7 +271,6 @@ switch ($action) {
     case 'addTheImage':
         $imgName = $_FILES['file1']['name'];
         echo "getting here one";
-        exit;
             $imgPath = uploadFile('file1');
             $result = storeImages($imgPath, $imgName);
             if ($result) {
