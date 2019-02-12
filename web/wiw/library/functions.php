@@ -75,6 +75,7 @@ function showGallery($pictures) {
 function uploadFile($name) {
     // Gets the paths, full and local directory
     global $image_dir, $image_dir_path;
+    echo "getting here two";
     if (isset($_FILES[$name])) {
         // Gets the actual file name
         $filename = $_FILES[$name]['name'];
@@ -82,6 +83,7 @@ function uploadFile($name) {
             echo "not working";
             return;
         }
+        echo "getting here three";
         // Get the file from the temp folder on the server
         $source = $_FILES[$name]['tmp_name'];
         // Sets the new path - images folder in this directory
