@@ -24,7 +24,7 @@ function showPuppiesforUpdate($puppies) {
         } else {
             $showPuppies .= '<img id="no-image" src="/wiw/images/no-image.png" alt="no image available">';
         }
-        $showPuppies .= '<h4><a href="index.php?action=updatePuppy&id=' . $puppy['puppyid'] . '>Update </a>' . $puppy['name'] . '</h4></div>';
+        $showPuppies .= '<h4><a href="index.php?action=updatePuppy&id=' . $puppy['puppyid'] . '>Update ' . $puppy['name'] . '</a></h4></div>';
     }
     $showPuppies .= '</div>';
     return $showPuppies;
