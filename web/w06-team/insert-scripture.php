@@ -45,6 +45,9 @@ $db = dbConnect();
 
     $newScriptureId = $pdo->lastInsertId('scriptureid');
 
+    echo "scriptureId: " . $newScriptureId;
+    exit;
+
     foreach ($topics as $topic) {
         $statement = $db->prepare('INSERT INTO scripture_topic VALUES (default, :scriptureid, :topicid)');
         $statement->bindValue(':scriptureid', $newScriptureId, PDO::PARAM_STR);
