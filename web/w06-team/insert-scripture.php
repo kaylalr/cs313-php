@@ -27,6 +27,9 @@ $verse = filter_input(INPUT_POST, 'verse', FILTER_SANITIZE_NUMBER_INT);
 $content = filter_input(INPUT_POST, 'content', FILTER_SANITIZE_STRING);
 $topics = $_POST['topic'];
 
+echo "$book, $chapter, $verse, $content";
+var_dump($topcis);
+
 $db = dbConnect();
 
     $statement = $db->prepare('INSERT INTO scripture VALUES (default, :book, :chapter, :verse, :content)');
