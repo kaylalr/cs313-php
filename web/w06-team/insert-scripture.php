@@ -34,7 +34,7 @@ var_dump($topics);
 
 $db = dbConnect();
 
-    $statement = $db->prepare('INSERT INTO scripture VALUES (default, :book, :chapter, :verse, :content)');
+    $statement = $db->prepare('INSERT INTO scriptures VALUES (default, :book, :chapter, :verse, :content)');
     $statement->bindValue(':book', $book, PDO::PARAM_STR);
     $statement->bindValue(':chapter', $chapter, PDO::PARAM_STR);
     $statement->bindValue(':verse', $verse, PDO::PARAM_STR);
