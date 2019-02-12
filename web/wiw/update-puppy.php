@@ -21,22 +21,22 @@ if (!$_SESSION['loggedin']) {
         <main>
             <h1>Update Puppy</h1>
             <form>
-                <label>Name:</label>
-                <input name="name" type="text" value="<?php echo $puppy['name']?>" required>
-                <label>Birthday:</label>
-                <input name="birthdate" type="date" value="<?php echo $puppy['birthdate']?>" required>
-                <label>Details:</label>
-                <input name="details" type="textarea" value="<?php echo $puppy['details']?>" required>
-                <label>Mark puppy as sold?</label>
-                <input type="radio" name="sold" value="true" <?php if($puppy['sold']) { echo 'checked';}?>>
-                <input type="radio" name="sold" value="false" <?php if(!$puppy['sold']) { echo 'checked';}?>>
-                <label>Gender:</label>
-                <input type="radio" name="gender" value="true" <?php if($puppy['male']) { echo 'checked';}?>>
-                <input type="radio" name="sold" value="false" <?php if(!$puppy['male']) { echo 'checked';}?>>
-                <label>Image:</label>
-                <input name="imgpath" type="file" value="<?php echo $puppy['imgpath']?>" required>
-                <label>Image Description:</label>
-                <input name="imgdescription" type="text" value="<?php echo $puppy['imgdescription']?>" required>
+                <label>Name:</label><br>
+                <input name="name" type="text" value="<?php echo $puppy['name']?>" required><br>
+                <label>Birthday:</label><br>
+                <input name="birthdate" type="date" value="<?php echo $puppy['birthdate']?>" required><br>
+                <label>Details:</label><br>
+                <input name="details" type="textarea" value="<?php echo $puppy['details']?>" required><br>
+                <label>Mark puppy as sold?</label><br>
+                <input type="radio" name="sold" value="true" <?php if($puppy['sold']) { echo 'checked';}?>>Yes
+                <input type="radio" name="sold" value="false" <?php if(!$puppy['sold']) { echo 'checked';}?>>No<br>
+                <label>Gender:</label><br>
+                <input type="radio" name="gender" value="true" <?php if($puppy['male']) { echo 'checked';}?>>Male
+                <input type="radio" name="sold" value="false" <?php if(!$puppy['male']) { echo 'checked';}?>>Female<br>
+                <label>Image:</label><br>
+                <input name="imgpath" type="file" value="<?php echo $puppy['imgpath']?>" required><br>
+                <label>Image Description:</label><br>
+                <input name="imgdescription" type="text" value="<?php echo $puppy['imgdescription']?>" required><br>
             </form>
         </main>
     </body>
