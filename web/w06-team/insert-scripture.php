@@ -30,7 +30,7 @@ $topics = $_POST['topic'];
 var_dump($_POST);
 
 echo "$book, $chapter, $verse, $content";
-var_dump($topcis);
+var_dump($topics);
 
 $db = dbConnect();
 
