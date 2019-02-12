@@ -79,6 +79,7 @@ function uploadFile($name) {
         // Gets the actual file name
         $filename = $_FILES[$name]['name'];
         if (empty($filename)) {
+            echo "not working";
             return;
         }
         // Get the file from the temp folder on the server
