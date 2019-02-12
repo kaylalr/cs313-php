@@ -242,7 +242,7 @@ switch ($action) {
         $id = filter_input(INPUT_POST, 'damid', FILTER_SANITIZE_NUMBER_INT);
         $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
         $details = filter_input(INPUT_POST, 'details', FILTER_SANITIZE_STRING);
-        
+        echo "$id, $name, $details";
         $updateTerrier = updateTerrier($id, $name, $details);
         if (!$updateTerrier) {
             $_SESSION['message'] = "<p class='warning'>Updating the terrier did not work. Please try again.</p>";
