@@ -27,10 +27,10 @@ $verse = filter_input(INPUT_POST, 'verse', FILTER_SANITIZE_NUMBER_INT);
 $content = filter_input(INPUT_POST, 'content', FILTER_SANITIZE_STRING);
 $topics = $_POST['topic'];
 
-var_dump($_POST);
+// var_dump($_POST);
 
-echo "$book, $chapter, $verse, $content";
-var_dump($topics);
+// echo "$book, $chapter, $verse, $content";
+// var_dump($topics);
 
 $db = dbConnect();
 
