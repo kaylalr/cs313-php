@@ -53,6 +53,6 @@ $db = dbConnect();
         $statement->bindValue(':scriptureid', $newScriptureId, PDO::PARAM_INT);
         $statement->bindValue(':topicid', $topic, PDO::PARAM_INT);
         $statement->execute();
-    }
+    };
 
 include 'scripture-list.php';
