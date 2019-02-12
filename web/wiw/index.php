@@ -199,8 +199,9 @@ switch ($action) {
         $gender = filter_input(INPUT_POST, 'gender', FILTER_SANITIZE_STRING);
         $imgpath = filter_input(INPUT_POST, 'imgpath', FILTER_SANITIZE_STRING);
         $imgdescription = filter_input(INPUT_POST, 'imgdescription', FILTER_SANITIZE_STRING);
-
+        echo 'getting here one';
         $updatePuppy = updatePuppy($id, $name, $birthdate, $details, $sold, $gender, $imgpath, $imgdescription);
+        echo 'getting here two';
 //        echo $updatePuppy;
         if (!$updatePuppy) {
             $_SESSION['message'] = "<p class='warning'>Updating the puppy did not work. Please try again.</p>";
