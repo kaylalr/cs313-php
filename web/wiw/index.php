@@ -201,6 +201,7 @@ switch ($action) {
         $imgdescription = filter_input(INPUT_POST, 'imgdescription', FILTER_SANITIZE_STRING);
 
         $updatePuppy = updatePuppy($id, $name, $birthdate, $details, $sold, $gender, $imgpath, $imgdescription);
+        echo $updatePuppy;
         if (!$updatePuppy) {
             $_SESSION['message'] = "<p class='warning'>Updating the puppy did not work. Please try again.</p>";
             echo 'not working';
