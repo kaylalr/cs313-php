@@ -43,10 +43,10 @@ $db = dbConnect();
     // $rowsChanged = $statement->rowCount();
     // return $rowsChanged;
 
-    $newScriptureId = $pdo->lastInsertId('scriptureid_seq');
+    $newScriptureId = $pdo->lastInsertId('scriptures_scriptureid_seq');
 
-    echo "scriptureId: " . $newScriptureId;
-    exit;
+    // echo "scriptureId: " . $newScriptureId;
+    // exit;
 
     foreach ($topics as $topic) {
         $statement = $db->prepare('INSERT INTO scripture_topic VALUES (default, :scriptureid, :topicid)');
