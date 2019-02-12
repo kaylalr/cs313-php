@@ -41,7 +41,7 @@ if (!$_SESSION['loggedin']) {
                 <input type="radio" name="sold" value="false" checked>No<br>
                 <label>Gender:</label><br>
                 <input type="radio" name="gender" value="true" >Male
-                <input type="radio" name="sold" value="false" >Female<br><br>
+                <input type="radio" name="gender" value="false" >Female<br><br>
                 <p class="warning">To add an image for the puppy, go to the "Update Images" page</p>
                 <input type="submit" value="Add">
             </form>

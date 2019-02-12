@@ -32,7 +32,7 @@ if (!$_SESSION['loggedin']) {
                 <input type="radio" name="sold" value="false" <?php if(!$puppy['sold']) { echo 'checked';}?>>No<br>
                 <label>Gender:</label><br>
                 <input type="radio" name="gender" value="true" <?php if($puppy['male']) { echo 'checked';}?>>Male
-                <input type="radio" name="sold" value="false" <?php if(!$puppy['male']) { echo 'checked';}?>>Female<br><br>
+                <input type="radio" name="gender" value="false" <?php if(!$puppy['male']) { echo 'checked';}?>>Female<br><br>
                 <p class="warning">To add an image for the puppy, go to the "Update Images" page</p>
                 <input type="hidden" name="puppyid" value="<?php echo $puppy['puppyid']?>">
                 <input type="submit" value="Update">
