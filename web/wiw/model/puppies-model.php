@@ -32,7 +32,7 @@ function getPuppyById($id) {
 
 function updatePuppy($id, $name, $birthdate, $details, $sold, $gender) {
     $db = dbConnect();
-    $statement = $db->prepare('UPDATE puppies SET name = :name, birthdate = :birthdate, details = :details, sold = :sold, male = :gender WHERE p.puppyid = :id');
+    $statement = $db->prepare('UPDATE puppies SET name = :name, birthdate = :birthdate, details = :details, sold = :sold, male = :gender WHERE puppyid = :id');
     $statement->bindValue(':id', $id, PDO::PARAM_INT);
     $statement->bindValue(':name', $name, PDO::PARAM_STR);
     $statement->bindValue(':birthdate', $birthdate, PDO::PARAM_STR);
