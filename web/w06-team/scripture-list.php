@@ -21,8 +21,8 @@ function dbConnect() {
     }
 }
 
-$db = dbConnect();
 function getScriptures() {
+$db = dbConnect();
     $statement = $db->prepare('SELECT s.book, s.chapter, s.verse, s.content, t.name FROM scriptures s JOIN scripture_topic st ON s.scriptureid = st.scriptureid JOIN topics t ON t.topicid = st.topicid');
     $statement->execute();
     $topics = $statement->fetchAll(PDO::FETCH_ASSOC);
