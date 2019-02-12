@@ -55,4 +55,6 @@ $db = dbConnect();
         $statement->execute();
     };
 
-include 'scripture-list.php';
+    echo "getting here";
+// include 'scripture-list.php';
+?>
