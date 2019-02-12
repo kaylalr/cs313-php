@@ -188,8 +188,6 @@ switch ($action) {
     case 'updatePuppy':
         $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
         $puppy = getPuppyById($id);
-        echo $puppy[imgpath];
-        exit;
         include 'update-puppy.php';
         break;
     case 'updateCurrentPuppy':
