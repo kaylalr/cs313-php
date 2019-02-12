@@ -46,3 +46,5 @@ $db = dbConnect();
         $statement->bindValue(':topicid', $topic, PDO::PARAM_STR);
         $statement->execute();
     }
+
+include 'scripture-list.php';
