@@ -218,7 +218,7 @@ switch ($action) {
         $details = filter_input(INPUT_POST, 'details', FILTER_SANITIZE_STRING);
         $sold = filter_input(INPUT_POST, 'sold', FILTER_SANITIZE_STRING);
         $gender = filter_input(INPUT_POST, 'gender', FILTER_SANITIZE_STRING);
-        
+        echo "$name, $mother, $birthdate, $details, $sold, $gender";
         $addedPuppy = addPuppy($name, $mother, $birthdate, $details, $sold, $gender);
         
         if (!$addedPuppy) {
