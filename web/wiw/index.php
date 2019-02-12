@@ -203,8 +203,12 @@ switch ($action) {
         $updatePuppy = updatePuppy($id, $name, $birthdate, $details, $sold, $gender, $imgpath, $imgdescription);
         if (!$updatePuppy) {
             $_SESSION['message'] = "<p class='warning'>Updating the puppy did not work. Please try again.</p>";
+            echo 'not working';
+            exit;
         } else {
             $_SESSION['message'] = "<p class='warning'>Updating the puppy was sucessful!</p>";
+            echo 'working!!!!!';
+            exit;
         }
         header('Location: index.php?action=updatePuppies');
 
