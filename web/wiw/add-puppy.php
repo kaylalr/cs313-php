@@ -12,7 +12,7 @@ if (!$_SESSION['loggedin']) {
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link rel="stylesheet" href="main.css" type="text/css">
-        <title>Update Puppy</title>
+        <title>Add Puppy</title>
     </head>
     <body>
         <header>
@@ -20,21 +20,27 @@ if (!$_SESSION['loggedin']) {
         </header>
         <main>
             <h1>Update Puppy</h1>
-            <form method="post" action="index.php?action=updateCurrentPuppy">
+            <form method="post" action="index.php?action=addThePuppy">
                 <label>Name:</label><br>
-                <input name="name" type="text" value="<?php echo $puppy['name']?>" required><br>
+                <input name="name" type="text" required><br>
                 <label>Birthday:</label><br>
-                <input name="birthdate" type="date" value="<?php echo $puppy['birthdate']?>" required><br>
+                <label>Mother:</label>
+                <select name="mother">
+                    <?php foreach($mothers as $mother) {
+                        echo "<option value='$mother[damid]'>$mother[name]</option>";
+                    }
+                        ?>
+                </select>
+                <input name="birthdate" type="date" required><br>
                 <label>Details:</label><br>
-                <input name="details" type="textarea" value="<?php echo $puppy['details']?>" required><br>
+                <input name="details" type="textarea" required><br>
                 <label>Mark puppy as sold?</label><br>
-                <input type="radio" name="sold" value="true" <?php if($puppy['sold']) { echo 'checked';}?>>Yes
-                <input type="radio" name="sold" value="false" <?php if(!$puppy['sold']) { echo 'checked';}?>>No<br>
+                <input type="radio" name="sold" value="true" >Yes
+                <input type="radio" name="sold" value="false" >No<br>
                 <label>Gender:</label><br>
-                <input type="radio" name="gender" value="true" <?php if($puppy['male']) { echo 'checked';}?>>Male
-                <input type="radio" name="sold" value="false" <?php if(!$puppy['male']) { echo 'checked';}?>>Female<br><br>
+                <input type="radio" name="gender" value="true" >Male
+                <input type="radio" name="sold" value="false" >Female<br><br>
                 <p class="warning">To add an image for the puppy, go to the "Update Images" page</p>
-                <input type="hidden" name="puppyid" value="<?php echo $puppy['puppyid']?>">
                 <input type="submit" value="Update">
             </form>
         </main>

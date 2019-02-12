@@ -166,7 +166,7 @@ switch ($action) {
     case 'login':
         include 'login.php';
         break;
-    case 'loggedin':
+    case 'admin':
         $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
         $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
 
@@ -197,7 +197,7 @@ switch ($action) {
         $details = filter_input(INPUT_POST, 'details', FILTER_SANITIZE_STRING);
         $sold = filter_input(INPUT_POST, 'sold', FILTER_SANITIZE_STRING);
         $gender = filter_input(INPUT_POST, 'gender', FILTER_SANITIZE_STRING);
-        
+
         $updatePuppy = updatePuppy($id, $name, $birthdate, $details, $sold, $gender);
         if (!$updatePuppy) {
             $_SESSION['message'] = "<p class='warning'>Updating the puppy did not work. Please try again.</p>";
@@ -206,6 +206,27 @@ switch ($action) {
         }
         header('Location: index.php?action=updatePuppies');
 
+        break;
+    case 'addPuppy':
+        $mothers = getTerriers();
+        include 'add-puppy.php';
+        break;
+    case 'addThePuppy':
+        $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+        $mother = filter_input(INPUT_POST, 'mother', FILTER_SANITIZE_NUMBER_INT);
+        $birthdate = filter_input(INPUT_POST, 'birthdate');
+        $details = filter_input(INPUT_POST, 'details', FILTER_SANITIZE_STRING);
+        $sold = filter_input(INPUT_POST, 'sold', FILTER_SANITIZE_STRING);
+        $gender = filter_input(INPUT_POST, 'gender', FILTER_SANITIZE_STRING);
+        
+        $addedPuppy = addPuppy($name, $mother, $birthdate, $details, $sold, $gender);
+        
+        if (!$addedPuppy) {
+            $_SESSION['message'] = "<p class='warning'>Adding the puppy did not work. Please try again.</p>";
+        } else {
+            $_SESSION['message'] = "<p class='warning'>Adding the puppy was sucessful!</p>";
+        }
+        header('Location: index.php?action=admin');
         break;
     default:
         include 'home.php';

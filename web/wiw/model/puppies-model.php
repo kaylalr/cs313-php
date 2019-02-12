@@ -40,17 +40,27 @@ function updatePuppy($id, $name, $birthdate, $details, $sold, $gender) {
     $statement->bindValue(':sold', $sold, PDO::PARAM_STR);
     $statement->bindValue(':gender', $gender, PDO::PARAM_STR);
     $statement->execute();
-//    echo 'getting here';
-//    $puppy = $statement->fetch(PDO::FETCH_ASSOC);
     $rowsChanged = $statement->rowCount();
-//    echo 'getting here too';
-//    $statement->closeCursor();
+    return $rowsChanged;
+}
+
+function addPuppy($name, $mother, $birthdate, $details, $sold, $gender) {
+    $db = dbConnect();
+    $statement = $db->prepare('INSERT INTO puppies VALUES (default, :mother, :name, :birthdate, :details, :sold, :gender)');
+    $statement->bindValue(':name', $name, PDO::PARAM_STR);
+    $statement->bindValue(':mother', $mother, PDO::PARAM_INT);
+    $statement->bindValue(':birthdate', $birthdate, PDO::PARAM_STR);
+    $statement->bindValue(':details', $details, PDO::PARAM_STR);
+    $statement->bindValue(':sold', $sold, PDO::PARAM_STR);
+    $statement->bindValue(':gender', $gender, PDO::PARAM_STR);
+    $statement->execute();
+    $rowsChanged = $statement->rowCount();
     return $rowsChanged;
 }
 
 function getTerriers() {
     $db = dbConnect();
-    $statement = $db->query('SELECT * FROM dams d left join images i on i.damid = d.damid');
+    $statement = $db->query('SELECT damid, name, description FROM dams d left join images i on i.damid = d.damid');
     $puppies = $statement->fetchAll(PDO::FETCH_ASSOC);
     return $puppies;
 }

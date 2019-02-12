@@ -21,7 +21,7 @@
                     <input name="username" id="username" type="text" placeholder="username" required>
                     <label><strong>Password</strong></label>
                     <input name="password" id="password" type="password" placeholder="password" required>
-                    <input type="hidden" name="action" value="loggedin">
+                    <input type="hidden" name="action" value="admin">
                     <button id="loginBtn" class="formBtn">Login</button>
                 </form>
         </main>
