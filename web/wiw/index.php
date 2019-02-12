@@ -197,17 +197,7 @@ switch ($action) {
         $details = filter_input(INPUT_POST, 'details', FILTER_SANITIZE_STRING);
         $sold = filter_input(INPUT_POST, 'sold', FILTER_SANITIZE_STRING);
         $gender = filter_input(INPUT_POST, 'gender', FILTER_SANITIZE_STRING);
-//        $imgpath = filter_input(INPUT_POST, 'imgpath', FILTER_SANITIZE_STRING);
-//        $imgdescription = filter_input(INPUT_POST, 'imgdescription', FILTER_SANITIZE_STRING);
-//        echo 'getting here one';
-//        if($imgpath == null) {
-//            $imgpath = 'images/no-image.png';
-//        }
-//        if($imgdescription == null) {
-//            $imgdescription = 'no image available';
-//        }
         
-//        echo "$id, $name, $birthdate, $details, $sold, $gender, $imgpath, $imgdescription";
         $updatePuppy = updatePuppy($id, $name, $birthdate, $details, $sold, $gender);
         if (!$updatePuppy) {
             $_SESSION['message'] = "<p class='warning'>Updating the puppy did not work. Please try again.</p>";

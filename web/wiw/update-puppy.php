@@ -33,10 +33,7 @@ if (!$_SESSION['loggedin']) {
                 <label>Gender:</label><br>
                 <input type="radio" name="gender" value="true" <?php if($puppy['male']) { echo 'checked';}?>>Male
                 <input type="radio" name="sold" value="false" <?php if(!$puppy['male']) { echo 'checked';}?>>Female<br>
-                <label>Image:</label><br>
-                <input name="imgpath" type="file" value="<?php if($puppy['imgpath'] != null){echo $puppy['imgpath'];}?>"><br>
-                <label>Image Description:</label><br>
-                <input name="imgdescription" type="text" value="<?php if($puppy['imgdescription'] != null){echo $puppy['imgdescription'];}?>"><br>
+                <p class="warning">To add an image for the puppy, go to the "Update Images" page</p>
                 <input type="hidden" name="puppyid" value="<?php echo $puppy['puppyid']?>">
                 <input type="submit" value="Update">
             </form>
