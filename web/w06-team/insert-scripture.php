@@ -43,7 +43,7 @@ $db = dbConnect();
     // $rowsChanged = $statement->rowCount();
     // return $rowsChanged;
 
-    $newScriptureId = $pdo->lastInsertId('scriptures_scriptureid_seq');
+    $newScriptureId = $db->lastInsertId('scriptures_scriptureid_seq');
 
     echo "scriptureId: " . $newScriptureId;
     exit;
