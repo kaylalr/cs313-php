@@ -60,7 +60,7 @@ function addPuppy($name, $mother, $birthdate, $details, $sold, $gender) {
 
 function getTerriers() {
     $db = dbConnect();
-    $statement = $db->query('SELECT damid, name, description FROM dams d left join images i on i.damid = d.damid');
+    $statement = $db->query('SELECT d.damid, d.name, d.description, i.imgpath, i.imgdescription FROM dams d left join images i on i.damid = d.damid');
     $puppies = $statement->fetchAll(PDO::FETCH_ASSOC);
     return $puppies;
 }
