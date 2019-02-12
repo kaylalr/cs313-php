@@ -43,7 +43,7 @@ function updatePuppy($id, $name, $birthdate, $details, $sold, $gender, $imgpath,
     $statement->bindValue(':imgdescription', $imgdescription, PDO::PARAM_STR);
     $statement->execute();
 //    $puppy = $statement->fetch(PDO::FETCH_ASSOC);
-    $rowsChanged = $stmt->rowCount();
+    $rowsChanged = $statement->rowCount();
     $stmt->closeCursor();
     return $rowsChanged;
 }
