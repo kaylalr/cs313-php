@@ -46,7 +46,7 @@ function updatePuppy($id, $name, $birthdate, $details, $sold, $gender) {
 
 function addPuppy($name, $mother, $birthdate, $details, $sold, $gender) {
     $db = dbConnect();
-    $statement = $db->prepare('INSERT INTO puppies VALUES (default, :mother, :name, :birthdate, :details, :sold, :gender)');
+    $statement = $db->prepare('INSERT INTO puppies VALUES (default, :name, :mother, :birthdate, :details, :sold, :gender)');
     $statement->bindValue(':name', $name, PDO::PARAM_STR);
     $statement->bindValue(':mother', $mother, PDO::PARAM_INT);
     $statement->bindValue(':birthdate', $birthdate, PDO::PARAM_STR);

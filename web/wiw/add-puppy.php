@@ -24,14 +24,16 @@ if (!$_SESSION['loggedin']) {
                 <label>Name:</label><br>
                 <input name="name" type="text" required><br>
                 <label>Birthday:</label><br>
+                <input name="birthdate" type="date" required><br>
                 <label>Mother:</label>
-                <select name="mother">
-                    <?php foreach($mothers as $mother) {
+                <select name="mother" required>
+                    <option selected disabled>Chose one...</option>
+                    <?php
+                    foreach ($mothers as $mother) {
                         echo "<option value='$mother[damid]'>$mother[name]</option>";
                     }
-                        ?>
+                    ?>
                 </select>
-                <input name="birthdate" type="date" required><br>
                 <label>Details:</label><br>
                 <input name="details" type="textarea" required><br>
                 <label>Mark puppy as sold?</label><br>
@@ -41,7 +43,7 @@ if (!$_SESSION['loggedin']) {
                 <input type="radio" name="gender" value="true" >Male
                 <input type="radio" name="sold" value="false" >Female<br><br>
                 <p class="warning">To add an image for the puppy, go to the "Update Images" page</p>
-                <input type="submit" value="Update">
+                <input type="submit" value="Add">
             </form>
         </main>
     </body>
