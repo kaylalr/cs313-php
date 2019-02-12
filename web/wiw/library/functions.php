@@ -54,7 +54,7 @@ function showTerriersForUpdate($terriers) {
         } else {
             $showTerriers .= '<img id="no-image" src="/wiw/images/no-image.png" alt="no image available">';
         }
-        $showTerriers .= '<h4><a href="index.php?action=updateTerrier&id=' . $terrier[damid] . '">Update '. $terrier['name'] . '</a></h4></div>';
+        $showTerriers .= '<h4><a href="index.php?action=updateTerrier&id=' . $terrier[damid] . '">Update ' . $terrier['name'] . '</a></h4></div>';
     }
     $showTerriers .= '</div>';
     return $showTerriers;
@@ -78,12 +78,15 @@ function uploadFile($name) {
     echo ", getting here two";
     if (isset($_FILES[$name])) {
         // Gets the actual file name
+        echo ", getting here three";
+
         $filename = $_FILES[$name]['name'];
         if (empty($filename)) {
             echo "not working!";
-//            return;
+            return;
         }
-        echo ", getting here three";
+        echo ", getting here four";
+
         // Get the file from the temp folder on the server
         $source = $_FILES[$name]['tmp_name'];
         // Sets the new path - images folder in this directory
