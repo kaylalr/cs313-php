@@ -219,13 +219,36 @@ switch ($action) {
         $sold = filter_input(INPUT_POST, 'sold', FILTER_SANITIZE_STRING);
         $gender = filter_input(INPUT_POST, 'gender', FILTER_SANITIZE_STRING);
         $addedPuppy = addPuppy($name, $mother, $birthdate, $details, $sold, $gender);
-        
+
         if (!$addedPuppy) {
             $_SESSION['message'] = "<p class='warning'>Adding the puppy did not work. Please try again.</p>";
         } else {
             $_SESSION['message'] = "<p class='warning'>Adding the puppy was sucessful!</p>";
         }
         header('Location: index.php?action=admin');
+        break;
+    case 'updateTerriers':
+        $dogs = getTerriers();
+        $showDogs = showTerriersForUpdate($dogs);
+        include 'update-terriers.php';
+        break;
+    case 'updateTerrier':
+        $id = filter_input(INPUT_GET, 'damid', FILTER_SANITIZE_NUMBER_INT);
+        $terrier = getTerrierById($id);
+        include 'update-terrier.php';
+        break;
+    case 'updateCurrentTerrier':
+        $id = filter_input(INPUT_POST, 'damid', FILTER_SANITIZE_NUMBER_INT);
+        $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+        $details = filter_input(INPUT_POST, 'details', FILTER_SANITIZE_STRING);
+        
+        $updateTerrier = updateTerrier($id, $name, $details);
+        if (!$updateTerrier) {
+            $_SESSION['message'] = "<p class='warning'>Updating the terrier did not work. Please try again.</p>";
+        } else {
+            $_SESSION['message'] = "<p class='warning'>Updating the terrier was sucessful!</p>";
+        }
+        header('Location: index.php?action=updateTerriers');
         break;
     default:
         include 'home.php';

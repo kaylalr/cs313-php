@@ -65,6 +65,26 @@ function getTerriers() {
     return $puppies;
 }
 
+function getTerrierById($id) {
+    $db = dbConnect();
+    $statement = $db->prepare('SELECT d.damid, d.name, d.description FROM dams d left join images i on i.damid = d.damid WHERE d.damid = :id');
+    $statement->bindValue(':id', $id, PDO::PARAM_INT);
+    $statement->execute();
+    $puppy = $statement->fetch(PDO::FETCH_ASSOC);
+    return $puppy;
+}
+
+function updateTerrier($id, $name, $details) {
+    $db = dbConnect();
+    $statement = $db->prepare('UPDATE terriers SET name = :name, details = :details WHERE damid = :id');
+    $statement->bindValue(':id', $id, PDO::PARAM_INT);
+    $statement->bindValue(':name', $name, PDO::PARAM_STR);
+    $statement->bindValue(':details', $details, PDO::PARAM_STR);
+    $statement->execute();
+    $rowsChanged = $statement->rowCount();
+    return $rowsChanged;
+}
+
 function getAllPictures() {
     $db = dbConnect();
     $statement = $db->query('SELECT * FROM images');
