@@ -233,9 +233,9 @@ switch ($action) {
         include 'update-terriers.php';
         break;
     case 'updateTerrier':
-        $id = filter_input(INPUT_GET, 'damid', FILTER_SANITIZE_NUMBER_INT);
+        $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
         $terrier = getTerrierById($id);
-        var_dump($terrier);
+//        var_dump($terrier);
         include 'update-terrier.php';
         break;
     case 'updateCurrentTerrier':
