@@ -200,6 +200,7 @@ switch ($action) {
         $imgpath = filter_input(INPUT_POST, 'imgpath', FILTER_SANITIZE_STRING);
         $imgdescription = filter_input(INPUT_POST, 'imgdescription', FILTER_SANITIZE_STRING);
         echo 'getting here one';
+        echo "$id, $name, $birthdate, $details, $sold, $gender, $imgpath, $imgdescription";
         $updatePuppy = updatePuppy($id, $name, $birthdate, $details, $sold, $gender, $imgpath, $imgdescription);
         echo 'getting here two';
 //        echo $updatePuppy;
