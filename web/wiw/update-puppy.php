@@ -20,7 +20,7 @@ if (!$_SESSION['loggedin']) {
         </header>
         <main>
             <h1>Update Puppy</h1>
-            <form>
+            <form method="post" action="index.php?action=updateCurrentPuppy">
                 <label>Name:</label><br>
                 <input name="name" type="text" value="<?php echo $puppy['name']?>" required><br>
                 <label>Birthday:</label><br>
@@ -34,9 +34,11 @@ if (!$_SESSION['loggedin']) {
                 <input type="radio" name="gender" value="true" <?php if($puppy['male']) { echo 'checked';}?>>Male
                 <input type="radio" name="sold" value="false" <?php if(!$puppy['male']) { echo 'checked';}?>>Female<br>
                 <label>Image:</label><br>
-                <input name="imgpath" type="file" value="<?php echo $puppy['imgpath']?>" required><br>
+                <input name="imgpath" type="file" value="<?php if($puppy['imgpath'] != null){echo $puppy['imgpath'];}?>"><br>
                 <label>Image Description:</label><br>
-                <input name="imgdescription" type="text" value="<?php echo $puppy['imgdescription']?>" required><br>
+                <input name="imgdescription" type="text" value="<?php if($puppy['imgdescription'] != null){echo $puppy['imgdescription'];}?>"><br>
+                <input type="hidden" name="puppyid" value="<?php echo $puppy['puppyid']?>">
+                <input type="submit" value="Update">
             </form>
         </main>
     </body>

@@ -20,8 +20,13 @@ if (!$_SESSION['loggedin']) {
         </header>
         <main>
             <h1>Update Puppies</h1>
-            <p>Please choose a puppy to update:</p>
-            <?php echo $updatePuppies ?>
+            <h2>Please choose a puppy to update:</h2>
+            <?php 
+            if(isset($_SESSION['message'])) {
+                echo $_SESSION['message'];
+            }
+            echo $updatePuppies;
+            ?>
         </main>
     </body>
 </html>

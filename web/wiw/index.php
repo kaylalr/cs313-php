@@ -190,6 +190,25 @@ switch ($action) {
         $puppy = getPuppyById($id);
         include 'update-puppy.php';
         break;
+    case 'updateCurrentPuppy':
+        $id = filter_input(INPUT_POST, 'puppyid', FILTER_SANITIZE_NUMBER_INT);
+        $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+        $birthdate = filter_input(INPUT_POST, 'birthdate');
+        $details = filter_input(INPUT_POST, 'details', FILTER_SANITIZE_STRING);
+        $sold = filter_input(INPUT_POST, 'sold', FILTER_SANITIZE_STRING);
+        $gender = filter_input(INPUT_POST, 'gender', FILTER_SANITIZE_STRING);
+        $imgpath = filter_input(INPUT_POST, 'imgpath', FILTER_SANITIZE_STRING);
+        $imgdescription = filter_input(INPUT_POST, 'imgdescription', FILTER_SANITIZE_STRING);
+
+        $updatePuppy = updatePuppy($id, $name, $birthdate, $details, $sold, $gender, $imgpath, $imgdescription);
+        if (!$updatePuppy) {
+            $_SESSION['message'] = "<p class='warning'>Updating the puppy did not work. Please try again.</p>";
+        } else {
+            $_SESSION['message'] = "<p class='warning'>Updating the puppy was sucessful!</p>";
+        }
+        header('Location: index.php?action=updatePuppies');
+
+        break;
     default:
         include 'home.php';
 }

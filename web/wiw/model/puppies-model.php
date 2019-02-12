@@ -30,6 +30,24 @@ function getPuppyById($id) {
     return $puppy;
 }
 
+function updatePuppy($id, $name, $birthdate, $details, $sold, $gender, $imgpath, $imgdescription) {
+    $db = dbConnect();
+    $statement = $db->prepare('UPDATE p SET p.name = :name, p.birthdate = :birthdate, p.details = :details, p.sold = :sold, p.male = :gender, i.imgpath = :imgpath, i.imgdescription = :imgdescription FROM puppies p JOIN images i ON p.puppyid = i.puppyid WHERE p.puppyid = :id');
+    $statement->bindValue(':id', $id, PDO::PARAM_INT);
+    $statement->bindValue(':name', $name, PDO::PARAM_STR);
+    $statement->bindValue(':birthdate', $birthdate, PDO::PARAM_STR);
+    $statement->bindValue(':details', $details, PDO::PARAM_STR);
+    $statement->bindValue(':sold', $sold, PDO::PARAM_STR);
+    $statement->bindValue(':gender', $gender, PDO::PARAM_STR);
+    $statement->bindValue('imgpath', $imgpath, PDO::PARAM_STR);
+    $statement->bindValue(':imgdescription', $imgdescription, PDO::PARAM_STR);
+    $statement->execute();
+//    $puppy = $statement->fetch(PDO::FETCH_ASSOC);
+    $rowsChanged = $stmt->rowCount();
+    $stmt->closeCursor();
+    return $rowsChanged;
+}
+
 function getTerriers() {
     $db = dbConnect();
     $statement = $db->query('SELECT * FROM dams d left join images i on i.damid = d.damid');
