@@ -25,7 +25,7 @@ if (!$_SESSION['loggedin']) {
                 <input name="name" type="text" required><br>
                 <label>Birthday:</label><br>
                 <input name="birthdate" type="date" required><br>
-                <label>Mother:</label>
+                <label>Mother:</label><br>
                 <select name="mother" required>
                     <option selected disabled>Chose one...</option>
                     <?php
@@ -33,12 +33,12 @@ if (!$_SESSION['loggedin']) {
                         echo "<option value='$mother[damid]'>$mother[name]</option>";
                     }
                     ?>
-                </select>
+                </select><br>
                 <label>Details:</label><br>
                 <input name="details" type="textarea" required><br>
                 <label>Mark puppy as sold?</label><br>
                 <input type="radio" name="sold" value="true" >Yes
-                <input type="radio" name="sold" value="false" >No<br>
+                <input type="radio" name="sold" value="false" checked>No<br>
                 <label>Gender:</label><br>
                 <input type="radio" name="gender" value="true" >Male
                 <input type="radio" name="sold" value="false" >Female<br><br>
