@@ -87,6 +87,16 @@ function updateTerrier($id, $name, $details) {
     return $rowsChanged;
 }
 
+function addTerrier($name, $details) {
+    $db = dbConnect();
+    $statement = $db->prepare('INSERT INTO dams VALUES (default, :name, :details)');
+    $statement->bindValue(':name', $name, PDO::PARAM_STR);
+    $statement->bindValue(':details', $details, PDO::PARAM_STR);
+    $statement->execute();
+    $rowsChanged = $statement->rowCount();
+    return $rowsChanged;
+}
+
 function getAllPictures() {
     $db = dbConnect();
     $statement = $db->query('SELECT * FROM images');

@@ -12,21 +12,22 @@ if (!$_SESSION['loggedin']) {
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link rel="stylesheet" href="main.css" type="text/css">
-        <title>Update Terriers</title>
+        <title>Update Terrier</title>
     </head>
     <body>
         <header>
             <?php include 'common/header.php' ?>
         </header>
         <main>
-            <h1>Update Terriers</h1>
-            <h2>Please choose a terrier to update:</h2>
-            <?php 
-            if(isset($_SESSION['message'])) {
-                echo $_SESSION['message'];
-            }
-            echo $showDogs;
-            ?>
+            <h1>Update Terrier</h1>
+            <form method="post" action="index.php?action=addTheTerrier">
+                <label>Name:</label><br>
+                <input name="name" type="text" required><br>
+                <label>Description:</label><br>
+                <input name="details" type="textArea" required><br>
+                <p class="warning">To add an image for the puppy, go to the "Update Images" page</p>
+                <input type="submit" value="Update">
+            </form>
         </main>
     </body>
 </html>

@@ -218,8 +218,8 @@ switch ($action) {
         $details = filter_input(INPUT_POST, 'details', FILTER_SANITIZE_STRING);
         $sold = filter_input(INPUT_POST, 'sold', FILTER_SANITIZE_STRING);
         $gender = filter_input(INPUT_POST, 'gender', FILTER_SANITIZE_STRING);
+        
         $addedPuppy = addPuppy($name, $mother, $birthdate, $details, $sold, $gender);
-
         if (!$addedPuppy) {
             $_SESSION['message'] = "<p class='warning'>Adding the puppy did not work. Please try again.</p>";
         } else {
@@ -250,6 +250,21 @@ switch ($action) {
             $_SESSION['message'] = "<p class='warning'>Updating the terrier was sucessful!</p>";
         }
         header('Location: index.php?action=updateTerriers');
+        break;
+    case 'addTerrier':
+        include 'add-terrier.php';
+        break;
+    case 'addTheTerrier':
+        $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+        $details = filter_input(INPUT_POST, 'details', FILTER_SANITIZE_STRING);
+        
+        $addedTerrier = addTerrier($name, $details);
+        if (!$addedTerrier) {
+            $_SESSION['message'] = "<p class='warning'>Adding the terrier did not work. Please try again.</p>";
+        } else {
+            $_SESSION['message'] = "<p class='warning'>Adding the terrier was sucessful!</p>";
+        }
+        header('Location: index.php?action=admin');
         break;
     default:
         include 'home.php';
