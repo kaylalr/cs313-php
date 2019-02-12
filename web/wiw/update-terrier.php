@@ -24,7 +24,7 @@ if (!$_SESSION['loggedin']) {
                 <label>Name:</label><br>
                 <input name="name" type="text" value="<?php echo $terrier['name']?>" required><br>
                 <label>Description:</label><br>
-                <input name="description" type="text" value="<?php echo $terrier['description']?>" required><br>
+                <input name="description" type="textarea" value="<?php echo $terrier['description']?>" required><br>
                 <p class="warning">To add an image for the puppy, go to the "Update Images" page</p>
                 <input type="hidden" name="damid" value="<?php echo $terrier['damid']?>">
                 <input type="submit" value="Update">

@@ -121,4 +121,10 @@ main {
   color: red;
 }
 
+/***** Forms *****/
+form textarea {
+  height: 100px;
+  width: 200px;
+}
+
 /*# sourceMappingURL=main.css.map */
