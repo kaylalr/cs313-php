@@ -40,7 +40,7 @@ $db = dbConnect();
     $statement->bindValue(':verse', $verse, PDO::PARAM_INT);
     $statement->bindValue(':content', $content, PDO::PARAM_STR);
     $statement->execute();
-    // $rowsChanged = $statement->rowCount();
+    $rowsChanged = $statement->rowCount();
     // return $rowsChanged;
 
     $newScriptureId = $pdo->lastInsertId('scriptureid');
