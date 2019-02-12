@@ -235,6 +235,7 @@ switch ($action) {
     case 'updateTerrier':
         $id = filter_input(INPUT_GET, 'damid', FILTER_SANITIZE_NUMBER_INT);
         $terrier = getTerrierById($id);
+        var_dump($terrier);
         include 'update-terrier.php';
         break;
     case 'updateCurrentTerrier':

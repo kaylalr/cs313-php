@@ -70,8 +70,8 @@ function getTerrierById($id) {
     $statement = $db->prepare('SELECT d.damid, d.name, d.description FROM dams d left join images i on i.damid = d.damid WHERE d.damid = :id');
     $statement->bindValue(':id', $id, PDO::PARAM_INT);
     $statement->execute();
-    $puppy = $statement->fetch(PDO::FETCH_ASSOC);
-    return $puppy;
+    $terrier = $statement->fetch(PDO::FETCH_ASSOC);
+    return $terrier;
 }
 
 function updateTerrier($id, $name, $details) {
