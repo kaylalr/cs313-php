@@ -104,6 +104,17 @@ function getAllPictures() {
     return $images;
 }
 
+function storeImages($imgPath, $imgDescription) {
+    $db = dbConnect();
+    $stmt = $db->prepare('INSERT INTO images VALUES (default, :imgPath, :imgDescription)');
+    // Store the full size image information
+    $stmt->bindValue(':imgPath', $imgPath, PDO::PARAM_STR);
+    $stmt->bindValue(':imgDescription', $imgDescription, PDO::PARAM_STR);
+    $stmt->execute();
+    $rowsChanged = $stmt->rowCount();
+    return $rowsChanged;
+}
+
 function checkUser($username) {
     $db = dbConnect();
     $statement = $db->prepare('SELECT username, userpassword FROM users WHERE username = :username');

@@ -218,7 +218,7 @@ switch ($action) {
         $details = filter_input(INPUT_POST, 'details', FILTER_SANITIZE_STRING);
         $sold = filter_input(INPUT_POST, 'sold', FILTER_SANITIZE_STRING);
         $gender = filter_input(INPUT_POST, 'gender', FILTER_SANITIZE_STRING);
-        
+
         $addedPuppy = addPuppy($name, $mother, $birthdate, $details, $sold, $gender);
         if (!$addedPuppy) {
             $_SESSION['message'] = "<p class='warning'>Adding the puppy did not work. Please try again.</p>";
@@ -235,7 +235,6 @@ switch ($action) {
     case 'updateTerrier':
         $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
         $terrier = getTerrierById($id);
-//        var_dump($terrier);
         include 'update-terrier.php';
         break;
     case 'updateCurrentTerrier':
@@ -257,13 +256,29 @@ switch ($action) {
     case 'addTheTerrier':
         $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
         $details = filter_input(INPUT_POST, 'details', FILTER_SANITIZE_STRING);
-        
+
         $addedTerrier = addTerrier($name, $details);
         if (!$addedTerrier) {
             $_SESSION['message'] = "<p class='warning'>Adding the terrier did not work. Please try again.</p>";
         } else {
             $_SESSION['message'] = "<p class='warning'>Adding the terrier was sucessful!</p>";
         }
+        header('Location: index.php?action=admin');
+        break;
+    case 'addImage':
+        include 'add-image.php';
+        break;
+    case 'addTheImage':
+        $imgName = $_FILES['file1']['name'];
+
+            $imgPath = uploadFile('file1');
+            $result = storeImages($imgPath, $imgName);
+            if ($result) {
+                $_SESSION['message'] = '<p class="notice">The upload succeeded.</p>';
+            } else {
+                $_SESSION['message'] = '<p class="notice">Sorry, the upload failed.</p>';
+            }
+
         header('Location: index.php?action=admin');
         break;
     default:
