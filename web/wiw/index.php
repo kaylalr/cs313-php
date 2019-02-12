@@ -188,6 +188,8 @@ switch ($action) {
     case 'updatePuppy':
         $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
         $puppy = getPuppyById($id);
+        echo $puppy[imgpath];
+        exit;
         include 'update-puppy.php';
         break;
     case 'updateCurrentPuppy':
@@ -200,6 +202,13 @@ switch ($action) {
         $imgpath = filter_input(INPUT_POST, 'imgpath', FILTER_SANITIZE_STRING);
         $imgdescription = filter_input(INPUT_POST, 'imgdescription', FILTER_SANITIZE_STRING);
         echo 'getting here one';
+        if($imgpath == null) {
+            $imgpath = 'images/no-image.png';
+        }
+        if($imgdescription == null) {
+            $imgdescription = 'no image available';
+        }
+        
         echo "$id, $name, $birthdate, $details, $sold, $gender, $imgpath, $imgdescription";
         $updatePuppy = updatePuppy($id, $name, $birthdate, $details, $sold, $gender, $imgpath, $imgdescription);
         echo 'getting here two';
