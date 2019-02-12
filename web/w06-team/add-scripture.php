@@ -38,14 +38,14 @@ function getTopics() {
 </head>
 <body>
     <form method="post" action="insert-scripture.php">
-        <label>Book:</label>
-        <input type="text" name="book">
-        <label>Chapter:</label>
-        <input type="text" name="chapter">
-        <label>Verse:</label>
-        <input type="text" name="verse">
-        <label>Content:</label>
-        <input type="textarea" name="content">
+        <label>Book:</label><br>
+        <input type="text" name="book"><br>
+        <label>Chapter:</label><br>
+        <input type="text" name="chapter"><br>
+        <label>Verse:</label><br>
+        <input type="text" name="verse"><br>
+        <label>Content:</label><br>
+        <input type="textarea" name="content"><br>
         <?php 
         $topics = getTopics();
         foreach ($topics as $topic) {
