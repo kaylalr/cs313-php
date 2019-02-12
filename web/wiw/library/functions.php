@@ -78,14 +78,14 @@ function uploadFile($name) {
     echo ", getting here two";
     if (isset($_FILES[$name])) {
         // Gets the actual file name
-        echo ", getting here three";
+        echo ", getting here three.one";
 
         $filename = $_FILES[$name]['name'];
         if (empty($filename)) {
             echo "not working!";
             return;
         }
-        echo ", getting here four";
+        echo ", getting here three.two";
 
         // Get the file from the temp folder on the server
         $source = $_FILES[$name]['tmp_name'];

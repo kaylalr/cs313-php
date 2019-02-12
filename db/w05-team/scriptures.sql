@@ -33,3 +33,26 @@ INSERT INTO scriptures VALUES (
     9,
     'He is the alight and the life of the world; yea, a light that is endless, that can never be darkened; yea, and also a life which is endless, that there can be no more death.'
 );
+
+CREATE TABLE topics (
+    topicId     SERIAL      NOT NULL,   
+    name        varchar(50) NOT NULL,
+    PRIMARY KEY (topicId)
+);
+
+INSERT INTO topics VALUES (
+    default,
+    'Faith'
+), (
+    default,
+    'Sacrifice'
+), (
+    default,
+    'Charity'
+);
+
+CREATE TABLE scripture_topic (
+    scripture_topic_id  SERIAL      NOT NULL,
+    scriptureId         int         NOT NULL,
+    topicId             int         NOT NULL
+);
