@@ -2,7 +2,7 @@
 
 function getAllPuppies() {
     $db = dbConnect();
-    $statement = $db->query('SELECT * FROM puppies p left join images i on i.puppyid = p.puppyid');
+    $statement = $db->query('SELECT p.name, i.imgpath, i.imgdescription, p.puppyid FROM puppies p left join images i on i.puppyid = p.puppyid');
     $puppies = $statement->fetchAll(PDO::FETCH_ASSOC);
     return $puppies;
 }
