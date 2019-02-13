@@ -161,8 +161,8 @@ form input[type=textArea] {
   width: 200px;
   position: fixed;
   z-index: 1;
-  top: 0;
-  left: 0;
+  top: 200px;
+  left: 200px;
   background-color: #555;
   overflow-x: hidden;
   padding-top: 20px;
