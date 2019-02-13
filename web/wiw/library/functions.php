@@ -125,7 +125,7 @@ function showPicturesForUpdate($images) {
 function uploadFile($name) {
     global $image_dir, $image_dir_path;
     if (isset($_FILES[$name])) {
-        vardump($_FILES[$name]);
+        var_dump($_FILES[$name]);
         $filename = $_FILES[$name]['name'];
         if (empty($filename)) {
             echo "not working!";
