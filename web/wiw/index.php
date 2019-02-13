@@ -273,12 +273,12 @@ switch ($action) {
         include 'add-image.php';
         break;
     case 'addTheImage':
-        $imgPath = $_FILES['file1']['imgpath'];
+//        $imgPath = $_FILES['file1']['imgpath'];
 //        var_dump($imgName);
         var_dump($_FILES['file1']);
         echo "getting here one";
             $imgPath = uploadFile('file1');
-            $result = storeImages($imgPath, $imgName);
+            $result = storeImages($imgPath);
             if ($result) {
                 $_SESSION['message'] = '<p class="notice">The upload succeeded.</p>';
             } else {

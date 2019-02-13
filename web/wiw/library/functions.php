@@ -75,18 +75,18 @@ function showGallery($pictures) {
 function uploadFile($name) {
     // Gets the paths, full and local directory
     global $image_dir, $image_dir_path;
-    echo ", getting here two, $name";
+//    echo ", getting here two, $name";
 //    var_dump($_FILES[$name]);
     if (isset($_FILES[$name])) {
         // Gets the actual file name
-        echo ", getting here three.one";
+//        echo ", getting here three.one";
 
         $filename = $_FILES[$name]['name'];
         if (empty($filename)) {
             echo "not working!";
             return;
         }
-        echo ", getting here three.two";
+//        echo ", getting here three.two";
 
         // Get the file from the temp folder on the server
         $source = $_FILES[$name]['tmp_name'];
@@ -113,10 +113,10 @@ function processImage($dir, $filename) {
     $image_path = $dir . $filename;
 
     // Set up the thumbnail image path
-    $image_path_tn = $dir . makeThumbnailName($filename);
+//    $image_path_tn = $dir . makeThumbnailName($filename);
 
     // Create a thumbnail image that's a maximum of 200 pixels square
-    resizeImage($image_path, $image_path_tn, 200, 200);
+//    resizeImage($image_path, $image_path_tn, 200, 200);
 
     // Resize original to a maximum of 500 pixels square
     resizeImage($image_path, $image_path, 500, 500);
