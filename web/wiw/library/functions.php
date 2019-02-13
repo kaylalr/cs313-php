@@ -86,18 +86,23 @@ function uploadFile($name) {
             echo "not working!";
             return;
         }
-//        echo ", getting here three.two";
+        echo "getting here three.two";
 
         // Get the file from the temp folder on the server
         $source = $_FILES[$name]['tmp_name'];
+        echo ";  after source";
         // Sets the new path - images folder in this directory
         $target = $image_dir_path . '/' . $filename;
+        echo ";  after target";
         // Moves the file to the target folder
         move_uploaded_file($source, $target);
+        echo ";  after move upload";
         // Send file for further processing
         processImage($image_dir_path, $filename);
+        echo ";  after proces images";
         // Sets the path for the image for Database storage
         $filepath = $image_dir . '/' . $filename;
+        echo ";  after filepath";
         // Returns the path where the file is stored
         return $filepath;
     }
