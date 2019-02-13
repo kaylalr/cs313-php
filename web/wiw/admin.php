@@ -19,25 +19,27 @@ if (!$_SESSION['loggedin']) {
             <?php include 'common/header.php' ?>
         </header>
         <main>
-            <div class="sidenav">
-                <!--<div>-->
-                <h2>Puppies</h2>
-                <a href="index.php?action=updatePuppies">Update Puppies</a><br>
-                <a href="index.php?action=addPuppy">Add Puppy</a><br>
-                <!--</div>-->
-                <!--<div>-->
-                <h2>Terriers</h2>
-                <a href="index.php?action=updateTerriers">Update Terriers</a><br>
-                <a href="index.php?action=addTerrier">Add Terrier</a><br>
-                <!--</div>-->
-                <!--<div>-->
-                <h2>Images</h2>
-                <a href="index.php?action=addImage">Add Image</a><br>
-                <a href="index.php?action=deleteImage">Delete Image</a><br>
-                <!--</div>-->
-            </div>
-            <div class="admin-content">
-                <h1>Admin</h1>
+            <div id="admin-page">
+                <div class="sidenav">
+                    <!--<div>-->
+                    <h2>Puppies</h2>
+                    <a href="index.php?action=updatePuppies">Update Puppies</a><br>
+                    <a href="index.php?action=addPuppy">Add Puppy</a><br>
+                    <!--</div>-->
+                    <!--<div>-->
+                    <h2>Terriers</h2>
+                    <a href="index.php?action=updateTerriers">Update Terriers</a><br>
+                    <a href="index.php?action=addTerrier">Add Terrier</a><br>
+                    <!--</div>-->
+                    <!--<div>-->
+                    <h2>Images</h2>
+                    <a href="index.php?action=addImage">Add Image</a><br>
+                    <a href="index.php?action=deleteImage">Delete Image</a><br>
+                    <!--</div>-->
+                </div>
+                <div class="admin-content">
+                    <h1>Admin</h1>
+                </div>
             </div>
         </main>
     </body>
