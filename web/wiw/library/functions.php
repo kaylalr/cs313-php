@@ -82,6 +82,7 @@ function uploadFile($name) {
 //        echo ", getting here three.one";
 
         $filename = $_FILES[$name]['name'];
+        echo "fileName: $filename";
         if (empty($filename)) {
             echo "not working!";
             return;
