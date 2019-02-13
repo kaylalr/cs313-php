@@ -24,7 +24,7 @@ if (!$_SESSION['loggedin']) {
                 <div class="admin-content">
                     <h1>Delete Puppies</h1>
                     <?php 
-                    echo $showPuppiesforDelete;
+                    echo $deletePuppies;
                     ?>
                 </div>
             </div>

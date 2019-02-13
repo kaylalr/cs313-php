@@ -233,7 +233,7 @@ switch ($action) {
         break;
     case 'deletePuppies':
         $puppies = getAllPuppies();
-        $updatePuppies = showPuppiesforDelete($puppies);
+        $deletePuppies = showPuppiesforDelete($puppies);
         include 'delete-puppies.php';
         break;
     case 'updateTerriers':
