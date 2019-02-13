@@ -148,7 +148,7 @@ form input[type=textArea] {
 }
 
 #login .container #login-row #login-column #login-box #login-form input {
-  font-size: 2em;
+  font-size: inherit;
 }
 
 /*# sourceMappingURL=main.css.map */
