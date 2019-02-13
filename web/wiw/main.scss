@@ -20,7 +20,7 @@ header {
 }
 nav {
     height: inherit;
-    font-size: 1.5em;
+    font-size: 1.6em;
     ul {
         display: flex;
         flex-flow: row nowrap;
@@ -154,9 +154,9 @@ form input[type="textArea"] {
     display: flex;
 }
 .sidenav {
-  height: 100%;
+  height: 81vh;
   width: 200px;
-  bottom: 0;
+  /*bottom: 0;*/
   /*position: fixed;*/
   /*z-index: 1;*/
   /*top: 120px;*/
@@ -173,9 +173,9 @@ form input[type="textArea"] {
 .sidenav a {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
-  font-size: 25px;
+  /*font-size: 25px;*/
   color: #818181;
-  display: block;
+  /*display: block;*/
   font-size: 1.7em;
 }
 .sidenav a:hover {
