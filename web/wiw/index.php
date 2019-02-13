@@ -21,7 +21,7 @@ $puppies = array(
 );
 
 //variables for uploading an image
-$image_dir = '/wis/images';
+$image_dir = '/wiw/images';
 $image_dir_path = $_SERVER['DOCUMENT_ROOT'] . $image_dir;
 
 $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING);
