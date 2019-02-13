@@ -12,7 +12,6 @@ if (!$_SESSION['loggedin']) {
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link rel="stylesheet" href="main.css" type="text/css">
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <title>Add Image</title>
     </head>
     <body>
@@ -20,14 +19,20 @@ if (!$_SESSION['loggedin']) {
             <?php include 'common/header.php' ?>
         </header>
         <main>
-            <h1>Add Image</h1>
-            <form method="post" action="index.php?action=addTheImage" enctype="multipart/form-data">
-                <label>Upload Image:</label><br>
-                <input type="file" name="file1"><br>
-                <label>Description:</label><br>
-                <input type="textarea" name="description"><br>
-                <input type="submit" value="Upload">
-            </form>
+            <div id="admin-page">
+                <?php include 'common/admin-sidenav.php' ?>
+                <div class="admin-content">
+                    <h1>Add Image</h1>
+                    <form method="post" action="index.php?action=addTheImage" enctype="multipart/form-data">
+                        <label>Upload Image:</label><br>
+                        <input type="file" name="file1"><br>
+                        <label>Description:</label><br>
+                        <input type="textarea" name="description"><br>
+                        <input type="submit" value="Upload">
+                    </form>
+                </div>
+            </div>
+
         </main>
     </body>
 </html>
