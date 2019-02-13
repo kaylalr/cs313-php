@@ -63,6 +63,10 @@ main {
   /*width: 80%;*/
 }
 
+.smaller-grid img {
+  height: 100px;
+}
+
 /* cart page */
 .cartItem {
   display: grid;

@@ -18,7 +18,7 @@ function showPuppies($puppies) {
 function showPuppiesforUpdate($puppies) {
     $showPuppies = "<div class='gridContainer'>";
     foreach ($puppies as $puppy) {
-        $showPuppies .= '<div class="gridItem">';
+        $showPuppies .= '<div class="gridItem smaller-grid">';
         if ($puppy['imgpath']) {
             $showPuppies .= '<img src="' . $puppy['imgpath'] . '" alt="' . $puppy['imgdescription'] . '">';
         } else {
