@@ -243,7 +243,9 @@ switch ($action) {
         break;
     case 'deleteThePuppy':
         $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
+        echo "id: $id";
         $deleted = deletePuppy($id);
+        echo "deleted: $deleted";
         if (!$deleted) {
             $_SESSION['message'] = "<p class='warning'>Deleting the puppy did not work. Please try again.</p>";
         } else {
