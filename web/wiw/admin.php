@@ -42,9 +42,9 @@ if (!$_SESSION['loggedin']) {
                 <div class="col-sm-2">
                     <nav class="nav-sidebar">
                         <ul class="nav">
-                            <li class="active"><a href="javascript:;">Home</a></li>
-                            <li><a href="javascript:;">About</a></li>
-                            <li><a href="javascript:;">Products</a></li>
+                            <li class="active"><a href="#">Home</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Products</a></li>
 <!--                            <li>
                                 <a href="#" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-fw fa-search"></i> MENU 1 <i class="fa fa-fw fa-angle-down pull-right"></i></a>
                                 <ul id="submenu-1" class="collapse">
