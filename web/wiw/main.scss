@@ -153,10 +153,10 @@ form input[type="textArea"] {
 .sidenav {
   height: 100%;
   width: 200px;
-  /*position: fixed;*/
+  position: fixed;
   z-index: 1;
   top: 120px;
-  left: 200px;
+  left: 30%;
   background-color: #555;
   overflow-x: hidden;
   padding-top: 20px;
