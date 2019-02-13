@@ -231,6 +231,11 @@ switch ($action) {
         }
         header('Location: index.php?action=admin');
         break;
+    case 'deletePuppies':
+        $puppies = getAllPuppies();
+        $updatePuppies = showPuppiesforDelete($puppies);
+        include 'delete-puppies.php';
+        break;
     case 'updateTerriers':
         $dogs = getTerriers();
         $showDogs = showTerriersForUpdate($dogs);
@@ -276,15 +281,15 @@ switch ($action) {
         $imgDescription = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
 //        var_dump($_FILES['file1']);
 //        echo "getting here one";
-            $imgPath = uploadFile('file1');
-            echo "path: $imgPath";
-            echo "description: $imgDescription";
-            $result = storeImages($imgPath, $imgDescription);
-            if ($result) {
-                $_SESSION['message'] = '<p class="notice">The upload succeeded.</p>';
-            } else {
-                $_SESSION['message'] = '<p class="notice">Sorry, the upload failed.</p>';
-            }
+        $imgPath = uploadFile('file1');
+        echo "path: $imgPath";
+        echo "description: $imgDescription";
+        $result = storeImages($imgPath, $imgDescription);
+        if ($result) {
+            $_SESSION['message'] = '<p class="notice">The upload succeeded.</p>';
+        } else {
+            $_SESSION['message'] = '<p class="notice">Sorry, the upload failed.</p>';
+        }
 
         header('Location: index.php?action=admin');
         break;

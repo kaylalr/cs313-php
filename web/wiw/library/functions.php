@@ -30,6 +30,21 @@ function showPuppiesforUpdate($puppies) {
     return $showPuppies;
 }
 
+function showPuppiesforDelete($puppies) {
+    $showPuppies = "<div class='gridContainer'>";
+    foreach ($puppies as $puppy) {
+        $showPuppies .= '<div class="gridItem smaller-grid">';
+        if ($puppy['imgpath']) {
+            $showPuppies .= '<img src="' . $puppy['imgpath'] . '" alt="' . $puppy['imgdescription'] . '">';
+        } else {
+            $showPuppies .= '<img id="no-image" src="/wiw/images/no-image.png" alt="no image available">';
+        }
+        $showPuppies .= '<h4><a href="index.php?action=deletePuppy&id=' . $puppy['puppyid'] . '">Delete ' . $puppy['name'] . '</a></h4></div>';
+    }
+    $showPuppies .= '</div>';
+    return $showPuppies;
+}
+
 function showTerriers($terriers) {
     $showTerriers = "<div class='gridContainer'>";
     foreach ($terriers as $terrier) {
