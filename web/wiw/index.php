@@ -273,7 +273,7 @@ switch ($action) {
         include 'add-image.php';
         break;
     case 'addTheImage':
-        $imgDescription = filter_input(INPUT_POST, 'decsription', FILTER_SANITIZE_STRING);
+        $imgDescription = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
 //        var_dump($_FILES['file1']);
 //        echo "getting here one";
             $imgPath = uploadFile('file1');
