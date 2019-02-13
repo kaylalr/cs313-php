@@ -78,7 +78,7 @@ function showTerriersForUpdate($terriers) {
 function showTerriersForDelete($terriers) {
     $showTerriers = "<div class='gridContainer'>";
     foreach ($terriers as $terrier) {
-        $showTerriers .= '<div class="gridItem">';
+        $showTerriers .= '<div class="gridItem smaller-grid">';
         if ($terrier['imgpath']) {
             $showTerriers .= '<img src="' . $terrier['imgpath'] . '" alt="' . $terrier['imgdescription'] . '">';
         } else {
