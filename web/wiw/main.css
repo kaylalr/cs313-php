@@ -130,7 +130,9 @@ form input[type=textArea] {
 /***** Login Page *****/
 /*code taken from https://bootsnipp.com/snippets/bxzmb*/
 #login .container #login-row {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  /*text-align: center;*/
 }
 
 #login .container #login-row #login-column #login-box {
