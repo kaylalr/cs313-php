@@ -329,7 +329,7 @@ switch ($action) {
         break;
     case 'addTheImage':
         $imgDescription = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
-        $puppyid = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
+        $puppyid = filter_input(INPUT_POST, 'puppyid', FILTER_SANITIZE_STRING);
         $imgPath = uploadFile('file1');
 //        echo "path: $imgPath";
 //        echo "description: $imgDescription";
