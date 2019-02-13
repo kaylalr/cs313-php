@@ -296,7 +296,7 @@ switch ($action) {
         $terriersToDelete = showTerriersForDelete($terriers);
         include 'delete-terriers.php';
         break;
-    case 'deteteTerrier':
+    case 'deleteTerrier':
         $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
         $terrierToDelete = getTerrierById($id);
         include 'delete-terrier.php';
