@@ -19,24 +19,30 @@ if (!$_SESSION['loggedin']) {
             <?php include 'common/header.php' ?>
         </header>
         <main>
-            <h1>Update Puppy</h1>
-            <form method="post" action="index.php?action=updateCurrentPuppy">
-                <label>Name:</label><br>
-                <input name="name" type="text" value="<?php echo $puppy['name']?>" required><br>
-                <label>Birthday:</label><br>
-                <input name="birthdate" type="date" value="<?php echo $puppy['birthdate']?>" required><br>
-                <label>Details:</label><br>
-                <input name="details" type="textarea" value="<?php echo $puppy['details']?>" required><br>
-                <label>Mark puppy as sold?</label><br>
-                <input type="radio" name="sold" value="true" <?php if($puppy['sold']) { echo 'checked';}?>>Yes
-                <input type="radio" name="sold" value="false" <?php if(!$puppy['sold']) { echo 'checked';}?>>No<br>
-                <label>Gender:</label><br>
-                <input type="radio" name="gender" value="true" <?php if($puppy['male']) { echo 'checked';}?>>Male
-                <input type="radio" name="gender" value="false" <?php if(!$puppy['male']) { echo 'checked';}?>>Female<br><br>
-                <p class="warning">To add an image for the puppy, go to the "Update Images" page</p>
-                <input type="hidden" name="puppyid" value="<?php echo $puppy['puppyid']?>">
-                <input type="submit" value="Update">
-            </form>
+            <div id="admin-page">
+                <?php include 'common/admin-sidenav.php' ?>
+                <div class="admin-content">
+                    <h1>Update Puppy</h1>
+                    <form method="post" action="index.php?action=updateCurrentPuppy">
+                        <label>Name:</label><br>
+                        <input name="name" type="text" value="<?php echo $puppy['name']?>" required><br>
+                        <label>Birthday:</label><br>
+                        <input name="birthdate" type="date" value="<?php echo $puppy['birthdate']?>" required><br>
+                        <label>Details:</label><br>
+                        <input name="details" type="textarea" value="<?php echo $puppy['details']?>" required><br>
+                        <label>Mark puppy as sold?</label><br>
+                        <input type="radio" name="sold" value="true" <?php if($puppy['sold']) { echo 'checked';}?>>Yes
+                        <input type="radio" name="sold" value="false" <?php if(!$puppy['sold']) { echo 'checked';}?>>No<br>
+                        <label>Gender:</label><br>
+                        <input type="radio" name="gender" value="true" <?php if($puppy['male']) { echo 'checked';}?>>Male
+                        <input type="radio" name="gender" value="false" <?php if(!$puppy['male']) { echo 'checked';}?>>Female<br><br>
+                        <p class="warning">To add an image for the puppy, go to the "Update Images" page</p>
+                        <input type="hidden" name="puppyid" value="<?php echo $puppy['puppyid']?>">
+                        <input type="submit" value="Update">
+                    </form>
+                </div>
+            </div>
+            
         </main>
     </body>
 </html>

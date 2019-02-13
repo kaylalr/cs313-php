@@ -19,15 +19,21 @@ if (!$_SESSION['loggedin']) {
             <?php include 'common/header.php' ?>
         </header>
         <main>
-            <h1>Update Terrier</h1>
-            <form method="post" action="index.php?action=addTheTerrier">
-                <label>Name:</label><br>
-                <input name="name" type="text" required><br>
-                <label>Description:</label><br>
-                <input name="details" type="textArea" required><br>
-                <p class="warning">To add an image for the puppy, go to the "Update Images" page</p>
-                <input type="submit" value="Update">
-            </form>
+            <div id="admin-page">
+                <?php include 'common/admin-sidenav.php' ?>
+                <div class="admin-content">
+                    <h1>Add Terrier</h1>
+                    <form method="post" action="index.php?action=addTheTerrier">
+                        <label>Name:</label><br>
+                        <input name="name" type="text" required><br>
+                        <label>Short Description:</label><br>
+                        <input name="details" type="text" required><br>
+                        <p class="warning">To add an image for the puppy, go to the "Update Images" page</p>
+                        <input type="submit" value="Update">
+                    </form>
+                </div>
+            </div>
+
         </main>
     </body>
 </html>

@@ -19,14 +19,20 @@ if (!$_SESSION['loggedin']) {
             <?php include 'common/header.php' ?>
         </header>
         <main>
-            <h1>Update Puppies</h1>
-            <h2>Please choose a puppy to update:</h2>
-            <?php 
-            if(isset($_SESSION['message'])) {
-                echo $_SESSION['message'];
-            }
-            echo $updatePuppies;
-            ?>
+            <div id="admin-page">
+                <?php include 'common/admin-sidenav.php' ?>
+                <div class="admin-content">
+                    <h1>Update Puppies</h1>
+                    <h2>Please choose a puppy to update:</h2>
+                    <?php
+                    if (isset($_SESSION['message'])) {
+                        echo $_SESSION['message'];
+                    }
+                    echo $updatePuppies;
+                    ?>
+                </div>
+            </div>
+
         </main>
     </body>
 </html>

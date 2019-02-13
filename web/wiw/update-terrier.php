@@ -19,16 +19,22 @@ if (!$_SESSION['loggedin']) {
             <?php include 'common/header.php' ?>
         </header>
         <main>
-            <h1>Update Terrier</h1>
-            <form method="post" action="index.php?action=updateCurrentTerrier">
-                <label>Name:</label><br>
-                <input name="name" type="text" value="<?php echo $terrier['name'] ?>" required><br>
-                <label>Description:</label><br>
-                <input name="details" type="textArea" value="<?php echo $terrier['description'] ?>" required><br>
-                <p class="warning">To add an image for the puppy, go to the "Update Images" page</p>
-                <input type="hidden" name="damid" value="<?php echo $terrier['damid'] ?>">
-                <input type="submit" value="Update">
-            </form>
+            <div id="admin-page">
+                <?php include 'common/admin-sidenav.php' ?>
+                <div class="admin-content">
+                    <h1>Update Terrier</h1>
+                    <form method="post" action="index.php?action=updateCurrentTerrier">
+                        <label>Name:</label><br>
+                        <input name="name" type="text" value="<?php echo $terrier['name'] ?>" required><br>
+                        <label>Description:</label><br>
+                        <input name="details" type="textArea" value="<?php echo $terrier['description'] ?>" required><br>
+                        <p class="warning">To add an image for the puppy, go to the "Update Images" page</p>
+                        <input type="hidden" name="damid" value="<?php echo $terrier['damid'] ?>">
+                        <input type="submit" value="Update">
+                    </form>
+                </div>
+            </div>
+            
         </main>
     </body>
 </html>

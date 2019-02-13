@@ -23,7 +23,7 @@ if (!$_SESSION['loggedin']) {
             <div id="admin-page">
                 <?php include 'common/admin-sidenav.php' ?>
                 <div class="admin-content">
-                    <h1>Update Puppy</h1>
+                    <h1>Add Puppy</h1>
                     <form method="post" action="index.php?action=addThePuppy">
                         <label>Name:</label><br>
                         <input name="name" type="text" required><br>
