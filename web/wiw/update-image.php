@@ -12,7 +12,7 @@ if (!$_SESSION['loggedin']) {
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link rel="stylesheet" href="main.css" type="text/css">
-        <title>Update Terrier</title>
+        <title>Update Image</title>
     </head>
     <body>
         <header>
@@ -22,19 +22,18 @@ if (!$_SESSION['loggedin']) {
             <div id="admin-page">
                 <?php include 'common/admin-sidenav.php' ?>
                 <div class="admin-content">
-                    <h1>Update Terrier</h1>
-                    <form method="post" action="index.php?action=updateCurrentTerrier">
-                        <label>Name:</label><br>
-                        <input name="name" type="text" value="<?php echo $terrier['name'] ?>" required><br>
-                        <label>Description:</label><br>
-                        <input name="details" type="textArea" value="<?php echo $terrier['description'] ?>" required><br>
-                        <p class="warning">To add an image for the puppy, go to the "Update Images" page</p>
-                        <input type="hidden" name="damid" value="<?php echo $terrier['damid'] ?>">
-                        <input type="submit" value="Update">
+                    <h1>Update Image</h1>
+                    <img id="updatingImg" src="<?php echo $currentImage[imgpath]?>" alt="<?php $currentImage[imgdescription]?>">
+                    <form method="post" action="index.php?action=addTheImage" enctype="multipart/form-data">
+                        <label>Choose a puppy (if applicable):</label><br>
+                        <?php echo $puppiesDropDown ?><br>
+                        <label>Choose a terrier (if applicable):</label><br>
+                        <?php echo $terriersDropDown ?><br>
+                        <input type="submit" value="Upload">
                     </form>
                 </div>
             </div>
-            
+
         </main>
     </body>
 </html>

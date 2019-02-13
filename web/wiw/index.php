@@ -321,6 +321,8 @@ switch ($action) {
 //        $updated = updateImage($id, $imgpath, $imgdescription, $puppyid, $damid);
         $image = getPictureById($id);
         $puppiesDropDown = puppiesDropDown();
+        $terriersDropDown = terriersDropDown();
+        $currentImage = getPictureById($id);
         include 'update-image.php';
         break;
     case 'addImage':

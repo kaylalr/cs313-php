@@ -30,7 +30,7 @@ if (!$_SESSION['loggedin']) {
                         <input type="textarea" name="description"><br>
                         <label>Choose a puppy (if applicable):</label><br>
                         <?php echo $puppiesDropDown ?><br>
-                        <label>Choose a mom (if applicable):</label><br>
+                        <label>Choose a terrier (if applicable):</label><br>
                         <?php echo $terriersDropDown ?><br>
                         <input type="submit" value="Upload">
                     </form>
