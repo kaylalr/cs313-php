@@ -132,7 +132,6 @@ form input[type=textArea] {
 #login .container #login-row {
   display: flex;
   justify-content: center;
-  /*text-align: center;*/
 }
 
 #login .container #login-row #login-column #login-box {
