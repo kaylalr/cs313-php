@@ -76,13 +76,12 @@ function uploadFile($name) {
     // Gets the paths, full and local directory
     global $image_dir, $image_dir_path;
 //    echo ", getting here two, $name";
-    var_dump($_FILES[$name]);
+//    var_dump($_FILES[$name]);
     if (isset($_FILES[$name])) {
         // Gets the actual file name
 //        echo ", getting here three.one";
 
         $filename = $_FILES[$name]['name'];
-        echo "fileName: $filename";
         if (empty($filename)) {
             echo "not working!";
             return;
@@ -99,7 +98,7 @@ function uploadFile($name) {
         move_uploaded_file($source, $target);
         echo ";  after move upload";
         // Send file for further processing
-        processImage($image_dir_path, $filename);
+//        processImage($image_dir_path, $filename);
         echo ";  after proces images";
         // Sets the path for the image for Database storage
         $filepath = $image_dir . '/' . $filename;
