@@ -76,7 +76,7 @@ function uploadFile($name) {
     // Gets the paths, full and local directory
     global $image_dir, $image_dir_path;
 //    echo ", getting here two, $name";
-//    var_dump($_FILES[$name]);
+    var_dump($_FILES[$name]);
     if (isset($_FILES[$name])) {
         // Gets the actual file name
 //        echo ", getting here three.one";
