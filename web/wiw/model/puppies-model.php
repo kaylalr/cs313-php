@@ -134,6 +134,7 @@ function updateImage($id, $imgpath, $imgdescription, $puppyid, $damid) {
 }
 
 function storeImages($imgPath, $imgDescription, $puppyid) {
+    echo "$imgPath, $imgDescription, $puppyid";
     $db = dbConnect();
     $stmt = $db->prepare('INSERT INTO images VALUES (default, :imgPath, :imgDescription, :puppyid)');
     // Store the full size image information
