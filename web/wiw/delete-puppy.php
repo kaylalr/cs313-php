@@ -26,8 +26,8 @@ if (!$_SESSION['loggedin']) {
                     $name = $puppyToDelete['name'];
                     echo "<h1>Are you sure you want to delete $name?</h1>";
                     ?>
-                    <button type="button" class="btn btn-danger"><a href="index.php?action=deleteThePuppy&id=<?php echo $puppyToDelete['puppyid']?>">Yes</a></button>
-                    <button type="button" class="btn btn-secondary"><a href="index.php?action=deletePuppies">No</a></button>
+                    <a href="index.php?action=deleteThePuppy&id=<?php echo $puppyToDelete['puppyid']?>"><button type="button" class="btn btn-danger">Yes</button></a>
+                    <a href="index.php?action=deletePuppies"><button type="button" class="btn btn-secondary">No</button></a>
                 </div>
             </div>
         </main>
