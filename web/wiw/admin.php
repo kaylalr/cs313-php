@@ -45,14 +45,14 @@ if (!$_SESSION['loggedin']) {
                             <li class="active"><a href="javascript:;">Home</a></li>
                             <li><a href="javascript:;">About</a></li>
                             <li><a href="javascript:;">Products</a></li>
-                            <li>
+<!--                            <li>
                                 <a href="#" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-fw fa-search"></i> MENU 1 <i class="fa fa-fw fa-angle-down pull-right"></i></a>
                                 <ul id="submenu-1" class="collapse">
                                     <li><a href="#"><i class="fa fa-angle-double-right"></i> SUBMENU 1.1</a></li>
                                     <li><a href="#"><i class="fa fa-angle-double-right"></i> SUBMENU 1.2</a></li>
                                     <li><a href="#"><i class="fa fa-angle-double-right"></i> SUBMENU 1.3</a></li>
                                 </ul>
-                            </li>
+                            </li>-->
                             <!--                            <li><a href="javascript:;">FAQ</a></li>
                                                         <li class="nav-divider"></li>
                                                         <li><a href="javascript:;"><i class="glyphicon glyphicon-off"></i> Sign in</a></li>-->
