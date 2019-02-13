@@ -101,6 +101,17 @@ function showTerriersForDelete($terriers) {
     return $showTerriers;
 }
 
+function terriersDropDown() {
+    $terriers = getTerriers();
+    $td = "<select name='damid'>";
+    $td .= "<option selected disabled>Chose one...</option>";
+    foreach ($terriers as $dog) {
+        $td .= "<option value='$dog[damid]'>$dog[name]</option>";
+    }
+    $td .= "</select>";
+    return $td;
+}
+
 function showGallery($pictures) {
     $showGallery = "<div class='gridContainer'>";
     foreach ($pictures as $pic) {

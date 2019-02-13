@@ -325,15 +325,17 @@ switch ($action) {
         break;
     case 'addImage':
         $puppiesDropDown = puppiesDropDown();
+        $terriersDropDown = terriersDropDown();
         include 'add-image.php';
         break;
     case 'addTheImage':
         $imgDescription = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
         $puppyid = filter_input(INPUT_POST, 'puppyid', FILTER_SANITIZE_STRING);
+        $damid = filter_input(INPUT_POST, 'damid', FILTER_SANITIZE_STRING);
         $imgPath = uploadFile('file1');
 //        echo "path: $imgPath";
 //        echo "description: $imgDescription";
-        $result = storeImages($imgPath, $imgDescription, $puppyid);
+        $result = storeImages($imgPath, $imgDescription, $puppyid, $damid);
         if ($result) {
             $_SESSION['message'] = '<p class="notice">The upload succeeded.</p>';
         } else {

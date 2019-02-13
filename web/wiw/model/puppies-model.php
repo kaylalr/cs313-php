@@ -133,14 +133,14 @@ function updateImage($id, $imgpath, $imgdescription, $puppyid, $damid) {
     return $rowsChanged;
 }
 
-function storeImages($imgPath, $imgDescription, $puppyid) {
-    echo "$imgPath, $imgDescription, $puppyid";
+function storeImages($imgPath, $imgDescription, $puppyid, $damid) {
     $db = dbConnect();
-    $stmt = $db->prepare('INSERT INTO images VALUES (default, :imgPath, :imgDescription, :puppyid)');
+    $stmt = $db->prepare('INSERT INTO images VALUES (default, :imgPath, :imgDescription, :puppyid, :damid)');
     // Store the full size image information
     $stmt->bindValue(':imgPath', $imgPath, PDO::PARAM_STR);
     $stmt->bindValue(':imgDescription', $imgDescription, PDO::PARAM_STR);
-    $stmt->bindValue(':puppyid', $puppyid, PDO::PARAM_STR);
+    $stmt->bindValue(':puppyid', $puppyid, PDO::PARAM_INT);
+    $stmt->bindValue(':damid', $damid, PDO::PARAM_INT);
     $stmt->execute();
     $rowsChanged = $stmt->rowCount();
     return $rowsChanged;

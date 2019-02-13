@@ -28,8 +28,10 @@ if (!$_SESSION['loggedin']) {
                         <input type="file" name="file1"><br>
                         <label>Description:</label><br>
                         <input type="textarea" name="description"><br>
-                        <label>Choose a puppy (if applicable):</label>
-                        <?php echo $puppiesDropDown ?>
+                        <label>Choose a puppy (if applicable):</label><br>
+                        <?php echo $puppiesDropDown ?><br>
+                        <label>Choose a mom (if applicable):</label><br>
+                        <?php echo $terriersDropDown ?><br>
                         <input type="submit" value="Upload">
                     </form>
                 </div>
