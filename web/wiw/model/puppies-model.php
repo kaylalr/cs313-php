@@ -75,8 +75,6 @@ function getTerriers() {
 }
 
 function getTerrierById($id) {
-//    echo "damid: $id";
-//    exit;
     $db = dbConnect();
     $statement = $db->prepare('SELECT d.damid, d.name, d.description FROM dams d left join images i on i.damid = d.damid WHERE d.damid = :id');
     $statement->bindValue(':id', $id, PDO::PARAM_INT);

@@ -179,11 +179,7 @@ switch ($action) {
         $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
 
         $verify = checkUser($username);
-//        var_dump($verify);
-//        echo "password: $password";
-//        exit;
         if ($verify['userpassword'] == $password) {
-//            echo "getting here";
             $_SESSION['loggedin'] = TRUE;
             include 'admin.php';
         }
@@ -320,8 +316,6 @@ switch ($action) {
         break;
     case 'addTheImage':
         $imgDescription = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
-//        var_dump($_FILES['file1']);
-//        echo "getting here one";
         $imgPath = uploadFile('file1');
         echo "path: $imgPath";
         echo "description: $imgDescription";
