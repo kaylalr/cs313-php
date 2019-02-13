@@ -135,6 +135,7 @@ function uploadFile($name) {
         $target = $image_dir_path . '/' . $filename;
         move_uploaded_file($source, $target);
         $filepath = $image_dir . '/' . $filename;
+        echo "name: $filename";
         return $filepath;
     }
 }
