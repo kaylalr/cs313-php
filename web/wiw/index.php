@@ -236,6 +236,11 @@ switch ($action) {
         $deletePuppies = showPuppiesforDelete($puppies);
         include 'delete-puppies.php';
         break;
+    case 'deletePuppy':
+        $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
+        $puppyToDelete = getPuppyById($id);
+        include 'delete-puppy.php';
+        break;
     case 'updateTerriers':
         $dogs = getTerriers();
         $showDogs = showTerriersForUpdate($dogs);
