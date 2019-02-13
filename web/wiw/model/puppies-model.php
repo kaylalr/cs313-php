@@ -61,7 +61,7 @@ function addPuppy($name, $mother, $birthdate, $details, $sold, $gender) {
 function deletePuppy($id) {
     $db = dbConnect();
     $statement = $db->prepare('DELETE FROM puppies WHERE puppyid = :id');
-    $statement->bindValue(':id', $id, PDO::PARAM_STR);
+    $statement->bindValue(':id', $id, PDO::PARAM_INT);
     $statement->execute();
     $rowsChanged = $statement->rowCount();
     return $rowsChanged;
