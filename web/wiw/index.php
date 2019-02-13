@@ -20,6 +20,10 @@ $puppies = array(
     array('id' => 6, 'Name' => 'Female Puppy 3', 'Price' => '$1200', 'ImagePath' => 'images/girl5sm.jpg', 'ImageDescription' => 'female puppy', 'Gender' => 'female'),
 );
 
+//variables for uploading an image
+$image_dir = '/wis/images';
+$image_dir_path = $_SERVER['DOCUMENT_ROOT'] . $image_dir;
+
 $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING);
 if ($action == NULL) {
     $action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING);
@@ -270,8 +274,8 @@ switch ($action) {
         break;
     case 'addTheImage':
         $imgName = $_FILES['file1']['name'];
-        var_dump($imgName);
-        var_dump($_FILES['file1']['name']);
+//        var_dump($imgName);
+//        var_dump($_FILES['file1']['name']);
         echo "getting here one";
             $imgPath = uploadFile('file1');
             $result = storeImages($imgPath, $imgName);
