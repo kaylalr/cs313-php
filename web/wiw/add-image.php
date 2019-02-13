@@ -23,6 +23,8 @@ if (!$_SESSION['loggedin']) {
             <form method="post" action="index.php?action=addTheImage" enctype="multipart/form-data">
                 <label>Upload Image:</label><br>
                 <input type="file" name="file1"><br>
+                <label>Description:</label><br>
+                <input type="textarea" name="description"><br>
                 <input type="submit" value="Upload">
             </form>
         </main>
