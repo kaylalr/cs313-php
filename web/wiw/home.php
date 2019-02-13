@@ -13,5 +13,8 @@
         <header>
             <?php include 'common/header.php' ?>
         </header>
+        <main>
+            <h1>Home Page</h1>
+        </main>
     </body>
 </html>
