@@ -106,6 +106,15 @@ function addTerrier($name, $details) {
     return $rowsChanged;
 }
 
+function deleteTerrier($id) {
+    $db = dbConnect();
+    $statement = $db->prepare('DELETE FROM dams WHERE damid = :id');
+    $statement->bindValue(':id', $id, PDO::PARAM_INT);
+    $statement->execute();
+    $rowsChanged = $statement->rowCount();
+    return $rowsChanged;
+}
+
 function getAllPictures() {
     $db = dbConnect();
     $statement = $db->query('SELECT * FROM images');

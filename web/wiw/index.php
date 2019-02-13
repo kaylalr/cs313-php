@@ -291,6 +291,26 @@ switch ($action) {
         }
         header('Location: index.php?action=admin');
         break;
+    case 'deleteTerriers':
+        $terriers = getTerriers();
+        $terriersToDelete = showTerriersForDelete($terriers);
+        include 'delete-terriers.php';
+        break;
+    case 'deteteTerrier':
+        $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
+        $terrierToDelete = getTerrierById($id);
+        include 'delete-terrier.php';
+        break;
+    case 'deleteTheTerrier':
+        $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
+        $deleted = deleteTerrier($id);
+        if (!deleted) {
+            $_SESSION['message'] = "<p class='warning'>Deleting the terrier did not work. Please try again.</p>";
+        } else {
+            $_SESSION['message'] = "<p class='warning'>Deleting the terrier was sucessful.</p>";
+        }
+        header('Location: index.php?action=deleteTerriers');
+        break;
     case 'addImage':
         include 'add-image.php';
         break;

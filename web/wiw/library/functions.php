@@ -75,6 +75,21 @@ function showTerriersForUpdate($terriers) {
     return $showTerriers;
 }
 
+function showTerriersForDelete($terriers) {
+    $showTerriers = "<div class='gridContainer'>";
+    foreach ($terriers as $terrier) {
+        $showTerriers .= '<div class="gridItem">';
+        if ($terrier['imgpath']) {
+            $showTerriers .= '<img src="' . $terrier['imgpath'] . '" alt="' . $terrier['imgdescription'] . '">';
+        } else {
+            $showTerriers .= '<img id="no-image" src="/wiw/images/no-image.png" alt="no image available">';
+        }
+        $showTerriers .= '<h4><a href="index.php?action=deleteTerrier&id=' . $terrier[damid] . '">Delete ' . $terrier['name'] . '</a></h4></div>';
+    }
+    $showTerriers .= '</div>';
+    return $showTerriers;
+}
+
 function showGallery($pictures) {
     $showGallery = "<div class='gridContainer'>";
     foreach ($pictures as $pic) {

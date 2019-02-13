@@ -12,7 +12,7 @@ if (!$_SESSION['loggedin']) {
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link rel="stylesheet" href="main.css" type="text/css">
-        <title>Delete Puppies</title>
+        <title>Delete Puppy</title>
     </head>
     <body>
         <header>
@@ -22,13 +22,12 @@ if (!$_SESSION['loggedin']) {
             <div id="admin-page">
                 <?php include 'common/admin-sidenav.php' ?>
                 <div class="admin-content">
-                    <h1>Delete Puppies</h1>
                     <?php 
-                    if (isset($_SESSION['message'])) {
-                        echo $_SESSION['message'];
-                    }
-                    echo $deletePuppies;
+                    $name = $terrierToDelete['name'];
+                    echo "<h1>Are you sure you want to delete $name?</h1>";
                     ?>
+                    <button type="button" class="btn btn-danger"><a href="index.php?action=deleteTheTerrier&id=<?php echo $terrierToDelete['puppyid']?>">Yes</a></button>
+                    <button type="button" class="btn btn-secondary"><a href="index.php?action=deleteTerriers">No</a></button>
                 </div>
             </div>
         </main>
