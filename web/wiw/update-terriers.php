@@ -36,3 +36,5 @@ if (!$_SESSION['loggedin']) {
         </main>
     </body>
 </html>
+
+<?php unset($_SESSION['message']); ?>

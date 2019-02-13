@@ -23,8 +23,15 @@ if (!$_SESSION['loggedin']) {
                 <?php include 'common/admin-sidenav.php' ?>
                 <div class="admin-content">
                     <h1>Admin Page</h1>
+                    <?php 
+                    if (isset($_SESSION['message'])) {
+                        echo $_SESSION['message'];
+                    }
+                    ?>
                 </div>
             </div>
         </main>
     </body>
 </html>
+
+<?php unset($_SESSION['message']); ?>

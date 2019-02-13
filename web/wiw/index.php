@@ -170,6 +170,10 @@ switch ($action) {
     case 'login':
         include 'login.php';
         break;
+    case 'logout':
+        session_destroy();
+        header('Location: index.php');
+        break;
     case 'admin':
         $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
         $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);

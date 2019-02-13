@@ -11,5 +11,6 @@
     <h2>Images</h2>
     <a href="index.php?action=updateImage">Update Image</a><br>
     <a href="index.php?action=addImage">Add Image</a><br>
-    <a href="index.php?action=deleteImage">Delete Image</a><br>
+    <a href="index.php?action=deleteImage">Delete Image</a><br><br><br>
+    <a href="index.php?action=logout">Logout</a>
 </div>
