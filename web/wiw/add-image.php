@@ -20,7 +20,7 @@ if (!$_SESSION['loggedin']) {
         </header>
         <main>
             <h1>Add Image</h1>
-            <form method="post" action="index.php?action=addTheImage">
+            <form method="post" action="index.php?action=addTheImage" enctype="multipart/form-data">
                 <label>Upload Image:</label><br>
                 <input type="file" name="file1"><br>
                 <input type="submit" value="Upload">
