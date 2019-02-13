@@ -45,6 +45,17 @@ function showPuppiesforDelete($puppies) {
     return $showPuppies;
 }
 
+function puppiesDropDown() {
+    $puppies = getAllPuppies();
+    $pd = "<select name='puppyid'>";
+    $pd .= "<option selected disabled>Chose one...</option>";
+    foreach ($puppies as $puppy) {
+        $pd .= "<option value='$puppy[puppyid]'>$puppy[name]</option>";
+    }
+    $pd .= "</select>";
+    return $pd;
+}
+
 function showTerriers($terriers) {
     $showTerriers = "<div class='gridContainer'>";
     foreach ($terriers as $terrier) {
@@ -98,6 +109,17 @@ function showGallery($pictures) {
     }
     $showGallery .= '</div>';
     return $showGallery;
+}
+
+function showPicturesForUpdate($images) {
+    $showImages = "<div class='gridContainer'>";
+    foreach ($images as $image) {
+        $showImages .= '<div class="gridItem smaller-grid">';
+        $showImages .= '<img src="' . $image['imgpath'] . '" alt="' . $image['imgdescription'] . '">';
+        $showImages .= '<h4><a href="index.php?action=updateImage&id=' . $image[imageid] . '">Update</a></h4></div>';
+    }
+    $showImages .= '</div>';
+    return $showImages;
 }
 
 function uploadFile($name) {

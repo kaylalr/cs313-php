@@ -12,7 +12,7 @@ if (!$_SESSION['loggedin']) {
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link rel="stylesheet" href="main.css" type="text/css">
-        <title>Add Image</title>
+        <title>Update Images</title>
     </head>
     <body>
         <header>
@@ -22,19 +22,19 @@ if (!$_SESSION['loggedin']) {
             <div id="admin-page">
                 <?php include 'common/admin-sidenav.php' ?>
                 <div class="admin-content">
-                    <h1>Add Image</h1>
-                    <form method="post" action="index.php?action=addTheImage" enctype="multipart/form-data">
-                        <label>Upload Image:</label><br>
-                        <input type="file" name="file1"><br>
-                        <label>Description:</label><br>
-                        <input type="textarea" name="description"><br>
-                        <label>Choose a puppy (if applicable):</label>
-                        <?php echo $puppiesDropDown ?>
-                        <input type="submit" value="Upload">
-                    </form>
+                    <h1>Update Images</h1>
+                    <h2>Please choose an image to update:</h2>
+                    <?php
+                    if (isset($_SESSION['message'])) {
+                        echo $_SESSION['message'];
+                    }
+                    echo $showImages;
+                    ?>
                 </div>
             </div>
 
         </main>
     </body>
 </html>
+
+<?php unset($_SESSION['message']); ?>

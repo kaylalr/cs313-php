@@ -120,15 +120,38 @@ function getAllPictures() {
     return $images;
 }
 
-function storeImages($imgPath, $imgDescription) {
+function updateImage($id, $imgpath, $imgdescription, $puppyid, $damid) {
     $db = dbConnect();
-    $stmt = $db->prepare('INSERT INTO images VALUES (default, :imgPath, :imgDescription)');
+    $statement = $db->prepare('UPDATE images SET imgpath = :imgpath, imgdescription = :imgdescription, puppyid = :puppyid, damid = :damid WHERE imageid = :id');
+    $statement->bindValue(':id', $id, PDO::PARAM_INT);
+    $statement->bindValue(':imgpath', $imgpath, PDO::PARAM_STR);
+    $statement->bindValue(':imgdescription', $imgdescription, PDO::PARAM_STR);
+    $statement->bindValue(':puppyid', $puppyid, PDO::PARAM_INT);
+    $statement->bindValue(':damid', $damid, PDO::PARAM_INT);
+    $statement->execute();
+    $rowsChanged = $statement->rowCount();
+    return $rowsChanged;
+}
+
+function storeImages($imgPath, $imgDescription, $puppyid) {
+    $db = dbConnect();
+    $stmt = $db->prepare('INSERT INTO images VALUES (default, :imgPath, :imgDescription, :puppyid)');
     // Store the full size image information
     $stmt->bindValue(':imgPath', $imgPath, PDO::PARAM_STR);
     $stmt->bindValue(':imgDescription', $imgDescription, PDO::PARAM_STR);
+    $stmt->bindValue(':puppyid', $puppyid, PDO::PARAM_STR);
     $stmt->execute();
     $rowsChanged = $stmt->rowCount();
     return $rowsChanged;
+}
+
+function getPictureById($id) {
+    $db = dbConnect();
+    $statement = $db->prepare('SELECT * FROM images WHERE imageid = :id');
+    $statement->bindValue(':id', $id, PDO::PARAM_INT);
+    $statement->execute();
+    $images = $statement->fetch(PDO::FETCH_ASSOC);
+    return $images;
 }
 
 function checkUser($username) {

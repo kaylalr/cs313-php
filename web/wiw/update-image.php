@@ -12,7 +12,7 @@ if (!$_SESSION['loggedin']) {
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link rel="stylesheet" href="main.css" type="text/css">
-        <title>Add Image</title>
+        <title>Update Terrier</title>
     </head>
     <body>
         <header>
@@ -22,19 +22,19 @@ if (!$_SESSION['loggedin']) {
             <div id="admin-page">
                 <?php include 'common/admin-sidenav.php' ?>
                 <div class="admin-content">
-                    <h1>Add Image</h1>
-                    <form method="post" action="index.php?action=addTheImage" enctype="multipart/form-data">
-                        <label>Upload Image:</label><br>
-                        <input type="file" name="file1"><br>
+                    <h1>Update Terrier</h1>
+                    <form method="post" action="index.php?action=updateCurrentTerrier">
+                        <label>Name:</label><br>
+                        <input name="name" type="text" value="<?php echo $terrier['name'] ?>" required><br>
                         <label>Description:</label><br>
-                        <input type="textarea" name="description"><br>
-                        <label>Choose a puppy (if applicable):</label>
-                        <?php echo $puppiesDropDown ?>
-                        <input type="submit" value="Upload">
+                        <input name="details" type="textArea" value="<?php echo $terrier['description'] ?>" required><br>
+                        <p class="warning">To add an image for the puppy, go to the "Update Images" page</p>
+                        <input type="hidden" name="damid" value="<?php echo $terrier['damid'] ?>">
+                        <input type="submit" value="Update">
                     </form>
                 </div>
             </div>
-
+            
         </main>
     </body>
 </html>

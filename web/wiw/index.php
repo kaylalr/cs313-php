@@ -311,15 +311,29 @@ switch ($action) {
         }
         header('Location: index.php?action=deleteTerriers');
         break;
+    case 'updateImages':
+        $images = getAllPictures();
+        $showImages = showPicturesForUpdate($images);
+        include 'update-images.php';
+        break;
+    case 'updateImage':
+        $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
+//        $updated = updateImage($id, $imgpath, $imgdescription, $puppyid, $damid);
+        $image = getPictureById($id);
+        $puppiesDropDown = puppiesDropDown();
+        include 'update-image.php';
+        break;
     case 'addImage':
+        $puppiesDropDown = puppiesDropDown();
         include 'add-image.php';
         break;
     case 'addTheImage':
         $imgDescription = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
+        $puppyid = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
         $imgPath = uploadFile('file1');
-        echo "path: $imgPath";
-        echo "description: $imgDescription";
-        $result = storeImages($imgPath, $imgDescription);
+//        echo "path: $imgPath";
+//        echo "description: $imgDescription";
+        $result = storeImages($imgPath, $imgDescription, $puppyid);
         if ($result) {
             $_SESSION['message'] = '<p class="notice">The upload succeeded.</p>';
         } else {
