@@ -152,16 +152,18 @@ form input[type="textArea"] {
 
 .sidenav {
   height: 100%;
-  width: 160px;
+  width: 200px;
   position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #111;
+  background-color: #555;
   overflow-x: hidden;
   padding-top: 20px;
 }
-
+.sidenav h2 {
+    color: #FFBF00;
+}
 .sidenav a {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
@@ -169,7 +171,6 @@ form input[type="textArea"] {
   color: #818181;
   display: block;
 }
-
 .sidenav a:hover {
   color: #f1f1f1;
 }
