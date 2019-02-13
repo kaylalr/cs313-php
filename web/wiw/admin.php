@@ -21,45 +21,60 @@ if (!$_SESSION['loggedin']) {
         </header>
         <main>
             <h1>Admin</h1>
-                        <div>
-                            <div>
-                                <h2>Puppies</h2>
-                                <a href="index.php?action=updatePuppies">Update Puppies</a><br>
-                                <a href="index.php?action=addPuppy">Add Puppy</a><br>
+            <!--                        <div>
+                                        <div>
+                                            <h2>Puppies</h2>
+                                            <a href="index.php?action=updatePuppies">Update Puppies</a><br>
+                                            <a href="index.php?action=addPuppy">Add Puppy</a><br>
+                                        </div>
+                                        <div>
+                                            <h2>Terriers</h2>
+                                            <a href="index.php?action=updateTerriers">Update Terriers</a><br>
+                                            <a href="index.php?action=addTerrier">Add Terrier</a><br>
+                                        </div>
+                                        <div>
+                                            <h2>Images</h2>
+                                            <a href="index.php?action=addImage">Add Image</a><br>
+                                            <a href="index.php?action=deleteImage">Delete Image</a><br>
+                                        </div>
+                                    </div>-->
+
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li class="sidebar-brand"> <a href="#"> Start Bootstrap </a> </li>
+                    <li> <a href="#">Dashboard</a> </li>
+                    <li> <a href="#">Shortcuts</a> </li>
+                    <li> <a href="#">Overview</a> </li>
+                    <li> <a href="#">Events</a> </li>
+                    <li> <a href="#">About</a> </li>
+                    <li> <a href="#">Services</a> </li>
+                    <li> <a href="#">Contact</a> </li>
+                </ul>
+            </div>
+
+
+            <!--            <div class="row">
+                            <div class="col-sm-2">
+                                <nav class="nav-sidebar">
+                                    <ul class="nav">
+                                        <li class="active"><a href="#">Home</a></li>
+                                        <li><a href="#">About</a></li>
+                                        <li><a href="#">Products</a></li>
+                                        <li>
+                                            <a href="#" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-fw fa-search"></i> MENU 1 <i class="fa fa-fw fa-angle-down pull-right"></i></a>
+                                            <ul id="submenu-1" class="collapse">
+                                                <li><a href="#"><i class="fa fa-angle-double-right"></i> SUBMENU 1.1</a></li>
+                                                <li><a href="#"><i class="fa fa-angle-double-right"></i> SUBMENU 1.2</a></li>
+                                                <li><a href="#"><i class="fa fa-angle-double-right"></i> SUBMENU 1.3</a></li>
+                                            </ul>
+                                        </li>
+                                                                    <li><a href="javascript:;">FAQ</a></li>
+                                                                    <li class="nav-divider"></li>
+                                                                    <li><a href="javascript:;"><i class="glyphicon glyphicon-off"></i> Sign in</a></li>
+                                    </ul>
+                                </nav>
                             </div>
-                            <div>
-                                <h2>Terriers</h2>
-                                <a href="index.php?action=updateTerriers">Update Terriers</a><br>
-                                <a href="index.php?action=addTerrier">Add Terrier</a><br>
-                            </div>
-                            <div>
-                                <h2>Images</h2>
-                                <a href="index.php?action=addImage">Add Image</a><br>
-                                <a href="index.php?action=deleteImage">Delete Image</a><br>
-                            </div>
-                        </div>
-<!--            <div class="row">
-                <div class="col-sm-2">
-                    <nav class="nav-sidebar">
-                        <ul class="nav">
-                            <li class="active"><a href="#">Home</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Products</a></li>
-                            <li>
-                                <a href="#" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-fw fa-search"></i> MENU 1 <i class="fa fa-fw fa-angle-down pull-right"></i></a>
-                                <ul id="submenu-1" class="collapse">
-                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> SUBMENU 1.1</a></li>
-                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> SUBMENU 1.2</a></li>
-                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> SUBMENU 1.3</a></li>
-                                </ul>
-                            </li>
-                                                        <li><a href="javascript:;">FAQ</a></li>
-                                                        <li class="nav-divider"></li>
-                                                        <li><a href="javascript:;"><i class="glyphicon glyphicon-off"></i> Sign in</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>-->
+                        </div>-->
 
 
         </main>
