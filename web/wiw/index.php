@@ -241,6 +241,16 @@ switch ($action) {
         $puppyToDelete = getPuppyById($id);
         include 'delete-puppy.php';
         break;
+    case 'deleteThePuppy':
+        $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
+        $deleted = deletePuppy($id);
+        if (!$deleted) {
+            $_SESSION['message'] = "<p class='warning'>Deleting the puppy did not work. Please try again.</p>";
+        } else {
+            $_SESSION['message'] = "<p class='warning'>The puppy was sucessfully deleted.</p>";
+        }
+        header('Location: index.php?action=deletePuppies');
+        break;
     case 'updateTerriers':
         $dogs = getTerriers();
         $showDogs = showTerriersForUpdate($dogs);

@@ -24,6 +24,9 @@ if (!$_SESSION['loggedin']) {
                 <div class="admin-content">
                     <h1>Delete Puppies</h1>
                     <?php 
+                    if (isset($_SESSION['message'])) {
+                        echo $_SESSION['message'];
+                    }
                     echo $deletePuppies;
                     ?>
                 </div>

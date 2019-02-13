@@ -58,6 +58,15 @@ function addPuppy($name, $mother, $birthdate, $details, $sold, $gender) {
     return $rowsChanged;
 }
 
+function deletePuppy($id) {
+    $db = dbConnect();
+    $statement = $db->prepare('DELETE FROM puppies WHERE puppyid = :id');
+    $statement->bindValue(':id', $id, PDO::PARAM_STR);
+    $statement->execute();
+    $rowsChanged = $statement->rowCount();
+    return $rowsChanged;
+}
+
 function getTerriers() {
     $db = dbConnect();
     $statement = $db->query('SELECT d.damid, d.name, d.description, i.imgpath, i.imgdescription FROM dams d left join images i on i.damid = d.damid');
