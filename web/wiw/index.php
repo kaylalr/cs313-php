@@ -275,8 +275,10 @@ switch ($action) {
     case 'addTheImage':
         $imgDescription = filter_input(INPUT_POST, 'decsription', FILTER_SANITIZE_STRING);
 //        var_dump($_FILES['file1']);
-        echo "getting here one";
+//        echo "getting here one";
             $imgPath = uploadFile('file1');
+            echo "path: $imgPath";
+            echo "description: $imgDescription";
             $result = storeImages($imgPath, $imgDescription);
             if ($result) {
                 $_SESSION['message'] = '<p class="notice">The upload succeeded.</p>';
