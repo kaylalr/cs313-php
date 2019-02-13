@@ -20,7 +20,7 @@ header {
 }
 nav {
     height: inherit;
-    font-size: 1.5em;
+    font-size: 2em;
     ul {
         display: flex;
         flex-flow: row nowrap;
@@ -144,4 +144,7 @@ form input[type="textArea"] {
 }
 #login .container #login-row #login-column #login-box #login-form input {
     font-size: inherit;
+}
+#login .container #login-row #login-column #login-box #login-form #login-button {
+    margin-top: 85px;
 }
