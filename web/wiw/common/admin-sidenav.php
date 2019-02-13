@@ -1,4 +1,5 @@
 <div class="sidenav">
+    <a href="index.php?action=admin">Admin Home</a><br>
     <h2>Puppies</h2>
     <a href="index.php?action=updatePuppies">Update Puppies</a><br>
     <a href="index.php?action=addPuppy">Add Puppy</a><br>
