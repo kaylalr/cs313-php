@@ -35,7 +35,7 @@ if (!$_SESSION['loggedin']) {
                         echo "<h1>This image is linked to the following terrier: " . $terrier[name] . "</h2>";
                     }
                     ?>
-                    <a href="index.php?action=deleteTheImage&id=<?php echo $puppyToDelete['puppyid']?>"><button type="button" class="btn btn-danger">Yes</button></a>
+                    <a href="index.php?action=deleteTheImage&id=<?php echo $imageDelete['imageid']?>"><button type="button" class="btn btn-danger">Yes</button></a>
                     <a href="index.php?action=deleteImages"><button type="button" class="btn btn-secondary">No</button></a>
                 </div>
             </div>
