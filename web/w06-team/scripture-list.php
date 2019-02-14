@@ -23,9 +23,9 @@ function getScriptures() {
     $scriptures = getScriptures();
     $currentScripture = null;
     foreach ($scriptures as $scripture) {
-        // if ($currentScripture != "$scripture['book'] . $scripture['chapter'] . $scripture['verse']") {
+        // if ($currentScripture != "$scripture['book'] $scripture['chapter'] $scripture['verse']") {
             echo "<h2>" . $scripture['book'] . " " . $scripture['chapter']  . ":" . $scripture['verse'] . "</h2>";
-            $currentScripture = "$scripture['book'] . $scripture['chapter'] . $scripture['verse']";
+            $currentScripture = "$scripture['book'] $scripture['chapter'] $scripture['verse']";
         // }
         echo "<span>". $scripture['name'] . "</span>";
     }
