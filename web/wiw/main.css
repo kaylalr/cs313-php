@@ -136,6 +136,10 @@ main {
     height: 100px;
     width: 200px;
 }*/
+form input[type=submit] {
+  margin-top: 50px;
+}
+
 /***** Login Page *****/
 /*code taken from https://bootsnipp.com/snippets/bxzmb*/
 #login .container #login-row {
