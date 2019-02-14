@@ -23,8 +23,8 @@ if (!$_SESSION['loggedin']) {
                 <?php include 'common/admin-sidenav.php' ?>
                 <div class="admin-content">
                     <h1>Are you sure you want to delete this image?</h1>
-                    <?php var_dump($imageDelete); exit;?>
-                    <img src="<?php $imageDelete['imgpath']?>" alt="<?php $imageDelete['imgdescription']?>">
+                    <?php // var_dump($imageDelete); exit; ?>
+                    <img src="<?php $imageDelete[imgpath]?>" alt="<?php $imageDelete[imgdescription]?>">
                     <?php 
                     if ($imageDelete[puppyid] != null) {
                         $puppy = getPuppyById($imageDelete[puppyid]);
