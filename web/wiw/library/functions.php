@@ -55,9 +55,9 @@ function puppiesDropDown() {
         if (isset($_SESSION['puppy'])) {
             if ($_SESSION['puppy'] == $puppy['puppyid']) {
                 $pd .= "<option value='$puppy[puppyid]' selected>$puppy[name]</option>";
+            } else {
+                $pd .= "<option value='$puppy[puppyid]'>$puppy[name]</option>";
             }
-        } else {
-            $pd .= "<option value='$puppy[puppyid]'>$puppy[name]</option>";
         }
     }
     $pd .= "</select>";
