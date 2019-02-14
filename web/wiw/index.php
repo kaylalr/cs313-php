@@ -373,14 +373,14 @@ switch ($action) {
         break;
     case 'deleteTheImage':
         $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
-        $imageDelete = getPictureById($id);
+//        $imageDelete = getPictureById($id);
         $deleted = deleteImage($id);
         if (!$deleted) {
             $_SESSION['message'] = '<p class="notice">Deleting the image failed. Please try again.</p>';
         } else {
             $_SESSION['message'] = '<p class="notice">The image was successfully deleted.</p>';
         }
-        header('Locatoin: index.php?action=deleteImages');
+        header('Location: index.php?action=deleteImages');
         break;
     default:
         include 'home.php';
