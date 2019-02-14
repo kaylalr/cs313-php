@@ -23,7 +23,7 @@ if (!$_SESSION['loggedin']) {
                 <?php include 'common/admin-sidenav.php' ?>
                 <div class="admin-content">
                     <h1>Are you sure you want to delete this image?</h1>
-                    <img src="<?php $imageDelete[imgpath]?>" alt="<?php $imageDelete[imgdescription]?>">
+                    <img src="<?php $imageDelete['imgpath']?>" alt="<?php $imageDelete['imgdescription']?>">
                     <?php 
                     if ($imageDelete[puppyid] != null) {
                         $puppy = getPuppyById($imageDelete[puppyid]);
@@ -31,7 +31,7 @@ if (!$_SESSION['loggedin']) {
                     }
                     if ($imageDelete[damid] != null) {
                         $terrier = getTerrierByIdById($imageDelete[puppyid]);
-                        echo "<p>This image is linked to the puppy </p>" . $terrier[name];
+                        echo "<h1>This image is linked to the following puppy:" . $terrier[name] . "</h2>";
                     }
                     ?>
                 </div>
