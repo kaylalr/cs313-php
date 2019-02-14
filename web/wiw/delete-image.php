@@ -24,7 +24,7 @@ if (!$_SESSION['loggedin']) {
                 <div class="admin-content">
                     <h1>Are you sure you want to delete this image?</h1>
                     <?php // var_dump($imageDelete); exit; ?>
-                    <img src="<?php $imageDelete[imgpath]?>" alt="<?php $imageDelete[imgdescription]?>">
+                    <img src="<?php echo $imageDelete[imgpath]?>" alt="<?php echo $imageDelete[imgdescription]?>">
                     <?php 
                     if ($imageDelete[puppyid] != null) {
                         $puppy = getPuppyById($imageDelete[puppyid]);
