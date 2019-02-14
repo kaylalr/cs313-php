@@ -23,10 +23,16 @@ if (!$_SESSION['loggedin']) {
                 <?php include 'common/admin-sidenav.php' ?>
                 <div class="admin-content">
                     <h1>Delete Image</h1>
-                    <?php echo $showPics ?>
+                    <?php 
+                    if (isset($_SESSION['message'])) {
+                        echo $_SESSION['message'];
+                    }
+                    echo $showPics ?>
                 </div>
             </div>
 
         </main>
     </body>
 </html>
+
+<?php unset($_SESSION['message']); ?>

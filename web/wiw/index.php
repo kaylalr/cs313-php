@@ -380,6 +380,7 @@ switch ($action) {
         } else {
             $_SESSION['message'] = '<p class="notice">The image was successfully deleted.</p>';
         }
+        header('Locatoin: index.php?action=deleteImages');
         break;
     default:
         include 'home.php';
