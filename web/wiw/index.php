@@ -154,6 +154,7 @@ switch ($action) {
         }
 //        var_dump($puppies);
 //        exit;
+        var_dump($puppies);
         $showPuppies = showPuppies($puppies);
         include 'view-puppies.php';
         break;
