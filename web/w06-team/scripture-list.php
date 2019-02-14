@@ -5,7 +5,7 @@ function getScriptures() {
     $statement = $db->prepare('SELECT s.book, s.chapter, s.verse, s.content, t.name FROM scriptures s JOIN scripture_topic st ON s.scriptureid = st.scriptureid JOIN topics t ON t.topicid = st.topicid');
     $statement->execute();
     $topics = $statement->fetchAll(PDO::FETCH_ASSOC);
-    var_dump($topics);
+    // var_dump($topics);
     return $topics;
 }
 ?>
@@ -20,7 +20,7 @@ function getScriptures() {
 <body>
 <h1>All Scriptures</h1>
     <?php 
-    // $scriptures = getScriptures();
+    $scriptures = getScriptures();
     // $currentScripture = null;
     // foreach ($scriptures as $scripture) {
     //     if ($currentScripture != "$scripture['book'] . $scripture['chapter'] . $scripture['verse']") {
