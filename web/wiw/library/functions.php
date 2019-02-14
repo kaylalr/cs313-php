@@ -58,6 +58,8 @@ function puppiesDropDown() {
             } else {
                 $pd .= "<option value='$puppy[puppyid]'>$puppy[name]</option>";
             }
+        } else {
+            $pd .= "<option value='$puppy[puppyid]'>$puppy[name]</option>";
         }
     }
     $pd .= "</select>";
