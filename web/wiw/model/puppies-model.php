@@ -77,7 +77,15 @@ function deletePuppy($id) {
 
 function getTerriers() {
     $db = dbConnect();
-    $statement = $db->query('SELECT d.damid, d.name, d.description, i.imgpath, i.imgdescription FROM dams d left join images i on i.damid = d.damid');
+    $statement = $db->query('SELECT di.damid, di.name, di.description, di.imgpath, di.imgdescription
+FROM (SELECT d.damid, d.name, d.description, i.imgpath, i.imgdescription,
+CASE
+WHEN d.damid=LAG(d.damid, 1, 0) OVER(ORDER BY d.damid) THEN 1
+ELSE 0
+END AS "Duplicates"
+FROM dams d LEFT JOIN images i on i.damid = d.damid) as di
+WHERE "Duplicates"=0;
+');
     $puppies = $statement->fetchAll(PDO::FETCH_ASSOC);
     return $puppies;
 }
