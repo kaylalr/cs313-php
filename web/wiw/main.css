@@ -63,8 +63,9 @@ main {
   /*width: 80%;*/
 }
 
-.smaller-grid img {
+.smaller-grid div {
   height: 200px;
+  width: 200px;
 }
 
 /* cart page */
