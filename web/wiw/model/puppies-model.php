@@ -161,6 +161,15 @@ function getPictureById($id) {
     return $images;
 }
 
+function deleteImage($id) {
+    $db = dbConnect();
+    $statement = $db->prepare('DELETE FROM images WHERE imageid = :id');
+    $statement->bindValue(':id', $id, PDO::PARAM_INT);
+    $statement->execute();
+    $rowsChanged = $statement->rowCount();
+    return $rowsChanged;
+}
+
 function checkUser($username) {
     $db = dbConnect();
     $statement = $db->prepare('SELECT username, userpassword FROM users WHERE username = :username');

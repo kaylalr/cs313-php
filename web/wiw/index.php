@@ -371,6 +371,16 @@ switch ($action) {
         $imageDelete = getPictureById($id);
         include 'delete-image.php';
         break;
+    case 'deleteTheImage':
+        $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
+        $imageDelete = getPictureById($id);
+        $deleted = deleteImage($id);
+        if (!$deleted) {
+            $_SESSION['message'] = '<p class="notice">Deleting the image failed. Please try again.</p>';
+        } else {
+            $_SESSION['message'] = '<p class="notice">The image was successfully deleted.</p>';
+        }
+        break;
     default:
         include 'home.php';
 }
