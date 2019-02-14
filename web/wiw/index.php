@@ -320,9 +320,13 @@ switch ($action) {
         $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
 //        $updated = updateImage($id, $imgpath, $imgdescription, $puppyid, $damid);
         $image = getPictureById($id);
+        $_SESSION['puppy'] = $image['puppyid'];
+        $_SESSION['terrier'] = $image['damid'];
         $puppiesDropDown = puppiesDropDown();
         $terriersDropDown = terriersDropDown();
         $currentImage = getPictureById($id);
+        unset($_SESSION['puppy']);
+        unset($_SESSION['terrier']);
         include 'update-image.php';
         break;
     case 'addImage':

@@ -50,7 +50,13 @@ function puppiesDropDown() {
     $pd = "<select name='puppyid'>";
     $pd .= "<option selected disabled>Chose one...</option>";
     foreach ($puppies as $puppy) {
-        $pd .= "<option value='$puppy[puppyid]'>$puppy[name]</option>";
+        if (isset($_SESSION['puppy'])) {
+            if ($_SESSION['puppy'] == $puppy['puppyid']) {
+                $pd .= "<option value='$puppy[puppyid]' selected>$puppy[name]</option>";
+            }
+        } else {
+            $pd .= "<option value='$puppy[puppyid]'>$puppy[name]</option>";
+        }
     }
     $pd .= "</select>";
     return $pd;
@@ -106,7 +112,13 @@ function terriersDropDown() {
     $td = "<select name='damid'>";
     $td .= "<option selected disabled>Chose one...</option>";
     foreach ($terriers as $dog) {
-        $td .= "<option value='$dog[damid]'>$dog[name]</option>";
+        if (isset($_SESSION['terrier'])) {
+            if ($_SESSION['terrier'] == $dog['damid']) {
+                $td .= "<option value='$dog[damid]' selected>$dog[name]</option>";
+            }
+        } else {
+            $td .= "<option value='$dog[damid]'>$dog[name]</option>";
+        }
     }
     $td .= "</select>";
     return $td;
