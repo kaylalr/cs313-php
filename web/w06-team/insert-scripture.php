@@ -57,4 +57,12 @@ $db = dbConnect();
 
     echo "getting here";
 include 'scripture-list.php';
+
+
+
+
+
+
+
+
 ?>

@@ -361,6 +361,16 @@ switch ($action) {
 
         header('Location: index.php?action=admin');
         break;
+    case 'deleteImages':
+        $pics = getAllPictures();
+        $showPics = showPicturesForDelete($pics);
+        include 'delete-images.php';
+        break;
+    case 'deleteImage':
+        $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
+        $imageDelete = getPictureById($id);
+        include 'delete-image.php';
+        break;
     default:
         include 'home.php';
 }

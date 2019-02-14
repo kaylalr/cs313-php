@@ -130,7 +130,7 @@ main {
 }
 
 /***** Forms *****/
-form input[type=textArea] {
+form input[type=textarea] {
   height: 100px;
   width: 200px;
 }

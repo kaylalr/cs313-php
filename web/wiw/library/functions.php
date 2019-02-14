@@ -149,6 +149,17 @@ function showPicturesForUpdate($images) {
     return $showImages;
 }
 
+function showPicturesForUpdate($images) {
+    $showImages = "<div class='gridContainer'>";
+    foreach ($images as $image) {
+        $showImages .= '<div class="gridItem smaller-grid">';
+        $showImages .= '<img src="' . $image['imgpath'] . '" alt="' . $image['imgdescription'] . '">';
+        $showImages .= '<h4><a href="index.php?action=deleteImage&id=' . $image[imageid] . '">Delete</a></h4></div>';
+    }
+    $showImages .= '</div>';
+    return $showImages;
+}
+
 function uploadFile($name) {
     global $image_dir, $image_dir_path;
     if (isset($_FILES[$name])) {
