@@ -21,14 +21,14 @@ function getScriptures() {
 <h1>All Scriptures</h1>
     <?php 
     $scriptures = getScriptures();
-    // $currentScripture = null;
-    // foreach ($scriptures as $scripture) {
-    //     if ($currentScripture != "$scripture['book'] . $scripture['chapter'] . $scripture['verse']") {
-    //     echo "<h2>" . $scripture['book'] . " " . $scripture['chapter']  . ":" . $scripture['verse'] . "</h2>";
-    //     $currentScripture = "$scripture['book'] . $scripture['chapter'] . $scripture['verse']";
-    //     }
-    //     echo "<span>". $scripture['name'] . "</span>";
-    // }
+    $currentScripture = null;
+    foreach ($scriptures as $scripture) {
+        if ($currentScripture != "$scripture['book'] . $scripture['chapter'] . $scripture['verse']") {
+        echo "<h2>" . $scripture['book'] . " " . $scripture['chapter']  . ":" . $scripture['verse'] . "</h2>";
+        $currentScripture = "$scripture['book'] . $scripture['chapter'] . $scripture['verse']";
+        }
+        echo "<span>". $scripture['name'] . "</span>";
+    }
     ?>
 </body>
 </html>
