@@ -2,7 +2,15 @@
 
 function getAllPuppies() {
     $db = dbConnect();
-    $statement = $db->query('SELECT p.name, i.imgpath, i.imgdescription, p.puppyid FROM puppies p left join images i on i.puppyid = p.puppyid');
+    $statement = $db->query('SELECT pi.name, pi.imgpath, pi.imgdescription, pi.puppyid
+FROM (SELECT p.name, i.imgpath, i.imgdescription, p.puppyid,
+CASE
+WHEN p.puppyid=LAG(p.puppyid, 1, 0) OVER(ORDER BY p.puppyid) THEN 1
+ELSE 0
+END AS "Duplicates"
+FROM puppies p LEFT JOIN images i on i.puppyid = p.puppyid) as pi
+WHERE "Duplicates"=0;
+');
     $puppies = $statement->fetchAll(PDO::FETCH_ASSOC);
     return $puppies;
 }
