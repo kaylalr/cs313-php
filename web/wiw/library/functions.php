@@ -50,7 +50,7 @@ function showPuppiesforDelete($puppies) {
 function puppiesDropDown() {
     $puppies = getAllPuppies();
     $pd = "<select name='puppyid'>";
-    $pd .= "<option selected disabled>Chose one...</option>";
+    $pd .= "<option disabled>Chose one...</option>";
     foreach ($puppies as $puppy) {
         if (isset($_SESSION['puppy'])) {
             if ($_SESSION['puppy'] == $puppy['puppyid']) {
