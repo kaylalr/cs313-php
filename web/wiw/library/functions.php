@@ -138,7 +138,7 @@ function showGallery($pictures) {
     return $showGallery;
 }
 
-function showPicturesForUpdate($images) {
+function showPicturesForDelete($images) {
     $showImages = "<div class='gridContainer'>";
     foreach ($images as $image) {
         $showImages .= '<div class="gridItem smaller-grid">';
