@@ -154,7 +154,7 @@ function showPicturesForDelete($images) {
     foreach ($images as $image) {
         $showImages .= '<div class="gridItem smaller-grid">';
         $showImages .= '<img src="' . $image['imgpath'] . '" alt="' . $image['imgdescription'] . '">';
-        $showImages .= '<h4><a href="index.php?action=deleteImage&id=' . $image[imageid] . '">Delete</a></h4></div>';
+        $showImages .= '<h4><a href="index.php?action=deleteImage&id=' . $image['imageid'] . '">Delete</a></h4></div>';
     }
     $showImages .= '</div>';
     return $showImages;
