@@ -138,7 +138,7 @@ function showPicturesForUpdate($images) {
     $showImages = "<div class='gridContainer'>";
     foreach ($images as $image) {
         $showImages .= '<div class="gridItem smaller-grid">';
-        $showImages .= '<div><img src="' . $image['imgpath'] . '" alt="' . $image['imgdescription'] . '"></div>';
+        $showImages .= '<img src="' . $image['imgpath'] . '" alt="' . $image['imgdescription'] . '">';
         $showImages .= '<h4><a href="index.php?action=updateImage&id=' . $image[imageid] . '">Update</a></h4></div>';
     }
     $showImages .= '</div>';
