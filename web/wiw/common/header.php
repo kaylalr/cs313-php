@@ -13,7 +13,7 @@
 <?php
 if (isset($_SESSION['loggedin'])) {
     if ($_SESSION['loggedin']) {
-        echo '<a href="index.php?action=admin"><button class = "btn btn-default btn-sm pull-right">Admin</button></a>';
+        echo '<a href="index.php?action=admin"><button class="btn btn-primary btn-sm pull-right">Admin</button></a>';
     }
 }
 ?>
