@@ -24,11 +24,12 @@ if (!$_SESSION['loggedin']) {
                 <div class="admin-content">
                     <h1>Update Image</h1>
                     <img id="updatingImg" src="<?php echo $currentImage[imgpath]?>" alt="<?php $currentImage[imgdescription]?>">
-                    <form method="post" action="index.php?action=updateImage" enctype="multipart/form-data">
+                    <form method="post" action="index.php?action=updateTheImage" enctype="multipart/form-data">
                         <label>Choose a puppy (if applicable):</label><br>
                         <?php echo $puppiesDropDown ?><br>
                         <label>Choose a terrier (if applicable):</label><br>
                         <?php echo $terriersDropDown ?><br>
+                        <input type="hidden" name="id" value="<?php echo $currentImage[imageid]?>">
                         <input type="submit" value="Upload">
                     </form>
                 </div>

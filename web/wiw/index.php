@@ -267,7 +267,7 @@ switch ($action) {
         $id = filter_input(INPUT_POST, 'damid', FILTER_SANITIZE_NUMBER_INT);
         $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
         $details = filter_input(INPUT_POST, 'details', FILTER_SANITIZE_STRING);
-        echo "$id, $name, $details";
+//        echo "$id, $name, $details";
         $updateTerrier = updateTerrier($id, $name, $details);
         if (!$updateTerrier) {
             $_SESSION['message'] = "<p class='warning'>Updating the terrier did not work. Please try again.</p>";
@@ -318,7 +318,6 @@ switch ($action) {
         break;
     case 'updateImage':
         $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
-//        $updated = updateImage($id, $imgpath, $imgdescription, $puppyid, $damid);
         $image = getPictureById($id);
         $_SESSION['puppy'] = $image['puppyid'];
         $_SESSION['terrier'] = $image['damid'];
@@ -328,6 +327,18 @@ switch ($action) {
         unset($_SESSION['puppy']);
         unset($_SESSION['terrier']);
         include 'update-image.php';
+        break;
+    case 'updateTheImage':
+        $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);
+        $puppyid = filter_input(INPUT_POST, 'puppyid', FILTER_SANITIZE_NUMBER_INT);
+        $damid = filter_input(INPUT_POST, 'damid', FILTER_SANITIZE_NUMBER_INT);
+        $updated = updateImage($id, $puppyid, $damid);
+        if (!updated) {
+            $_SESSION['message'] = "<p class='warning'>Updating the image did not work. Please try again.</p>";
+        } else {
+            $_SESSION['message'] = "<p class='warning'>Updating the image was sucessful.</p>";
+        }
+        header('Location: index.php?action=updateImages');
         break;
     case 'addImage':
         $puppiesDropDown = puppiesDropDown();

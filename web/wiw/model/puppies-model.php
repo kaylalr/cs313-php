@@ -120,12 +120,10 @@ function getAllPictures() {
     return $images;
 }
 
-function updateImage($id, $imgpath, $imgdescription, $puppyid, $damid) {
+function updateImage($id, $puppyid, $damid) {
     $db = dbConnect();
-    $statement = $db->prepare('UPDATE images SET imgpath = :imgpath, imgdescription = :imgdescription, puppyid = :puppyid, damid = :damid WHERE imageid = :id');
+    $statement = $db->prepare('UPDATE images SET puppyid = :puppyid, damid = :damid WHERE imageid = :id');
     $statement->bindValue(':id', $id, PDO::PARAM_INT);
-    $statement->bindValue(':imgpath', $imgpath, PDO::PARAM_STR);
-    $statement->bindValue(':imgdescription', $imgdescription, PDO::PARAM_STR);
     $statement->bindValue(':puppyid', $puppyid, PDO::PARAM_INT);
     $statement->bindValue(':damid', $damid, PDO::PARAM_INT);
     $statement->execute();
