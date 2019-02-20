@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  margin-top: -25px;
+  font-size: 1.2em;
+}
+
+#main-nav {
+  width: 100%;
+  background-color: gray;
+}
+#main-nav div {
+  max-width: 90%;
+  margin: 0 auto;
+}
+#main-nav ul {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 400px;
+  height: 70px;
+  list-style-type: none;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.3em;
+  padding: 0;
+}
+#main-nav a:link, #main-nav a:visited {
+  text-decoration: none;
+  color: black;
+}
+#main-nav a:hover {
+  color: white;
+  text-decoration: underline;
+}
+#main-nav a:active {
+  text-decoration: none;
+}
+
+main {
+  max-width: 90%;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+#welcome-para {
+  width: 500px;
+}
+
+/*# sourceMappingURL=main.css.map */
