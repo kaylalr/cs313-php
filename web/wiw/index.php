@@ -180,8 +180,14 @@ switch ($action) {
 
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
+        
+        $password1 = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+        $hashedPassword1 = password_hash($password, PASSWORD_DEFAULT);
+        
+        
         $verify = checkUser($username);
         var_dump($verify);
+        echo "<br><br><br>$hashedPassword";
         echo "<br><br><br>$hashedPassword";
         exit;
         if ($verify['userpassword'] == $hashedPassword) {
