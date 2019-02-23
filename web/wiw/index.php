@@ -178,8 +178,10 @@ switch ($action) {
         $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
         $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
 
+        $hashedPassword = $hash = password_hash($password, PASSWORD_DEFAULT);
+        
         $verify = checkUser($username);
-        if ($verify['userpassword'] == $password) {
+        if ($verify['userpassword'] == $hashedPassword) {
             $_SESSION['loggedin'] = TRUE;
             include 'admin.php';
         }
@@ -381,15 +383,6 @@ switch ($action) {
             $_SESSION['message'] = '<p class="notice">The image was successfully deleted.</p>';
         }
         header('Location: index.php?action=deleteImages');
-        break;
-    case 'signup':
-        include 'sign-up-test.php';
-        break;
-    case 'makeAccount':
-        $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
-        $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
-        $hashedPassword = $hash = password_hash($password, PASSWORD_DEFAULT);
-        $added = makeAccount($username, $hashedPassword);
         break;
     default:
         include 'home.php';
