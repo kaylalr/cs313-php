@@ -383,7 +383,7 @@ switch ($action) {
         header('Location: index.php?action=deleteImages');
         break;
     case 'signup':
-        include 'sign-up-text.php';
+        include 'sign-up-test.php';
         break;
     case 'makeAccount':
         $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
