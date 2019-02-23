@@ -178,11 +178,11 @@ switch ($action) {
         $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
         $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
 
-        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
 
         
         $password1 = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
-        $hashedPassword1 = password_hash($password, PASSWORD_DEFAULT);
+        $hashedPassword1 = password_hash($password, PASSWORD_BCRYPT);
         
         
         $verify = checkUser($username);
@@ -399,7 +399,7 @@ switch ($action) {
     case 'makeAccount':
         $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
         $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
-        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
         $added = makeAccount($username, $hashedPassword);
         break;
     default:
