@@ -182,6 +182,7 @@ switch ($action) {
         
         $verify = checkUser($username);
         var_dump($verify);
+        echo "<br><br><br>$hashedPassword";
         exit;
         if ($verify['userpassword'] == $hashedPassword) {
             $_SESSION['loggedin'] = TRUE;
