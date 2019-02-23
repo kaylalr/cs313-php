@@ -181,6 +181,8 @@ switch ($action) {
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
         
         $verify = checkUser($username);
+        var_dump($verify);
+        exit;
         if ($verify['userpassword'] == $hashedPassword) {
             $_SESSION['loggedin'] = TRUE;
             include 'admin.php';
