@@ -44,7 +44,7 @@
                                         <input type="password" name="password" id="password" class="form-control">
                                     </div>
                                     <div class="form-group">
-                                        <input type="submit" name="submit" id="login-button" class="btn btn-info btn-md" value="Login">
+                                        <input type="submit" name="submit" id="login-button" class="btn btn-info btn-md" value="Sign up">
                                     </div>
                                 </form>
                             </div>
