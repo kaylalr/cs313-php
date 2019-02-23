@@ -184,9 +184,10 @@ switch ($action) {
         $password1 = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
         $hashedPassword1 = password_hash($password, PASSWORD_BCRYPT);
         
-        $hashCheck = password_verify($clientPassword, $clientData['clientPassword']);
         
         $verify = checkUser($username);
+                $hashCheck = password_verify($password, $verify['userpassword']);
+
         var_dump($verify);
         echo "<br><br><br>$hashedPassword";
         echo "<br><br><br>$hashedPassword1";
