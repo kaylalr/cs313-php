@@ -186,3 +186,13 @@ function checkUser($username) {
     $user = $statement->fetch(PDO::FETCH_ASSOC);
     return $user;
 }
+
+function makeAccount($username, $password) {
+    $db = dbConnect();
+    $statement = $db->prepare('INSERT INTO users VALUES (default, :username, :password)');
+    $statement->bindValue(':username', $username, PDO::PARAM_INT);
+    $statement->bindValue(':password', $password, PDO::PARAM_INT);
+    $statement->execute();
+    $rowsChanged = $statement->rowCount();
+    return $rowsChanged;
+}
