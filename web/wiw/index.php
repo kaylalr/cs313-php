@@ -178,7 +178,7 @@ switch ($action) {
         $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
         $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
 
-        $hashedPassword = $hash = password_hash($password, PASSWORD_DEFAULT);
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
         
         $verify = checkUser($username);
         if ($verify['userpassword'] == $hashedPassword) {
