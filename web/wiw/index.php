@@ -188,12 +188,12 @@ switch ($action) {
         $verify = checkUser($username);
                 $hashCheck = password_verify($password, $verify['userpassword']);
 
-        var_dump($verify);
-        echo "<br><br><br>$hashedPassword";
-        echo "<br><br><br>$hashedPassword1";
-        echo "<br><br><br>$hashCheck";
-        exit;
-        if ($verify['userpassword'] == $hashedPassword) {
+//        var_dump($verify);
+//        echo "<br><br><br>$hashedPassword";
+//        echo "<br><br><br>$hashedPassword1";
+//        echo "<br><br><br>$hashCheck";
+//        exit;
+        if ($hashCheck) {
             $_SESSION['loggedin'] = TRUE;
             include 'admin.php';
         }
