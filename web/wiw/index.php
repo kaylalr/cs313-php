@@ -177,22 +177,10 @@ switch ($action) {
     case 'admin':
         $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
         $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
-
-        $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
-
-        
-        $password1 = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
-        $hashedPassword1 = password_hash($password, PASSWORD_BCRYPT);
-        
         
         $verify = checkUser($username);
-                $hashCheck = password_verify($password, $verify['userpassword']);
+        $hashCheck = password_verify($password, $verify['userpassword']);
 
-//        var_dump($verify);
-//        echo "<br><br><br>$hashedPassword";
-//        echo "<br><br><br>$hashedPassword1";
-//        echo "<br><br><br>$hashCheck";
-//        exit;
         if ($hashCheck) {
             $_SESSION['loggedin'] = TRUE;
             include 'admin.php';
@@ -395,15 +383,6 @@ switch ($action) {
             $_SESSION['message'] = '<p class="notice">The image was successfully deleted.</p>';
         }
         header('Location: index.php?action=deleteImages');
-        break;
-    case 'signup':
-        include 'sign-up-test.php';
-        break;
-    case 'makeAccount':
-        $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
-        $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
-        $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
-        $added = makeAccount($username, $hashedPassword);
         break;
     default:
         include 'home.php';
