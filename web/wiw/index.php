@@ -184,11 +184,13 @@ switch ($action) {
         $password1 = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
         $hashedPassword1 = password_hash($password, PASSWORD_BCRYPT);
         
+        $hashCheck = password_verify($clientPassword, $clientData['clientPassword']);
         
         $verify = checkUser($username);
         var_dump($verify);
         echo "<br><br><br>$hashedPassword";
         echo "<br><br><br>$hashedPassword1";
+        echo "<br><br><br>$hashCheck";
         exit;
         if ($verify['userpassword'] == $hashedPassword) {
             $_SESSION['loggedin'] = TRUE;
