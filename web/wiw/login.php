@@ -15,12 +15,7 @@
             <?php include 'common/header.php' ?>
         </header>
         <main>
-            <?php
-            if (isset($_SESSION['message'])) {
-                echo $_SESSION['message'];
-            }
-            echo $deletePuppies;
-            ?>
+
             <!--code taken from https://bootsnipp.com/snippets/bxzmb-->
             <div id="login">
                 <div class="container">
@@ -29,6 +24,11 @@
                             <div id="login-box" class="col-md-12">
                                 <form id="login-form" class="form" action="/wiw/index.php?action=admin" method="post">
                                     <h3 class="text-center text-info">Login</h3>
+                                    <?php
+                                    if (isset($_SESSION['message'])) {
+                                        echo $_SESSION['message'];
+                                    }
+                                    ?>
                                     <div class="form-group">
                                         <label for="username" class="text-info">Username:</label><br>
                                         <input type="text" name="username" id="username" class="form-control">
