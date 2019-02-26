@@ -15,6 +15,12 @@
             <?php include 'common/header.php' ?>
         </header>
         <main>
+            <?php
+            if (isset($_SESSION['message'])) {
+                echo $_SESSION['message'];
+            }
+            echo $deletePuppies;
+            ?>
             <!--code taken from https://bootsnipp.com/snippets/bxzmb-->
             <div id="login">
                 <div class="container">
@@ -44,3 +50,4 @@
     </body>
 </html>
 
+<?php unset($_SESSION['message']); ?>

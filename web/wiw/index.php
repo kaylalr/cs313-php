@@ -184,6 +184,9 @@ switch ($action) {
         if ($hashCheck) {
             $_SESSION['loggedin'] = TRUE;
             include 'admin.php';
+        } else {
+            $_SESSION['message'] = "<p>Something when wrong.  Please try to login again./p>";
+            header('Location: index.php?action=login');
         }
         break;
     case 'updatePuppies':
