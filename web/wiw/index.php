@@ -388,5 +388,5 @@ switch ($action) {
         header('Location: index.php?action=deleteImages');
         break;
     default:
-        include 'home.php';
+        header('Location: index.php?action=puppies');
 }
