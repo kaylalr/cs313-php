@@ -107,6 +107,9 @@ main {
 .filter form {
   font-size: 1.2em;
 }
+.filter input {
+  margin-top: 0px;
+}
 
 .formPadding {
   padding-left: 15px;
